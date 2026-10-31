@@ -1,10 +1,11 @@
 {
-  "run_at": "2026-10-31T10:03:53.746977+00:00",
+  "run_at": "2026-10-31T14:25:27.586703+00:00",
   "base_url": "https://api.meta.ai/v1",
   "muse_model": "muse-spark-1.3",
   "sam_model": "sam-3.1",
   "credentials": {
     "meta_api_key_present": false,
+    "auth_mode": "proxy_injected",
     "meta_api_key_length": 0,
     "sources_checked": [
       "MODEL_API_KEY",
@@ -12,5 +13,25 @@
       "kaggle_secrets"
     ]
   },
-  "blocked": "no_api_key"
+  "list_models": {
+    "ok": false,
+    "latency_ms": 469,
+    "error_type": "MetaAuthError",
+    "error": "Authentification Meta refusée (401): Unauthorized — aucune clé envoyée par le code : vérifier le secret réseau (type Bearer, hôte api.meta.ai).",
+    "http_status": 401
+  },
+  "muse_text_minimal": {
+    "ok": false,
+    "latency_ms": 430,
+    "error_type": "MetaAuthError",
+    "error": "Authentification Meta refusée (401): Unauthorized — aucune clé envoyée par le code : vérifier le secret réseau (type Bearer, hôte api.meta.ai).",
+    "http_status": 401
+  },
+  "muse_image_structured": {
+    "ok": false,
+    "latency_ms": 464,
+    "error_type": "MetaAuthError",
+    "error": "Authentification Meta refusée (401): Unauthorized — aucune clé envoyée par le code : vérifier le secret réseau (type Bearer, hôte api.meta.ai).",
+    "http_status": 401
+  }
 }

@@ -54,7 +54,7 @@ def main() -> int:
     s = get_settings()
     results: dict = {"run_at": datetime.now(timezone.utc).isoformat(), "base_url": s.models["meta_api"]["base_url"],
                      "muse_model": s.muse_model, "sam_model": s.sam_model, "credentials": describe_secret_status()}
-    if not results["credentials"]["meta_api_key_present"]:
+    if results["credentials"]["auth_mode"] == "none":
         print("MODEL_API_KEY absente : définir la variable (ou le secret Kaggle) puis relancer.")
         results["blocked"] = "no_api_key"
     else:

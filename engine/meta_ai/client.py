@@ -22,7 +22,7 @@ from typing import Any, Iterator
 
 import httpx
 
-from engine.config import get_meta_api_key, get_settings
+from engine.config import get_meta_api_key, get_settings, proxy_auth_allowed
 from engine.logging_utils import redact
 
 log = logging.getLogger(__name__)
@@ -85,7 +85,10 @@ class MetaModelClient:
         transport: httpx.BaseTransport | None = None,
     ) -> None:
         cfg = get_settings().models["meta_api"]
+        # api_key=None -> resolve from env/Kaggle; if still absent, rely on proxy-injected auth when allowed.
+        # An explicit api_key="" means "no credential at all" (used by offline tests).
         self._api_key = api_key if api_key is not None else get_meta_api_key()
+        self._proxy_auth = api_key is None and not self._api_key and proxy_auth_allowed()
         self.base_url = (base_url or cfg["base_url"]).rstrip("/")
         self.timeout_s = timeout_s or cfg.get("timeout_s", 240)
         self.max_retries = cfg.get("max_retries", 2) if max_retries is None else max_retries
@@ -94,17 +97,25 @@ class MetaModelClient:
     # ------------------------------------------------------------------ utils
     @property
     def configured(self) -> bool:
-        return bool(self._api_key)
+        return bool(self._api_key) or self._proxy_auth
+
+    @property
+    def auth_mode(self) -> str:
+        return "env_key" if self._api_key else ("proxy_injected" if self._proxy_auth else "none")
 
     def _client(self) -> httpx.Client:
-        if not self._api_key:
+        if not self.configured:
             raise MetaNotConfiguredError(
-                "Clé Meta absente : définir MODEL_API_KEY (variable d'environnement, .env local ou secret Kaggle)."
+                "Clé Meta absente : configurer un secret réseau (Bearer, hôte api.meta.ai) dans l'environnement cloud, "
+                "ou définir MODEL_API_KEY (variable d'environnement, .env local ou secret Kaggle)."
             )
+        headers = {"Content-Type": "application/json"}
+        if self._api_key:
+            headers["Authorization"] = f"Bearer {self._api_key}"
         return httpx.Client(
             base_url=self.base_url,
             timeout=httpx.Timeout(self.timeout_s, connect=20),
-            headers={"Authorization": f"Bearer {self._api_key}", "Content-Type": "application/json"},
+            headers=headers,
             transport=self._transport,
         )
 
@@ -118,7 +129,9 @@ class MetaModelClient:
             body = resp.text[:2000]
         msg = body.get("error", {}).get("message") if isinstance(body, dict) and isinstance(body.get("error"), dict) else str(body)
         if resp.status_code in (401, 403):
-            raise MetaAuthError(f"Authentification Meta refusée ({resp.status_code}): {msg}", resp.status_code, body)
+            hint = "" if "Authorization" in resp.request.headers else (
+                " — aucune clé envoyée par le code : vérifier le secret réseau (type Bearer, hôte api.meta.ai).")
+            raise MetaAuthError(f"Authentification Meta refusée ({resp.status_code}): {msg}{hint}", resp.status_code, body)
         raise MetaAPIError(f"Meta API HTTP {resp.status_code}: {msg}", resp.status_code, body)
 
     def _request(self, method: str, path: str, **kwargs: Any) -> httpx.Response:

@@ -5,6 +5,10 @@
 meta_api:
   base_url: https://api.meta.ai/v1
   api_key_env: [MODEL_API_KEY, META_API_KEY]   # first non-empty wins; Kaggle secret with same name also read
+  # When no key is visible to the code, send requests WITHOUT an Authorization header and let the
+  # Claude Code cloud network proxy inject it ("Network secrets" > Bearer, host api.meta.ai).
+  # The key then never exists in the process. A 401 means no secret is configured for the host.
+  allow_proxy_injected_auth: true
   timeout_s: 240
   max_retries: 2
 

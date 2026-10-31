@@ -167,3 +167,17 @@ def test_sam_without_key_is_unavailable():
     sam = SamSegmenter(client=MetaModelClient(api_key=""))
     sam.enabled = True
     assert sam.segment(Image.new("RGB", (64, 64)), "i").status == "unavailable"
+
+
+def test_proxy_injected_auth_sends_no_authorization_header(monkeypatch):
+    monkeypatch.setenv("MAANA_META_PROXY_AUTH", "true")
+    seen = {}
+
+    def handler(request):
+        seen["auth"] = request.headers.get("Authorization")
+        return httpx.Response(401, json={"error": {"message": "Unauthorized"}})
+    client = MetaModelClient(transport=httpx.MockTransport(handler), max_retries=0)
+    assert client.configured and client.auth_mode == "proxy_injected"
+    with pytest.raises(MetaAuthError) as exc:
+        client.create_response({"model": "m", "input": "x"})
+    assert seen["auth"] is None and "secret réseau" in str(exc.value)

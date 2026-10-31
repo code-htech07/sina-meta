@@ -110,11 +110,21 @@ def get_meta_api_key() -> str | None:
     return None
 
 
+def proxy_auth_allowed() -> bool:
+    """True when requests may rely on a credential injected by the cloud network proxy."""
+    env = _env_bool("MAANA_META_PROXY_AUTH")
+    if env is not None:
+        return env
+    return bool(get_settings().models["meta_api"].get("allow_proxy_injected_auth", False)) and bool(
+        os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy"))
+
+
 def describe_secret_status() -> dict[str, Any]:
     """Non-sensitive description of credential availability (safe to display)."""
     key = get_meta_api_key()
     return {
         "meta_api_key_present": bool(key),
+        "auth_mode": "env_key" if key else ("proxy_injected" if proxy_auth_allowed() else "none"),
         "meta_api_key_length": len(key) if key else 0,
         "sources_checked": get_settings().models["meta_api"].get("api_key_env", []) + ["kaggle_secrets"],
     }
