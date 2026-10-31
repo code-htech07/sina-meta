@@ -12,7 +12,6 @@ for meteorology), NOT on-parcel measurements.
 
 from __future__ import annotations
 
-import calendar
 import logging
 from datetime import date, timedelta
 from typing import Any
@@ -166,6 +165,3 @@ def get_weather_context(lat: float, lon: float, observation_date: date, client: 
         limitations=limitations,
     )
 
-
-def days_in_month(year: int, month: int) -> int:
-    return calendar.monthrange(year, month)[1]

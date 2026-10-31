@@ -20,5 +20,8 @@ uvicorn[standard]>=0.29
 python-multipart>=0.0.9
 streamlit>=1.35
 
+# Notebooks
+matplotlib>=3.8
+
 # Tests
 pytest>=8.0
