@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # frontend/ on path
 
-from common import PART_LABELS, page_header, service  # noqa: I001
+from common import PART_LABELS, analyses_remaining_today, page_header, service  # noqa: I001
 
 from datetime import date
 import streamlit as st
@@ -41,6 +41,12 @@ with st.form("obs"):
         use_f = e[4].checkbox("Déclarations", True)
     submitted = st.form_submit_button("Enregistrer et analyser", type="primary")
 
+remaining = analyses_remaining_today(svc)
+st.caption(f"Analyses payantes restantes aujourd'hui : {remaining}")
+
+if submitted and remaining <= 0:
+    st.error("Plafond quotidien d'analyses atteint (protection du crédit Meta). Réessayez demain.")
+    st.stop()
 if submitted:
     files = [u.getvalue() for u in uploads or []]
     if sample is not None:

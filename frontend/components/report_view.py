@@ -7,6 +7,8 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+from frontend.common import resolve_path
+
 from engine.schemas import AnalysisReport
 
 STATUS_FR = {"compatible": "compatible", "plausible": "plausible", "weakly_supported": "faiblement étayée", "unlikely": "peu probable"}
@@ -27,13 +29,14 @@ def _images(report: AnalysisReport, image_paths: dict[str, str]) -> None:
     cols = st.columns(2)
     with cols[0]:
         for q in report.image_quality:
-            p = image_paths.get(q.image_id)
-            if p and Path(p).exists():
-                st.image(p, caption=f"Photo {q.image_id}", width="stretch")
+            p = resolve_path(image_paths.get(q.image_id))
+            if p:
+                st.image(str(p), caption=f"Photo {q.image_id}", width="stretch")
     with cols[1]:
         seg = report.segmentation
-        if seg and seg.status == "ok" and seg.regions and seg.regions[0].overlay_path and Path(seg.regions[0].overlay_path).exists():
-            st.image(seg.regions[0].overlay_path, caption=f"Zones localisées par {seg.model} (localisation, pas diagnostic)",
+        overlay = resolve_path(seg.regions[0].overlay_path) if seg and seg.status == "ok" and seg.regions else None
+        if overlay:
+            st.image(str(overlay), caption=f"Zones localisées par {seg.model} (localisation, pas diagnostic)",
                      width="stretch")
         elif seg:
             st.info(f"Segmentation SAM : {seg.status}" + (f" — {seg.error}" if seg.error else ""))

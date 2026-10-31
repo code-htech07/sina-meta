@@ -19,7 +19,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from engine.config import get_meta_api_key  # noqa: E402
+from engine.config import describe_secret_status  # noqa: E402
 from engine.evaluation.experiments import EXPERIMENTS, load_manifest, run_ablation  # noqa: E402
 from engine.logging_utils import setup_logging  # noqa: E402
 
@@ -35,8 +35,8 @@ def main() -> int:
     ap.add_argument("--yes", action="store_true")
     args = ap.parse_args()
     setup_logging("WARNING")
-    if not get_meta_api_key():
-        print("MODEL_API_KEY absente : l'ablation exige des appels réels à Muse Spark. Aucun résultat produit.")
+    if describe_secret_status()["auth_mode"] == "none":
+        print("Aucune clé Meta (ni MODEL_API_KEY, ni secret réseau) : l'ablation exige des appels réels à Muse Spark. Aucun résultat produit.")
         return 2
     exps = [e.strip() for e in args.experiments.split(",") if e.strip() in EXPERIMENTS]
     n = len(load_manifest(args.manifest)[: args.limit or None])
