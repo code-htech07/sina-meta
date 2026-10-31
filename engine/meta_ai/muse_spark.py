@@ -65,6 +65,28 @@ def _strip_to_json(text: str) -> str:
     return text
 
 
+def strict_json_schema(model: type) -> dict[str, Any]:
+    """Pydantic schema -> Meta strict-mode subset: every object has additionalProperties=false
+    and lists ALL its properties in ``required``; defaults/titles removed."""
+    schema = model.model_json_schema()
+
+    def fix(node: Any) -> None:
+        if isinstance(node, dict):
+            node.pop("default", None)
+            node.pop("title", None)
+            if node.get("type") == "object" and "properties" in node:
+                node["additionalProperties"] = False
+                node["required"] = list(node["properties"])
+            for v in node.values():
+                fix(v)
+        elif isinstance(node, list):
+            for v in node:
+                fix(v)
+
+    fix(schema)
+    return schema
+
+
 def parse_muse_output(text: str) -> MuseAnalysisOutput:
     return MuseAnalysisOutput.model_validate(json.loads(_strip_to_json(text)))
 
@@ -112,8 +134,9 @@ class MuseSparkAnalyzer:
                 "format": {
                     "type": "json_schema",
                     "name": SCHEMA_NAME,
-                    "schema": MuseAnalysisOutput.model_json_schema(),
-                    "strict": False,
+                    "schema": strict_json_schema(MuseAnalysisOutput) if self.cfg.get("strict_schema", True)
+                    else MuseAnalysisOutput.model_json_schema(),
+                    "strict": bool(self.cfg.get("strict_schema", True)),
                 }
             }
         return payload
@@ -152,6 +175,7 @@ class MuseSparkAnalyzer:
             notes.append("Sortie JSON initiale invalide ; un tour de réparation a été effectué.")
             repair: dict[str, Any] = {
                 "model": self.model,
+                "instructions": system_instructions(self.language),
                 "input": [{"type": "message", "role": "user", "content": [
                     {"type": "input_text", "text": REPAIR_PROMPT.format(errors=str(exc)[:3000])}]}],
                 "max_output_tokens": self.cfg.get("max_output_tokens", 8000),

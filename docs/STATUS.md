@@ -1,12 +1,12 @@
-# État réel du projet — 2026-10-31
+# État réel du projet — 2026-10-31 (mis à jour après accès réel à l'API Meta)
 
 > Document de reprise : une nouvelle session doit lire `PROJECT_BRIEF.md`, puis ce fichier, puis `IMPLEMENTATION_PLAN.md`.
 
 ## Environnement de développement constaté
 - Dépôt initialement **vide** (aucun commit, aucune configuration ni exemple de requête Meta).
 - Python 3.13, venv local ; Kaggle non accessible depuis la session (pas d'identifiants).
-- **Aucune clé Meta** (`MODEL_API_KEY`/`META_API_KEY` absentes, pas de `.env`). L'endpoint `https://api.meta.ai/v1` est
-  joignable (HTTP 401 `invalid_api_key` sans clé, format d'erreur conforme au client).
+- Clé Meta fournie comme **secret réseau** de l'environnement cloud (type Bearer, hôte `api.meta.ai`) : injectée par le
+  proxy, jamais visible du code (`auth_mode = proxy_injected`).
 - Réseau sortant OK vers NASA POWER, Earth Search STAC, COG AWS, Mendeley.
 
 ## TERMINÉ (développé et testé)
@@ -24,22 +24,36 @@
 - Métriques d'évaluation et exécuteur E0–E4 (testés sur valeurs connues).
 - API FastAPI (testée), interface Streamlit 5 pages (testée en headless + capture navigateur réelle).
 - 8 notebooks Kaggle générés ; notebooks 02/04/05 exécutés avec succès en local.
-- Tests : 45 hors-ligne + 2 réseau réels passent ; 4 tests Meta réels prêts (ignorés sans clé).
+- Tests : 47 hors-ligne + 2 réseau réels passent ; 4 tests Meta réels prêts (ignorés sans clé).
+
+## VALIDÉ CONTRE L'API META RÉELLE (2026-10-31)
+- `GET /v1/models` : `muse-spark-1.3` et `sam-3.1` listés (9 modèles accessibles).
+- Muse Spark : texte minimal OK ; image + sortie structurée OK ; analyse complète de la démo : ~27 s, ~0,035 $.
+- SAM 3.1 : data URL acceptée ; segmentation OK (~0,0025 $/prompt). Benchmark : `experiments/reports/sam_prompt_benchmark.md`.
+- Pipeline complet réel (qualité → SAM → NASA POWER → Sentinel-2 → Muse Spark → validation) : ~90 s, ~0,047 $ par analyse.
+
+### Écarts découverts en réel et corrigés
+1. **Clés JSON corrompues** avec `strict: false` (`"hypotheses_foo"`, `"contradictions_contrad"`) → rapport vide silencieux.
+   Correctif : schéma strict (`strict: true`) + modèles Pydantic `extra="forbid"`. Deux runs successifs propres ensuite.
+2. **Masques SAM locaux à la boîte** (`data=H,W` = taille de la boîte) : replacement via `record.bounds`.
+3. **Vocabulaire SAM** : « cocoa pod », « pod », « lesion », « rot » → aucune détection ; retenu : `fruit`, `leaf`,
+   `brown spot`, `discolored area`, `hole` (seuil de score 0,5).
+4. Le tour de réparation reprend les consignes (langue, règles).
+
+### Observations préliminaires (n = 1 image, non généralisables)
+- Variabilité entre exécutions identiques (pourriture brune « plausible » puis « faiblement étayée ») → à mesurer.
+- Sur la cabosse étiquetée « swollen shoot » dans CocoaSwolSet, Muse Spark propose pourriture brune / mirides / cause
+  inconnue, pas CSSVD : cohérent avec l'aspect de l'image, à confronter à l'étiquette lors de l'ablation.
 
 ## PARTIELLEMENT TERMINÉ
-- **Adaptateur Muse Spark 1.3** : implémenté selon la documentation officielle (Responses API, `input_image` data URL,
-  `json_schema`, `reasoning.effort`), testé contre le contrat via mocks. **Non validé contre l'API réelle.**
-- **Adaptateur SAM 3.1** : implémenté (SSE, `metadata.mask_encoding`, `include_confidence`, décodage par le parseur
-  officiel `meta-sam-parser`), testé avec des masques encodés par le codec officiel. **Non validé contre l'API réelle** ;
-  l'envoi d'image en data URL est à confirmer pour SAM (la doc SAM montre une URL publique).
-- Base de connaissances : fiches anthracnose et chérelles de fiabilité faible ; sources ivoiriennes (CNRA/ANADER) à ajouter.
+- Base de connaissances : fiches anthracnose et chérelles de fiabilité faible ; sources CNRA/ANADER à ajouter.
+- Prompts SAM choisis sur 3 images seulement.
 
-## BLOQUÉ
-| Élément | Cause | Déjà tenté | Conséquence | Action requise |
-|---|---|---|---|---|
-| Vérification réelle Muse Spark / SAM 3.1 | Pas de `MODEL_API_KEY` dans l'environnement | Recherche env, `.env`, secrets Kaggle ; doc officielle consultée ; endpoint sondé | Aucune analyse visuelle réelle produite | Porteur : `cp .env.example .env`, renseigner la clé, lancer `python scripts/check_meta_access.py` (ou notebook 01 sur Kaggle avec le secret `MODEL_API_KEY`) |
-| Résultats d'ablation E0–E4 | Dépend de la clé | Exécuteur prêt et testé | Aucun résultat expérimental (aucun n'a été inventé) | Lancer `scripts/run_ablation.py` (coût estimé affiché avant exécution) |
-| Exécution sur Kaggle | Pas d'accès au compte Kaggle | Notebooks générés avec bootstrap | Non exécuté sur Kaggle | Porteur : importer les notebooks, Internet ON, secret `MODEL_API_KEY` (+ `GITHUB_TOKEN` si dépôt privé) |
+## EN ATTENTE D'ACCORD
+| Élément | Raison | Estimation |
+|---|---|---|
+| Ablation E0–E4 | Dépense | 8 images × 5 ≈ 1,2 $ ; 80 images × 5 ≈ 12 $ (~0,03 $ par appel Muse mesuré) |
+| Interface accessible depuis un téléphone | Publication externe | Streamlit Community Cloud (gratuit) ou équivalent |
 
 ## NON COMMENCÉ
 - Analyse temporelle multi-observations (P2), cartographie avancée (P2).
@@ -47,5 +61,4 @@
 - Conversion HEIC/DNG du dataset ; prise en charge de polygones de parcelle dans l'UI.
 
 ## PROCHAINE ACTION
-Exécuter `python scripts/check_meta_access.py` avec la clé, corriger l'adaptateur si un écart de contrat apparaît
-(identifiant SAM, data URL SAM, `text.format`), puis lancer l'ablation sur ≥ 80 images.
+Avec l'accord du porteur : ablation E0–E4 sur les 8 images du dépôt (~1,2 $), puis sur ~80 images (~12 $).

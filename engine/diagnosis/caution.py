@@ -54,6 +54,9 @@ def caution_level(
         if len(primary) > 1 and primary[0].status == primary[1].status:
             level = max(level, 1)
             why.append("Plusieurs hypothèses actives de même statut : non départagées.")
+    if output.overall_assessment == "abnormality_detected" and not primary:
+        level = max(level, 1)
+        why.append("Anomalie visible mais aucune hypothèse active formulée.")
     if any(q.issues for q in quality):
         level = max(level, 1)
         why.append("Défauts de qualité d'image signalés.")

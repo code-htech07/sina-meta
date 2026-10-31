@@ -201,7 +201,10 @@ class AnalysisPipeline:
         images = [to_data_url(load_rgb(img.path)) for img in usable]
         has_rois = False
         if seg and seg.status == "ok":
-            rois = sorted([r for r in seg.regions if r.crop_path], key=lambda r: -(r.mask_area_fraction or 0))
+            anomaly = set(settings.models["sam"].get("anomaly_prompts", []))
+            # anomaly regions first (most confident), then organ regions (largest)
+            rois = sorted([r for r in seg.regions if r.crop_path],
+                          key=lambda r: (r.prompt not in anomaly, -(r.mask_confidence or 0), -(r.mask_area_fraction or 0)))
             for r in rois[: settings.models["sam"].get("max_regions_to_muse", 4)]:
                 images.append(to_data_url(load_rgb(r.crop_path)))
                 has_rois = True
@@ -225,10 +228,11 @@ class AnalysisPipeline:
 
         out = muse_result.output
         report.model_usage.append(muse_result.usage)
+        n_sam = len(settings.models["sam"].get("organ_prompts", [])) + len(settings.models["sam"].get("anomaly_prompts", []))
         if seg and seg.status in ("ok", "no_match"):
             report.model_usage.append(ModelUsage(
-                model=seg.model or "sam", images=len(settings.models["sam"].get("prompts", [])),
-                estimated_cost_usd=round(len(settings.models["sam"].get("prompts", []))
+                model=seg.model or "sam", images=n_sam,
+                estimated_cost_usd=round(n_sam
                                          * settings.models["pricing"].get(seg.model or "", {}).get("per_1k_images", 0) / 1000, 6)))
 
         # 6. Validation + rules + caution ---------------------------------------

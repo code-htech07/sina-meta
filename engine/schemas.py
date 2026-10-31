@@ -256,6 +256,8 @@ class KBEntry(BaseModel):
 # Muse Spark structured output (what the LLM must return)
 # --------------------------------------------------------------------------- #
 class MuseImageAssessment(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     is_cocoa: Literal["yes", "no", "uncertain"]
     plant_part_detected: str
     image_usable: bool
@@ -263,6 +265,8 @@ class MuseImageAssessment(BaseModel):
 
 
 class MuseVisualObservation(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     description: str
     plant_part: str
     location_in_image: str
@@ -270,12 +274,16 @@ class MuseVisualObservation(BaseModel):
 
 
 class MuseEvidence(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     statement: str
     source_type: Literal["image", "weather", "satellite", "knowledge_base", "farmer", "segmentation"]
     reference_id: str | None = None   # KB entry id when source_type == knowledge_base
 
 
 class MuseHypothesis(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     problem_id: str                      # KB entry id or "unknown"
     name: str
     status: Literal["compatible", "plausible", "weakly_supported", "unlikely"]
@@ -286,11 +294,15 @@ class MuseHypothesis(BaseModel):
 
 
 class MuseRecommendation(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     text: str
     kb_reference_id: str | None = None
 
 
 class MuseAnalysisOutput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     image_assessment: MuseImageAssessment
     overall_assessment: Literal["no_visible_problem", "abnormality_detected", "cannot_assess"]
     visual_observations: list[MuseVisualObservation] = Field(default_factory=list)

@@ -26,7 +26,7 @@ uvicorn api.main:app --reload              # API (http://localhost:8000/docs)
 
 ## 3. Tests
 ```bash
-pytest -m "not network and not meta"       # 45 tests hors-ligne (aucun appel externe)
+pytest -m "not network and not meta"       # 47 tests hors-ligne (aucun appel externe)
 pytest -m network                          # NASA POWER + Sentinel-2 réels
 MAANA_LIVE_TESTS=1 pytest -m meta          # Meta Model API réelle (clé requise, coût minime)
 ```

@@ -72,7 +72,9 @@ def test_muse_payload_follows_contract(muse_fixture):
     assert captured["input"][0]["role"] == "user"
     assert {"type": "input_image", "image_url": "data:image/jpeg;base64,AAAA"} in content
     assert captured["reasoning"] == {"effort": "medium"}
-    assert captured["text"]["format"]["type"] == "json_schema" and captured["text"]["format"]["strict"] is False
+    assert captured["text"]["format"]["type"] == "json_schema" and captured["text"]["format"]["strict"] is True
+    schema = captured["text"]["format"]["schema"]
+    assert schema["additionalProperties"] is False and set(schema["required"]) == set(schema["properties"])
     assert res.output.overall_assessment == "abnormality_detected"
     assert res.usage.reasoning_tokens == 200 and res.usage.estimated_cost_usd == pytest.approx((1000 * 1.25 + 500 * 4.25) / 1e6)
 
@@ -98,29 +100,35 @@ def test_parse_muse_output_strips_fences(muse_fixture):
 
 # --------------------------------------------------------------------------- SAM
 def _sam_wire(mask: np.ndarray, conf: bool = True) -> str:
-    """Encode a mask with Meta's official codec to build a contract-valid SAM line."""
+    """Build a contract-valid SAM line with Meta's official codec.
+
+    As observed on the live API, the mask payload is LOCAL to the box (data=H,W = box size).
+    """
     from meta_sam_parser._mask_codec import _encode_raster  # official encoder (test-only use)
 
     h, w = mask.shape
-    payload = _encode_raster(mask.flatten().tolist(), w, h)
     ys, xs = np.nonzero(mask)
+    x1, y1, x2, y2 = xs.min(), ys.min(), xs.max(), ys.max()
+    local = mask[y1:y2 + 1, x1:x2 + 1]
+    payload = _encode_raster(local.flatten().tolist(), local.shape[1], local.shape[0])
     c = ";c=0.91" if conf else ""
-    return (f"<0f>0<|box;x1={xs.min()};y1={ys.min()};x2={xs.max()};y2={ys.max()};w={w};h={h}{c}|>"
-            f"<|mask;x=0;y=0;data={h},{w},{payload}{c}|>")
+    return (f"<0f>0<|box;x1={x1};y1={y1};x2={x2};y2={y2};w={w};h={h}{c}|>"
+            f"<|mask;x=0;y=0{c};data={local.shape[0]},{local.shape[1]},{payload}|>")
 
 
 def test_parse_sam_output_decodes_mask():
     mask = np.zeros((40, 60), dtype=np.uint8)
     mask[10:20, 30:50] = 1
-    regions, masks, diags = parse_sam_output(_sam_wire(mask), "img1", "brown lesion")
+    regions, masks, diags = parse_sam_output(_sam_wire(mask), "img1", "brown lesion", (60, 40))
     assert len(regions) == 1 and masks[0].sum() == 200
     r = regions[0]
     assert r.mask_area_fraction == round(200 / 2400, 5)
     assert r.bbox_xyxy[0] == 30 and r.mask_confidence == pytest.approx(0.91)
+    assert masks[0].shape == (40, 60) and masks[0][10:20, 30:50].all()  # re-placed at the box position
 
 
 def test_parse_sam_empty_output_means_no_match():
-    regions, masks, _ = parse_sam_output("", "img1", "leaf")
+    regions, masks, _ = parse_sam_output("", "img1", "leaf", (10, 10))
     assert regions == [] and masks == []
 
 
@@ -181,3 +189,13 @@ def test_proxy_injected_auth_sends_no_authorization_header(monkeypatch):
     with pytest.raises(MetaAuthError) as exc:
         client.create_response({"model": "m", "input": "x"})
     assert seen["auth"] is None and "secret réseau" in str(exc.value)
+
+
+def test_corrupted_keys_are_rejected(muse_fixture):
+    """Live run 2026-10-31 returned keys like "hypotheses_foo": they must not pass silently."""
+    from pydantic import ValidationError
+
+    bad = dict(muse_fixture)
+    bad["hypotheses_foo"] = bad.pop("hypotheses")
+    with pytest.raises(ValidationError):
+        parse_muse_output(json.dumps(bad))
