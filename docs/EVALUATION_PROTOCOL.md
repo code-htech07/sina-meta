@@ -48,6 +48,27 @@ Sorties : `experiments/ablation/runs/<run_id>/{E0..E4}.jsonl, summary.json, REPO
   **raisonnement**, pas un gain de précision attribuable à une météo réellement liée à l'image.
 - Un score de soutien Muse Spark n'est pas une probabilité : pas de courbe de calibration sans étude dédiée.
 
-## Résultats
-Aucun run d'ablation n'a encore été exécuté : la clé `MODEL_API_KEY` n'était pas disponible dans l'environnement de
-développement (voir `docs/STATUS.md`).
+## Résultats — essai n°1 (run 20261031-155838, 8 images, 40 appels réels, coût réel 0,78 $)
+Fichiers : `experiments/reports/ablation_20261031-155838/` (`REPORT.md`, `summary.json`, `predictions.csv`).
+
+| Exp | Contexte | Accuracy (n=8) | Erreurs critiques | CSSVD en hypothèse principale (malades) | Coût moyen |
+|---|---|---|---|---|---|
+| E0 | image seule | 5/8 | 1/4 | 0/4 | 0,016 $ |
+| E1 | + météo | 5/8 | 0/4 | 0/4 | 0,017 $ |
+| E2 | + satellite | 4/8 | 1/4 | 0/4 | 0,018 $ |
+| E3 | + météo + satellite | 5/8 | 0/4 | 0/4 | 0,020 $ |
+| E4 | + base agronomique | 7/8 | 0/4 | 2/4 | 0,027 $ |
+
+Lecture prudente :
+- **n = 8, une seule exécution par condition** ; la variabilité entre exécutions identiques a été observée : les écarts
+  (5/8 vs 7/8) ne sont **pas** statistiquement établis.
+- E0–E3 ne fournissent pas la base de connaissances : les hypothèses y sont toutes `unknown` et les recommandations
+  « non documentées » — c'est attendu par construction. Le gain d'E4 sur l'identification (CSSVD 2/4, mirides, pourriture brune)
+  vient donc surtout de la base de connaissances.
+- Faux positifs fréquents sur images saines en E1–E3 (3/4) : le contexte seul ne réduit pas la tendance à voir une anomalie.
+- **Artefact de mesure** : les 30 éléments « source non fournie » (5–8 par expérience) citaient tous `farmer` pour la partie
+  de plante déclarée, présente dans le contexte. Corrigé dans le pipeline après ce run ; ce compteur est invalide pour ce run.
+- Aucune règle de contradiction déterministe ne s'est déclenchée (contexte proxy avec météo « normale ») : la métrique
+  « contradictions ignorées » n'est pas évaluable ici.
+
+Prochaine étape recommandée : ~80 images (10 par strate) et ≥ 2 répétitions par condition, puis test de McNemar E0 vs E4.

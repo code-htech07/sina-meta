@@ -49,11 +49,14 @@
 - Base de connaissances : fiches anthracnose et chérelles de fiabilité faible ; sources CNRA/ANADER à ajouter.
 - Prompts SAM choisis sur 3 images seulement.
 
+## ESSAI D'ABLATION RÉALISÉ
+Run 20261031-155838 (8 images, 0,78 $) — résultats et limites : `docs/EVALUATION_PROTOCOL.md`.
+
 ## EN ATTENTE D'ACCORD
 | Élément | Raison | Estimation |
 |---|---|---|
-| Ablation E0–E4 | Dépense | 8 images × 5 ≈ 1,2 $ ; 80 images × 5 ≈ 12 $ (~0,03 $ par appel Muse mesuré) |
-| Interface accessible depuis un téléphone | Publication externe | Streamlit Community Cloud (gratuit) ou équivalent |
+| Ablation E0–E4 à plus grande échelle | Dépense | 80 images × 5 ≈ 8 $ (coût mesuré : ~0,02 $ par appel sans SAM) |
+| Interface en ligne | Clics du porteur sur Streamlit Community Cloud (préparé : mot de passe, plafond, démo) | voir `docs/DEPLOYMENT.md` §6 |
 
 ## NON COMMENCÉ
 - Analyse temporelle multi-observations (P2), cartographie avancée (P2).

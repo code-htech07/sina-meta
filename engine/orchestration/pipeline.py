@@ -245,7 +245,8 @@ class AnalysisPipeline:
             available.add("knowledge_base")
         if seg and seg.status == "ok":
             available.add("segmentation")
-        if experiment.use_farmer_input and (inp.farmer_symptoms or inp.farmer_notes):
+        # the declared plant part is always in the context (user_declared), so citing "farmer" for it is legitimate
+        if (experiment.use_farmer_input and (inp.farmer_symptoms or inp.farmer_notes)) or inp.plant_part not in ("unknown", None):
             available.add("farmer")
         with self._step(timings, "validation_fusion"):
             primary, alternative, recs, flags = validate_output(out, self.kb, experiment, available)
