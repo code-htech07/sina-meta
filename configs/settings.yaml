@@ -1,0 +1,36 @@
+app:
+  name: Maana Terra
+  # Language of free-text fields produced by Muse Spark in reports
+  report_language: fr
+
+storage:
+  db_path: data/maana_terra.db
+  images_dir: data/raw/uploads
+  artifacts_dir: data/processed/artifacts
+
+# Image quality gate (deterministic, computed locally with Pillow/NumPy).
+# Thresholds are engineering heuristics chosen for this MVP, NOT literature values.
+quality:
+  min_side_px: 400
+  min_laplacian_variance: 40.0     # below => likely blurred (computed on 512px-downscaled grey image)
+  min_mean_brightness: 40          # 0-255
+  max_mean_brightness: 225
+  max_clipped_fraction: 0.30       # fraction of pixels at 0 or 255
+  analysis_max_side_px: 1600       # images are downscaled before upload to the APIs
+
+weather:
+  lookback_days: 60
+
+satellite:
+  lookback_days: 120
+  max_scene_cloud_cover: 85        # scene-level filter; pixel-level SCL mask applied afterwards
+  buffer_m: 60                     # radius around the parcel point when no polygon is provided
+  max_scenes: 6
+  min_valid_pixel_fraction: 0.3
+
+fusion:
+  # Heuristic thresholds used by deterministic contradiction rules (documented in docs/TECHNICAL_DECISIONS.md)
+  wet_rain_ratio_vs_normal: 1.2    # 30-day rainfall / climatological normal
+  dry_rain_ratio_vs_normal: 0.5
+  dry_spell_days_alert: 14
+  ndvi_drop_alert: 0.1             # absolute drop between earliest and latest valid scene

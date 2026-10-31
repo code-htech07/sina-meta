@@ -1,0 +1,38 @@
+id: cherelle_wilt
+name: Flétrissement physiologique des chérelles (cherelle wilt)
+alternative_names: [Cherelle wilt, wilt of young pods]
+category: physiological
+causal_agents:
+  - "Aucun agent pathogène spécifique (désordre physiologique) ; certains Colletotrichum peuvent produire un tableau similaire"
+description: >
+  Flétrissement et dessèchement de jeunes fruits (chérelles) sur l'arbre, décrit comme une
+  maladie physiologique sans agent pathogène spécifique (Vanegtern et al., 2015). Des agents
+  fongiques (ex. Colletotrichum) peuvent néanmoins causer un flétrissement de chérelles
+  (Takata et al., 2024).
+characteristic_symptoms:
+  - "Jeunes fruits (chérelles) qui flétrissent, noircissent, se dessèchent et restent attachés à l'arbre."
+plant_parts: [cherelle, pod]
+favourable_conditions:
+  - "Non spécifiées dans les sources consultées pour la Côte d'Ivoire."
+differentiation:
+  - "Peut être confondu avec la pourriture brune (black pod) : la pourriture brune s'étend rapidement avec sporulation blanche possible (Vanegtern et al., 2015)."
+  - "Un flétrissement avec conidiomes rose saumon oriente vers une atteinte fongique (Colletotrichum)."
+verification_needed:
+  - "Déterminer la proportion de chérelles atteintes et la charge en fruits de l'arbre."
+  - "Rechercher sporulation blanche (Phytophthora) ou fructifications rose saumon (Colletotrichum)."
+management:
+  - "Retirer les chérelles malades lorsqu'une cause fongique est suspectée (Takata et al., 2024)."
+weather_signal: none
+keywords: [chérelle, cherelle, jeune fruit, flétrissement, wilt, dessèchement, noircissement]
+references:
+  - citation: "Vanegtern B., Rogers M., Nelson S. (2015). Black Pod Rot of Cacao Caused by Phytophthora palmivora. University of Hawai'i CTAHR, PD-108."
+    url: https://www3.ctahr.hawaii.edu/oc/freepubs/pdf/PD-108.pdf
+    accessed: 2026-10-31
+    reliability: institutional_extension
+  - citation: "Takata Y. et al. (2024). Colletotrichum kapreanum sp. nov., a Cherelle Wilt Pathogen. Journal of Fungi 10(3):204. doi:10.3390/jof10030204"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10970977
+    accessed: 2026-10-31
+    reliability: peer_reviewed
+documentary_reliability: low
+notes: >
+  Les causes du flétrissement des chérelles ne sont pas entièrement établies ; fiche minimale.

@@ -1,0 +1,57 @@
+id: black_pod
+name: Pourriture brune des cabosses (black pod)
+alternative_names: [Black pod rot, Phytophthora pod rot, pourriture brune]
+category: disease
+causal_agents:
+  - Phytophthora palmivora
+  - Phytophthora megakarya (Afrique de l'Ouest et du Centre)
+  - autres Phytophthora spp. (P. citrophora, P. capsici)
+description: >
+  Maladie causée par des oomycètes du genre Phytophthora. Elle atteint les cabosses à tous
+  les stades et peut provoquer des chancres sur tiges et branches. Les Phytophthora spp. sont
+  responsables d'une perte de 20 à 30 % de la production mondiale de cacao par an (jusqu'à 90 %
+  des cabosses dans certaines plantations), selon Vanegtern et al. (2015).
+characteristic_symptoms:
+  - "Tache jaunâtre puis petite tache brune au point d'infection sur la cabosse, pouvant débuter à l'extrémité pédonculaire ou apicale."
+  - "Extension rapide de la lésion brune à noire, couvrant toute la cabosse en quelques jours (7 à 10 jours selon Plantwise)."
+  - "En conditions favorables, amas de sporanges blancs à la surface de la cabosse."
+  - "Fèves internes atteintes ; la cabosse sèche et se momifie sur l'arbre."
+  - "Chancres sous l'écorce des tiges et branches, tache sombre pouvant exsuder un liquide rougeâtre ; dépérissement de branches."
+  - "Jeunes pousses de plants nouvellement plantés atteintes, pouvant mourir."
+plant_parts: [pod, cherelle, stem, branch, trunk]
+favourable_conditions:
+  - "Conditions fraîches et humides, ombrage (Plantwise) ; la maladie progresse peu par temps plus chaud et sec."
+  - "Fortes pluies et humidité du sol élevée, mauvais drainage (Vanegtern et al., 2015)."
+  - "Canopée dense et ombrage excessif limitant la circulation de l'air (humidité relative élevée)."
+  - "Cabosses malades laissées sur l'arbre ou au sol : source d'inoculum (une cabosse peut libérer ~4 millions de sporanges)."
+differentiation:
+  - "Peut être confondue avec le flétrissement physiologique des chérelles (cherelle wilt), sans agent pathogène (Vanegtern et al., 2015)."
+  - "La présence de sporulation blanche et l'extension rapide de la lésion à toute la cabosse orientent vers Phytophthora."
+  - "P. megakarya et P. palmivora ne se distinguent pas de façon fiable à l'œil nu : identification au laboratoire nécessaire."
+verification_needed:
+  - "Observer plusieurs cabosses et l'évolution de la lésion sur quelques jours (vitesse d'extension, sporulation blanche)."
+  - "Rechercher des chancres sur tronc et branches."
+  - "Confirmation de l'espèce de Phytophthora par isolement / test moléculaire en laboratoire (ex. CNRA)."
+  - "Relever la pluviométrie récente et l'état d'ombrage/aération de la parcelle."
+management:
+  - "Retirer toutes les cabosses présentant des symptômes, les sortir de la plantation et les brûler ou les enfouir (Plantwise)."
+  - "Tailler les cacaoyers et réguler l'ombrage (viser ~50 % d'ombrage) pour augmenter lumière et aération (Plantwise)."
+  - "Respecter l'espacement recommandé (3,1 m x 3,1 m dans la fiche Plantwise) et désherber pour réduire l'humidité."
+  - "Utiliser des variétés recommandées plus tolérantes (Plantwise ; Vanegtern et al., 2015)."
+  - "Lutte chimique (fongicides cupriques homologués) possible mais pas toujours rentable ; respecter l'homologation locale et l'étiquette (Vanegtern et al., 2015)."
+weather_signal: wet_favourable
+keywords: [cabosse, pod, pourriture, brun, noir, black, rot, sporulation, blanc, moisissure, chancre, lésion]
+references:
+  - citation: "Luseni M.M., Kroma S. (2012, rev. 2015). Black pod disease of cacao. Plantwise Factsheets for Farmers SL014En, CABI / SLARI."
+    url: https://factsheetadmin.plantwise.org/Uploads/PDFs/20127801283.pdf
+    accessed: 2026-10-31
+    reliability: institutional_factsheet
+    licence: CC BY-SA 4.0
+  - citation: "Vanegtern B., Rogers M., Nelson S. (2015). Black Pod Rot of Cacao Caused by Phytophthora palmivora. University of Hawai'i CTAHR, Plant Disease PD-108."
+    url: https://www3.ctahr.hawaii.edu/oc/freepubs/pdf/PD-108.pdf
+    accessed: 2026-10-31
+    reliability: institutional_extension
+documentary_reliability: high
+notes: >
+  Les deux sources décrivent principalement P. palmivora. En Côte d'Ivoire, P. megakarya est
+  également signalé ; seule une analyse de laboratoire permet de distinguer les espèces.

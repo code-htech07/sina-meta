@@ -1,0 +1,37 @@
+id: water_stress
+name: Stress hydrique (sécheresse)
+alternative_names: [Drought stress, water deficit, déficit hydrique]
+category: abiotic
+causal_agents:
+  - "Déficit hydrique du sol et/ou demande évaporative atmosphérique élevée (saison sèche, Harmattan)"
+description: >
+  Le déficit hydrique réduit la conductance stomatique, l'état hydrique foliaire, les échanges
+  gazeux et la photosynthèse du cacaoyer (revue de Carr & Lockwood, 2011). Les données de terrain
+  fiables sur la réponse du rendement à la sécheresse restent rares selon cette revue.
+characteristic_symptoms:
+  - "Signes visibles NON spécifiques dans les sources consultées : les effets documentés sont surtout physiologiques (état hydrique foliaire, photosynthèse)."
+  - "Un flétrissement ou un dessèchement foliaire peut avoir d'autres causes (maladie, ravageur, dégâts racinaires) : ne pas conclure à partir de l'image seule."
+plant_parts: [leaf, young_leaf, whole_tree, cherelle]
+favourable_conditions:
+  - "Période sèche prolongée, faible pluviométrie récente par rapport à la normale."
+differentiation:
+  - "Considérer l'historique de pluie (cumuls, jours secs consécutifs) et l'humidité du sol."
+  - "Un indice hydrique satellitaire bas (NDMI) est un indice de contexte, pas une preuve de stress hydrique."
+  - "Des symptômes localisés sur un seul organe orientent plutôt vers une cause biotique."
+verification_needed:
+  - "Mesurer/observer l'humidité du sol et l'état de plusieurs arbres de la parcelle."
+  - "Vérifier si l'ensemble de la parcelle est touché de façon homogène."
+management:
+  - "Aucune mesure de gestion spécifique n'est encore documentée dans cette base : recommander uniquement des vérifications (revue Carr & Lockwood 2011 centrée sur les besoins en irrigation)."
+weather_signal: dry_favourable
+keywords: [sécheresse, stress hydrique, flétrissement, dessèchement, feuille sèche, jaunissement, chute, sec]
+references:
+  - citation: "Carr M.K.V., Lockwood G. (2011). The water relations and irrigation requirements of cocoa (Theobroma cacao L.): a review. Experimental Agriculture 47(4):653-676. doi:10.1017/S0014479711000421"
+    url: https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0014479711000421
+    accessed: 2026-10-31
+    reliability: peer_reviewed
+documentary_reliability: medium
+notes: >
+  Fiche volontairement prudente : pas de seuil de pluie documenté pour déclarer un stress. Les
+  seuils utilisés par Maana Terra pour signaler une période sèche sont des heuristiques
+  d'ingénierie (configs/settings.yaml), présentées comme telles.

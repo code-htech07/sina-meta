@@ -1,0 +1,35 @@
+# Meta Model API — contract verified against official docs on 2026-10-31:
+#   https://dev.meta.ai/docs/models, /docs/image-understanding, /docs/structured-output,
+#   /docs/reasoning, /docs/api-reference/responses/schemas, /docs/sam/segmenting,
+#   /docs/sam/reading-segmentation, /docs/sam/client-libraries, /docs/pricing-rate-limits
+meta_api:
+  base_url: https://api.meta.ai/v1
+  api_key_env: [MODEL_API_KEY, META_API_KEY]   # first non-empty wins; Kaggle secret with same name also read
+  timeout_s: 240
+  max_retries: 2
+
+muse_spark:
+  model: muse-spark-1.3          # listed on /docs/models (vision input: yes). Override: MAANA_MUSE_MODEL
+  reasoning_effort: medium       # Responses API: {"reasoning": {"effort": ...}}
+  max_output_tokens: 8000
+  structured_output: true        # text.format = json_schema (strict=false; validated locally with Pydantic)
+  temperature: null              # null => API default
+
+sam:
+  model: sam-3.1                 # /docs/models and /docs/sam/segmenting. (Model card page shows "sam-3-1"; verify with scripts/check_meta_access.py)
+  enabled: true                  # Override: MAANA_SAM_ENABLED=false
+  mask_encoding: one_bit         # "lossless" (default, '~') or "one_bit" ('!')
+  include_confidence: true       # metadata.include_confidence = "true" (string)
+  # Short noun phrases (SAM 3.x concept prompts). SAM localises; it does NOT diagnose.
+  prompts:
+    - cocoa pod
+    - leaf
+    - brown lesion
+    - dark spot
+  max_regions_to_muse: 4         # number of ROI crops forwarded to Muse Spark
+
+# Public list prices (USD) from /docs/pricing-rate-limits, used only to ESTIMATE cost in evaluations.
+pricing:
+  muse-spark-1.3: {input_per_mtok: 1.25, output_per_mtok: 4.25, cached_input_per_mtok: 0.15}
+  muse-spark-1.3-contributor: {input_per_mtok: 0.10, output_per_mtok: 0.20, cached_input_per_mtok: 0.002}
+  sam-3.1: {per_1k_images: 2.50}

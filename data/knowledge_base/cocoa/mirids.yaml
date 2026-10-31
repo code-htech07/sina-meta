@@ -1,0 +1,48 @@
+id: mirids
+name: Dégâts de mirides (capsides)
+alternative_names: [Cocoa mirids, capsids, Sahlbergella singularis, Distantiella theobroma]
+category: pest
+causal_agents:
+  - Sahlbergella singularis (Hemiptera, Miridae)
+  - Distantiella theobroma (Hemiptera, Miridae)
+description: >
+  Punaises piqueuses-suceuses considérées comme les ravageurs les plus importants du cacaoyer en
+  Afrique de l'Ouest. Les piqûres alimentaires sur pousses et fruits provoquent des lésions qui
+  peuvent être envahies par un champignon faiblement pathogène (Calonectria rigidiuscula),
+  aggravant les dégâts.
+characteristic_symptoms:
+  - "Lésions/piqûres alimentaires sur les jeunes pousses (flushes) et les cabosses."
+  - "« Blast » : attaque diffuse légère, d'aspect comparable à des dégâts de feu (observations Gold Coast, Bull. Entomol. Res.)."
+  - "« Stagheaded cacao » : nombreuses petites branches de couronne et canopée pauvre (forme sévère)."
+  - "« Mirid pocket » : perte complète de la couronne sur une petite zone, troncs portant de nombreux gourmands (chupons)."
+  - "Avortement des chérelles et réduction de taille des fruits attaqués (Yede et al., 2024)."
+  - "Chancres anciens sur tronc et branches."
+plant_parts: [pod, cherelle, stem, branch, young_leaf, whole_tree]
+favourable_conditions:
+  - "Ouvertures de la canopée (les trouées semblent précéder les attaques)."
+  - "Ombrage trop dense : étiolement rendant le cacaoyer sensible (dégâts en « pocket ») ; ombrage clairsemé : forme « stagheaded »."
+differentiation:
+  - "Les lésions de piqûres sont ponctuelles et multiples, contrairement à la lésion unique et extensive de la pourriture brune."
+  - "Observer directement les insectes (larves, adultes) sur pousses et cabosses."
+verification_needed:
+  - "Inspection des jeunes pousses et cabosses à la recherche de mirides (larves et adultes) et de piqûres récentes."
+  - "Cartographier les zones de dégâts dans la parcelle (distribution agrégée)."
+management:
+  - "Intégrer la lutte contre les stades larvaires âgés (L3-L5) et les adultes, les plus dommageables, dans un programme de lutte intégrée (Yede et al., 2024)."
+  - "Pratiques culturales évaluées : taille des gourmands (chupons) et retrait des cabosses momifiées (source secondaire, à vérifier avec le CNRA)."
+weather_signal: none
+keywords: [miride, capside, punaise, piqûre, ponctuation, insecte, gourmand, pousse, dessèchement, blast]
+references:
+  - citation: "(Auteur à vérifier) Field observations on the cacao mirids, Sahlbergella singularis Hagl. and Distantiella theobroma (Dist.), in the Gold Coast. Bulletin of Entomological Research (Cambridge University Press), série en plusieurs parties (années 1950)."
+    url: https://resolve.cambridge.org/core/journals/bulletin-of-entomological-research/article/field-observations-on-the-cacao-mirids-sahlbergella-singularis-hagl-and-distantiella-theobroma-dist-in-the-gold-coast/2E8F2424AC692B0A480B48D23DC918CB
+    accessed: 2026-10-31
+    reliability: peer_reviewed
+  - citation: "Yede R.J.M., Mbenoun Masse P.S., Mballa Ndzie P.A., Bilong Bilong C.F. (2024). Assessment of the impact of different developmental stages of Sahlbergella singularis on cacao trees productivity and fruits growth (Cameroon). International Journal of Advanced Research 12(3):735-744. doi:10.21474/IJAR01/18447"
+    url: https://zenodo.org/records/10968028
+    accessed: 2026-10-31
+    reliability: peer_reviewed
+documentary_reliability: medium
+notes: >
+  Fiche à compléter : descriptions de symptômes issues de travaux anciens (Gold Coast) et d'une
+  étude camerounaise ; pas encore de fiche CNRA/CABI consultée. Pas de mesure chimique listée
+  volontairement (homologations locales à vérifier).

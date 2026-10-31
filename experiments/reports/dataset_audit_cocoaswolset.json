@@ -1,0 +1,51 @@
+{
+  "dataset": "CocoaSwolSet",
+  "doi": "10.17632/hvwth9dsfd.2",
+  "version": 2,
+  "published": "2025-12-29T12:22:46.747Z",
+  "licence": "CC BY 4.0",
+  "institutions": [
+    "Institut National Polytechnique Felix Houphouet-Boigny"
+  ],
+  "total_files": 2094,
+  "total_size_gb": 7.73,
+  "formats": {
+    "jpg": 1556,
+    "dng": 164,
+    "png": 2,
+    "heic": 230,
+    "jpeg": 142
+  },
+  "files_same_stem_multiple_formats": 159,
+  "exact_duplicate_groups": 10,
+  "exact_duplicate_extra_files": 11,
+  "duplicates_across_labels": 0,
+  "unlabelled_files": 0,
+  "unlabelled_folders": [],
+  "label_folder_anomalies": {
+    "CocoaSwolSet/Leaves/Adults/Diseaded": "Diseaded"
+  },
+  "analysable_unique_images": 1694,
+  "per_class_unique_analysable": {
+    "Healthy": 968,
+    "Diseased": 726
+  },
+  "per_part_and_class_unique_analysable": {
+    "Leaves-Adults | Diseased": 518,
+    "Leaves-Adults | Healthy": 480,
+    "Leaves-Young | Diseased": 101,
+    "Leaves-Young | Healthy": 362,
+    "Trees | Diseased": 79,
+    "Trees | Healthy": 49,
+    "cocoa pod | Diseased": 28,
+    "cocoa pod | Healthy": 77
+  },
+  "imbalance_ratio_majority_minority": 1.33,
+  "limitations": [
+    "Étiquettes binaires Healthy/Diseased (swollen shoot) : pas d'annotation des autres maladies ni de localisation des symptômes.",
+    "Pas de coordonnées GPS ni de date par image dans les métadonnées Mendeley : le contexte météo/satellite ne peut pas être rattaché image par image sans EXIF.",
+    "Le diagnostic de référence est visuel (experts agronomes INP-HB) ; la publication ne mentionne pas de confirmation PCR.",
+    "Anomalie de nommage : dossier « Diseaded » (Leaves/Adults) interprété comme « Diseased » — à confirmer auprès des auteurs.",
+    "Fichiers DNG/HEIC à convertir ; doublons RAW/JPEG d'une même prise (même nom de fichier) à dédoublonner pour éviter les fuites entre jeux."
+  ]
+}

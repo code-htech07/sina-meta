@@ -1,0 +1,28 @@
+nasa_power:
+  daily_url: https://power.larc.nasa.gov/api/temporal/daily/point
+  climatology_url: https://power.larc.nasa.gov/api/temporal/climatology/point
+  community: AG
+  parameters: [PRECTOTCORR, T2M, T2M_MAX, T2M_MIN, RH2M]
+  fill_value: -999.0
+  timeout_s: 60
+  docs: https://power.larc.nasa.gov/docs/services/api/temporal/daily/
+
+sentinel2:
+  stac_url: https://earth-search.aws.element84.com/v1
+  collection: sentinel-2-l2a
+  provider_note: >
+    Copernicus Sentinel-2 L2A (ESA) Cloud-Optimized GeoTIFFs hosted by the AWS Open Data
+    "sentinel-cogs" bucket and indexed by Element 84 Earth Search (no authentication).
+  bands: {red: red, nir: nir, nir08: nir08, swir16: swir16, scl: scl}
+  # Scene Classification Layer classes considered valid for vegetation indices
+  # (4 vegetation, 5 not-vegetated). All other classes (no data, saturated, dark/shadow,
+  # cloud shadow, water, unclassified, cloud medium/high prob, cirrus, snow) are masked.
+  scl_valid_classes: [4, 5]
+  timeout_s: 90
+  docs: https://element84.com/earth-search/
+
+datasets:
+  cocoaswolset:
+    api: https://data.mendeley.com/public-api/datasets/hvwth9dsfd
+    doi: 10.17632/hvwth9dsfd.2
+    licence: CC BY 4.0

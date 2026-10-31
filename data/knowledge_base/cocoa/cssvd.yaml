@@ -1,0 +1,48 @@
+id: cssvd
+name: Maladie du swollen shoot du cacaoyer (CSSD / CSSVD)
+alternative_names: [Cacao swollen shoot disease, Cocoa swollen shoot virus disease, swollen shoot]
+category: disease
+causal_agents:
+  - "Badnavirus du complexe Cacao swollen shoot virus (CSSV), plusieurs espèces virales apparentées"
+description: >
+  Maladie virale transmise par des cochenilles farineuses (Pseudococcidae). Elle provoque une
+  baisse importante de rendement et la mort des arbres (2 à 3 ans après infection pour les
+  souches sévères). Considérée comme une menace majeure pour la cacaoculture en Afrique de l'Ouest.
+characteristic_symptoms:
+  - "Bandes rouges le long des nervures (red vein banding) sur les jeunes feuilles du flush : symptôme le plus courant."
+  - "Puis flecks ou bandes chlorotiques le long des nervures, parfois en taches angulaires, sur feuilles plus âgées."
+  - "Gonflements des tiges (nœuds, entre-nœuds, extrémités des rameaux), parfois discrets pour les souches modérées."
+  - "Gonflements des racines possibles."
+  - "Souches sévères : cabosses plus petites, plus rondes et plus lisses."
+  - "Expression très variable selon la souche virale, le génotype de l'hôte et l'environnement ; symptômes foliaires parfois transitoires."
+plant_parts: [young_leaf, leaf, stem, branch, root, pod, whole_tree]
+favourable_conditions:
+  - "Présence de cochenilles farineuses vectrices (plus de 14 espèces suspectées ; Formicococcus njalensis et Planococcus citri les plus efficaces au Ghana)."
+  - "Proximité d'arbres infectés et d'hôtes alternatifs sauvages (ex. Cola chlamydantha, Ceiba pentandra, Adansonia digitata)."
+  - "Matériel de plantation infecté (hypothèse évoquée par les auteurs, non confirmée)."
+differentiation:
+  - "L'inspection visuelle seule est peu fiable : les symptômes peuvent être confondus avec des carences nutritionnelles (Ameyaw et al., 2023)."
+  - "Des plants infectés de façon latente peuvent ne présenter aucun symptôme."
+  - "Les conditions météorologiques ne sont pas un critère discriminant documenté pour cette maladie virale."
+verification_needed:
+  - "Rechercher les gonflements de tiges/rameaux et les bandes rouges sur les jeunes feuilles de plusieurs arbres voisins."
+  - "Rechercher la présence de cochenilles farineuses."
+  - "Confirmation par PCR en laboratoire (méthode actuellement privilégiée) ; la sérologie (ELISA) peut donner des faux positifs/négatifs."
+  - "Contacter le service de lutte contre le swollen shoot (ANADER / CNRA en Côte d'Ivoire)."
+management:
+  - "Arrachage (cutting-out) des arbres infectés : principale stratégie de lutte, à réaliser par/avec les services officiels (Ameyaw et al., 2023)."
+  - "Replantation avec des variétés tolérantes ; aucune variété testée n'est immune ou résistante (Ameyaw et al., 2023)."
+  - "Élimination des hôtes alternatifs sauvages du virus à proximité des parcelles (Ameyaw et al., 2023)."
+  - "La lutte insecticide contre les vecteurs a montré des effets indésirables (goût des fèves, insectes non cibles) : non recommandée comme solution principale (Ameyaw et al., 2023)."
+weather_signal: none
+keywords: [swollen, shoot, gonflement, nervure, rouge, red vein, chlorose, mosaïque, feuille, jeune feuille, flush, cochenille, virus]
+references:
+  - citation: "Ameyaw G.A., Domfeh O., Gyamera E. (2023). Epidemiology and Diagnostics of Cacao Swollen Shoot Disease in Ghana: Past Research Achievements and Knowledge Gaps to Guide Future Research. Viruses 16(1):43. doi:10.3390/v16010043"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10819116/
+    accessed: 2026-10-31
+    reliability: peer_reviewed
+    licence: CC BY 4.0
+documentary_reliability: high
+notes: >
+  Revue fondée sur le contexte ghanéen (Cocoa Research Institute of Ghana), transposable à la
+  Côte d'Ivoire voisine avec prudence. Le diagnostic de certitude exige une analyse moléculaire.

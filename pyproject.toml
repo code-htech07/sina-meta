@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maana-terra"
+version = "0.1.0"
+description = "Multimodal agricultural intelligence for cocoa (Meta Muse Spark + SAM 3.1 + NASA POWER + Sentinel-2 + documented agronomy)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.setuptools.packages.find]
+include = ["engine*", "api*", "frontend*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "network: test calls a real public external service (NASA POWER, STAC, Mendeley)",
+  "meta: test calls the real Meta Model API (requires MODEL_API_KEY)",
+]
+addopts = "-ra"

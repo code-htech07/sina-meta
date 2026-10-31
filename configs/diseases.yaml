@@ -1,0 +1,11 @@
+# Problems covered by the knowledge base (data/knowledge_base/cocoa/*.yaml) and how they map to
+# evaluation labels. Ground-truth datasets rarely share our taxonomy, so the mapping is explicit.
+crop: cocoa
+knowledge_base_dir: data/knowledge_base/cocoa
+problems: [black_pod, cssvd, mirids, anthracnose, cherelle_wilt, water_stress]
+
+evaluation_label_maps:
+  # CocoaSwolSet (Mendeley 10.17632/hvwth9dsfd.2): folders Healthy / Diseased (swollen shoot)
+  cocoaswolset:
+    Healthy: healthy
+    Diseased: cssvd

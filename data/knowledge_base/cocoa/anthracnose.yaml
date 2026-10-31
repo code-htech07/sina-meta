@@ -1,0 +1,37 @@
+id: anthracnose
+name: Anthracnose (Colletotrichum spp.)
+alternative_names: [Cocoa anthracnose, Colletotrichum gloeosporioides complex]
+category: disease
+causal_agents:
+  - "Colletotrichum spp. (complexe C. gloeosporioides et autres complexes d'espèces)"
+description: >
+  Maladie fongique se manifestant par des lésions sur feuilles et cabosses. Les Colletotrichum
+  sont aussi fréquemment présents comme endophytes asymptomatiques, ce qui complique
+  l'attribution des symptômes.
+characteristic_symptoms:
+  - "Lésions sur feuilles et cabosses."
+  - "Sur chérelles (jeunes fruits) : lésions noires ; chérelles brûlées et desséchées, avec conidiomes rose saumon (Takata et al., 2024)."
+plant_parts: [leaf, pod, cherelle]
+favourable_conditions:
+  - "Humidité élevée (conditions utilisées pour les inoculations expérimentales) ; croissance optimale in vitro vers 30 °C pour l'isolat décrit (Takata et al., 2024)."
+differentiation:
+  - "Identification fiable uniquement par isolement et analyse morphologique/moléculaire (ITS, GAPDH, CHS1, ACT, TUB2)."
+  - "Des infections latentes sont possibles : l'absence de symptôme n'exclut pas la présence du champignon."
+verification_needed:
+  - "Rechercher des fructifications rose saumon sur les lésions."
+  - "Isolement au laboratoire pour identification de l'espèce."
+management:
+  - "Retirer les chérelles malades pour réduire l'impact de la maladie (Takata et al., 2024)."
+weather_signal: wet_favourable
+keywords: [anthracnose, colletotrichum, nécrose, tache, feuille, brûlure, lésion, chérelle, saumon]
+references:
+  - citation: "Takata Y., Ocampo-Padilla C., Malonzo M.A.C., Pangilinan D.C.J.C., Nozawa S., Watanabe K. (2024). Description and Pathogenicity of Colletotrichum kapreanum sp. nov., a Cherelle Wilt Pathogen Belonging to the Gigasporum Species Complex. Journal of Fungi 10(3):204. doi:10.3390/jof10030204"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10970977
+    accessed: 2026-10-31
+    reliability: peer_reviewed
+    licence: CC BY 4.0
+documentary_reliability: low
+notes: >
+  Source unique, étude réalisée aux Philippines sur une nouvelle espèce. Fiche insuffisante pour
+  un usage terrain en Côte d'Ivoire : à compléter (CNRA, CABI Compendium). Les hypothèses
+  « anthracnose » doivent être présentées avec une prudence renforcée.

@@ -1,0 +1,36 @@
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+*.key
+kaggle.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Runtime data (user uploads, DB, artifacts, downloaded datasets)
+data/*.db
+data/*.db-journal
+data/raw/uploads/*
+!data/raw/uploads/.gitkeep
+data/raw/datasets/
+data/processed/*
+!data/processed/.gitkeep
+experiments/*/runs/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/

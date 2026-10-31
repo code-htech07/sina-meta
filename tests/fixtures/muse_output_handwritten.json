@@ -1,0 +1,31 @@
+{
+  "_comment": "HAND-WRITTEN TEST FIXTURE matching the MuseAnalysisOutput schema. NOT a real Muse Spark output.",
+  "image_assessment": {"is_cocoa": "yes", "plant_part_detected": "cabosse", "image_usable": true, "usability_issues": []},
+  "overall_assessment": "abnormality_detected",
+  "visual_observations": [
+    {"description": "Lésion brune irrégulière sur la face visible de la cabosse", "plant_part": "pod", "location_in_image": "centre droit", "extent": "localized"}
+  ],
+  "hypotheses": [
+    {"problem_id": "black_pod", "name": "Pourriture brune", "status": "compatible", "support_level": "medium",
+     "supporting_evidence": [
+       {"statement": "Lésion brune sur cabosse", "source_type": "image"},
+       {"statement": "Symptôme décrit dans la fiche", "source_type": "knowledge_base", "reference_id": "black_pod"},
+       {"statement": "Pluies abondantes", "source_type": "weather"}],
+     "contradicting_evidence": [{"statement": "Pas de sporulation blanche visible", "source_type": "image"}],
+     "needed_for_confirmation": ["Analyse de laboratoire"]},
+    {"problem_id": "mirids", "name": "Piqûres de mirides", "status": "plausible", "support_level": "low",
+     "supporting_evidence": [{"statement": "Petites lésions sombres ponctuelles", "source_type": "image"}],
+     "contradicting_evidence": [], "needed_for_confirmation": ["Recherche d'insectes"]},
+    {"problem_id": "made_up_disease", "name": "Maladie inventée", "status": "unlikely", "support_level": "low",
+     "supporting_evidence": [{"statement": "Indice satellite", "source_type": "satellite"}],
+     "contradicting_evidence": [], "needed_for_confirmation": []}
+  ],
+  "contradictions": [],
+  "missing_information": ["Historique des traitements"],
+  "recommended_field_checks": ["Observer l'évolution de la lésion sur 3 à 5 jours"],
+  "recommendations": [
+    {"text": "Retirer les cabosses malades", "kb_reference_id": "black_pod"},
+    {"text": "Pulvériser un produit miracle", "kb_reference_id": null}
+  ],
+  "reasoning_summary": "Les symptômes sont compatibles avec plusieurs hypothèses ; il faut confirmer au laboratoire."
+}
