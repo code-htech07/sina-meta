@@ -1,0 +1,114 @@
+{
+  "run_id": "20261102-180614",
+  "manifest": "data/raw/datasets/cocoaswolset_n10_s42/manifest.json",
+  "n_samples": 80,
+  "label_distribution": {
+    "healthy": 40,
+    "diseased": 40
+  },
+  "muse_model": "muse-spark-1.3",
+  "prompt_version": "2026-11-02.1",
+  "context_location": [
+    6.8276,
+    -5.2767
+  ],
+  "context_location_is_proxy": true,
+  "date_sources": {
+    "filename": 46,
+    "fallback": 34
+  },
+  "experiments": {
+    "E5": {
+      "config": {
+        "name": "E5_full_context_classifier_consensus",
+        "use_weather": true,
+        "use_satellite": true,
+        "use_knowledge_base": true,
+        "use_segmentation": false,
+        "use_farmer_input": false,
+        "use_classifier": true
+      },
+      "classification": {
+        "n_evaluated": 80,
+        "n_errors": 0,
+        "n_answered": 34,
+        "abstention_rate": 0.575,
+        "confusion_matrix": {
+          "healthy": {
+            "healthy": 16,
+            "diseased": 0,
+            "abstain": 24
+          },
+          "diseased": {
+            "healthy": 3,
+            "diseased": 15,
+            "abstain": 22
+          }
+        },
+        "accuracy": 0.9118,
+        "balanced_accuracy": 0.9167,
+        "per_class": {
+          "healthy": {
+            "precision": 0.8421,
+            "recall": 1.0,
+            "f1": 0.9143,
+            "support": 16
+          },
+          "diseased": {
+            "precision": 1.0,
+            "recall": 0.8333,
+            "f1": 0.9091,
+            "support": 18
+          }
+        },
+        "macro_f1": 0.9117,
+        "critical_error_rate": 0.075
+      },
+      "cssvd_specific": {
+        "target_problem": "cssvd",
+        "n_diseased": 40,
+        "top1_hit_rate": 0.35,
+        "in_primary_hypotheses_rate": 0.4,
+        "false_target_rate_on_healthy": 0.0
+      },
+      "quality": {
+        "n_reports": 80,
+        "hallucinated_source_items_per_report": 0.0,
+        "unsourced_claims_per_report": 0.1,
+        "categorical_language_rate": 0.0375,
+        "unknown_problem_id_per_report": 0.0,
+        "undocumented_recommendation_share": 0.1429,
+        "reports_with_rule_contradiction": 24,
+        "contradictions_ignored_by_model_rate": 0.0417,
+        "caution_levels": {
+          "standard": 42,
+          "elevated": 8,
+          "high": 29,
+          "insufficient_data": 1
+        },
+        "flag_counts": {
+          "hypothesis_without_support": 54,
+          "undocumented_recommendation": 14,
+          "categorical_language": 3,
+          "assessment_inconsistent": 2,
+          "unsourced_claim": 8
+        }
+      },
+      "cost_latency": {
+        "pipeline_latency_ms_mean": 28260.3,
+        "pipeline_latency_ms_p50": 23640.2,
+        "pipeline_latency_ms_p95": 65181.8,
+        "muse_latency_ms_mean": 25284.0,
+        "estimated_cost_usd_total": 2.3067,
+        "estimated_cost_usd_per_analysis": 0.02883,
+        "input_tokens_total": 636702,
+        "output_tokens_total": 366555
+      }
+    }
+  },
+  "limitations": [
+    "Le dataset ne fournit pas la localisation des images : le contexte météo/satellite est celui d'une localisation PROXY fournie par l'opérateur.",
+    "Les dates sont déduites des noms de fichiers (date de prise ou de partage WhatsApp) quand c'est possible.",
+    "Effectif réduit : les écarts entre expériences doivent être interprétés avec prudence (pas de test de significativité à ce stade)."
+  ]
+}

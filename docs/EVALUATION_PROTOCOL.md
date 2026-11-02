@@ -77,3 +77,7 @@ Accuracy : E0 0,58 · E1 0,61 · E2 0,67 · E3 0,61 · E4 0,67. McNemar exact vs
 **aucune différence significative**. Forte tendance aux faux positifs sur plantes saines. E4 : meilleur macro-F1 (0,67),
 meilleur rappel des sains (0,58), seul cas où CSSVD est identifié (17,5 % des malades). Le gain brut d'E2 ne peut pas être
 causal (satellite d'un lieu proxy). Conclusion : il faut des photos de terrain géolocalisées pour évaluer la fusion.
+
+## Résultats — E5, architecture hybride (80 images, 2,31 $)
+Consensus classifieur + Muse Spark : 91,2 % des cas tranchés (31/34), abstention 57,5 %, 0 fausse alerte sur les sains,
+7,5 % de malades manqués. Rapport : `experiments/reports/e5_20261102/REPORT.md` ; protocole du classifieur : `docs/CLASSIFIER.md`.

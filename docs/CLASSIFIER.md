@@ -70,6 +70,11 @@ renvoie les autres cas à une vérification humaine : mieux vaut « je ne sais p
 est un peu plus stricte que dans l'évaluation hors ligne (classifieur hors zone d'abstention et sur un organe fiable) :
 la mesure exacte nécessite l'expérience E5 (≈ 2 $ d'appels Muse Spark).
 
+## Mesure réelle du pipeline complet — E5 (80 images, 2,31 $)
+Consensus : **91,2 % de bonnes réponses sur les cas tranchés (31/34)**, **0 fausse alerte sur 40 plantes saines**,
+3 malades manqués sur 40 ; **57,5 % renvoyés en vérification** (dont toutes les photos d'arbres). Muse Spark, informé
+par le classifieur, passe de 67 % à 73 % (non significatif). Rapport : `experiments/reports/e5_20261102/REPORT.md`.
+
 ## Limites
 - Le classifieur ne connaît que « sain » vs « aspect swollen shoot » dans le domaine CocoaSwolSet (mêmes photographes,
   mêmes zones) : performance attendue plus faible sur des photos d'autres régions/appareils ; garde « hors domaine »
