@@ -136,3 +136,14 @@ def disease_specific(reports: list[AnalysisReport], y_true: list[str], target_pr
         "in_primary_hypotheses_rate": round(anyp / len(pairs), 4),
         "false_target_rate_on_healthy": round(healthy_false / n_healthy, 4) if n_healthy else None,
     }
+
+
+def mcnemar_exact(correct_a: list[bool], correct_b: list[bool]) -> dict[str, Any]:
+    """Exact (binomial) two-sided McNemar test on paired correctness of two systems."""
+    from math import comb
+
+    b = sum(1 for x, y in zip(correct_a, correct_b) if x and not y)
+    c = sum(1 for x, y in zip(correct_a, correct_b) if not x and y)
+    n = b + c
+    p = min(1.0, 2 * sum(comb(n, i) for i in range(0, min(b, c) + 1)) / 2 ** n) if n else 1.0
+    return {"a_only_correct": b, "b_only_correct": c, "discordant": n, "p_value": round(p, 4)}

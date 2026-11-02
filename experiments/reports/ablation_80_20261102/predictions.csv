@@ -1,0 +1,401 @@
+exp,image,part,label,prediction,primary,caution,cost_usd
+E0,d93ade13ec47_WhatsApp Image 2025-05-28 at 10.37.38.jpeg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01832
+E0,35e980c196fd_IMG-20250527-WA0199.jpg,Leaves-Adults,diseased,diseased,,elevated,0.01541
+E0,d3ccd734e74a_IMG_20250527_100254_392~2.jpg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:compatible;unknown:plausible,high,0.01647
+E0,ee12e18d379d_IMG-20250527-WA0309.jpg,Leaves-Adults,diseased,healthy,unknown:compatible,high,0.01236
+E0,e8e3eacafb0e_20250530_105439.jpg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01872
+E0,a479d2290298_WhatsApp Image 2025-05-28 at 10.26.25 (5).jpeg,Leaves-Adults,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01972
+E0,17fb2926bc28_20250527_104427.jpg,Leaves-Adults,diseased,diseased,unknown:plausible,high,0.018
+E0,69e8eb706d97_IMG_E7262.JPG,Leaves-Adults,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01955
+E0,df7f3b24ea40_WhatsApp Image 2025-05-28 at 10.25.19 (10).jpeg,Leaves-Adults,diseased,diseased,unknown:plausible,high,0.01736
+E0,6d3274fb4c0f_OTCH9324.JPG,Leaves-Adults,diseased,healthy,,standard,0.01473
+E0,bcb7783de740_IMG-20250527-WA0211.jpg,Leaves-Adults,healthy,healthy,,standard,0.01053
+E0,03361083d478_IMG-20250527-WA0252.jpg,Leaves-Adults,healthy,healthy,unknown:compatible,high,0.01485
+E0,239e4be3d9dd_IMG-20250527-WA0174.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01847
+E0,c266d8414546_20250530_111937.jpg,Leaves-Adults,healthy,diseased,unknown:plausible;unknown:plausible,high,0.01897
+E0,858be92e9861_20250527_103721.jpg,Leaves-Adults,healthy,diseased,,elevated,0.01863
+E0,34ac5e67340d_IMG-20250527-WA0188.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01745
+E0,143965058268_IMG-20250527-WA0251.jpg,Leaves-Adults,healthy,healthy,,standard,0.0116
+E0,6baee52bf3d2_IMG-20250527-WA0141.jpg,Leaves-Adults,healthy,healthy,,standard,0.00961
+E0,95cc8e224615_IMG-20250527-WA0200.jpg,Leaves-Adults,healthy,diseased,unknown:plausible,high,0.01522
+E0,2f0c0db9c320_MQJK7408.JPG,Leaves-Adults,healthy,diseased,unknown:compatible,high,0.01653
+E0,393b0ca5c676_IMG_E7283.JPG,Leaves-Young,diseased,healthy,unknown:compatible,high,0.01577
+E0,a99231dc6cf8_20250530_104850.jpg,Leaves-Young,diseased,diseased,unknown:compatible,high,0.01823
+E0,04af24e425c0_WhatsApp Image 2025-05-27 à 19.40.05_0ad9c30f.jpg,Leaves-Young,diseased,healthy,unknown:compatible,high,0.01133
+E0,c7dfcc926b70_TZZP1804.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01703
+E0,e15334fee1a8_IMG_E7271.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01647
+E0,7d079a2f588d_20250530_111506.jpg,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.0181
+E0,658809b086fc_IMG_E7293.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01983
+E0,b08ee31b3deb_WhatsApp Image 2025-05-28 at 10.25.19 (2).jpeg,Leaves-Young,diseased,diseased,unknown:compatible,high,0.01911
+E0,8ff7debf75ac_IMG_7311.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.02249
+E0,1063e4a1dd87_WhatsApp Image 2025-05-27 à 19.40.05_559e8561.jpg,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01429
+E0,50e268be1b35_IMG-20250527-WA0097.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01653
+E0,014f382dee2f_IMG_20250527_104356_394~3.jpg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01792
+E0,a8f9f43884b7_Feuilles _ jeunes _ saines (53).jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01172
+E0,4bbe04ab170d_WhatsApp Image 2025-05-28 at 10.25.20.jpeg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01664
+E0,6dc6f16238df_IMG_20250527_115705_189~2.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01258
+E0,0913aa634030_20250530_102559.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.0136
+E0,ad8639a2e22a_IMG_20250527_103800_618~2.jpg,Leaves-Young,healthy,diseased,unknown:plausible;unknown:plausible,high,0.01968
+E0,3bfb42c88a2b_SREB3653.JPG,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01729
+E0,fbf6ed843b54_Feuilles _ jeunes _ saines (49).jpg,Leaves-Young,healthy,healthy,,standard,0.01279
+E0,09657f16658b_Feuilles _ jeunes _ saines (50).jpg,Leaves-Young,healthy,diseased,unknown:plausible,high,0.02067
+E0,607926bd5398_CXPQ5851.JPG,Trees,diseased,abstain,,insufficient_data,0.01632
+E0,c7d709561982_IMG-20250527-WA0428.jpg,Trees,diseased,diseased,unknown:plausible,high,0.01455
+E0,b14975a97f12_IMG-20250527-WA0400.jpg,Trees,diseased,diseased,unknown:plausible,high,0.01449
+E0,53478ce2b377_IMG-20250527-WA0435.jpg,Trees,diseased,diseased,unknown:compatible,high,0.01468
+E0,3bd0d45db9bc_GQYE9603.JPG,Trees,diseased,diseased,unknown:plausible,high,0.01871
+E0,50926ec218a3_CIIA9558.JPG,Trees,diseased,healthy,,standard,0.01587
+E0,45786245553f_BZNZ9028.JPG,Trees,diseased,healthy,,standard,0.01748
+E0,ab7330b3b79b_BNYQ7741.JPG,Trees,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01727
+E0,576101bfe32a_RYNO6749.JPG,Trees,diseased,healthy,,standard,0.01825
+E0,c307312b66c7_IMG-20250527-WA0431.jpg,Trees,diseased,diseased,unknown:plausible,high,0.01832
+E0,25ef859c480f_IMG-20250527-WA0017.jpg,Trees,healthy,healthy,,standard,0.0107
+E0,f32b46307367_IMG-20250527-WA0029.jpg,Trees,healthy,diseased,,elevated,0.01859
+E0,80526c4a88fe_EFIY6101.JPG,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01976
+E0,964b773901af_KFZL8515.JPG,Trees,healthy,diseased,unknown:compatible,high,0.01729
+E0,b315e385c699_IMG-20250527-WA0036.jpg,Trees,healthy,diseased,unknown:compatible,high,0.0196
+E0,5a251488c861_IMG-20250527-WA0028.jpg,Trees,healthy,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.01869
+E0,cd759fdcf09b_IMG-20250527-WA0018.jpg,Trees,healthy,diseased,,elevated,0.01517
+E0,5601a5ec5b57_IMG-20250527-WA0034.jpg,Trees,healthy,healthy,,standard,0.01157
+E0,05268af8fe70_HVZJ7984.JPG,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.02299
+E0,793ccea83f0f_IMG-20250527-WA0031.jpg,Trees,healthy,healthy,,standard,0.01095
+E0,a91297d8166d_NUMI9413.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02049
+E0,1bc930c74e76_AWIE6939.JPG,cocoa pod,diseased,healthy,unknown:compatible,high,0.01669
+E0,201a407ee6d2_NETQ0419.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01627
+E0,31a1a00ad99e_QMQK5035.JPG,cocoa pod,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01822
+E0,e8ae2bb21d48_SUAD4980.JPG,cocoa pod,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01813
+E0,051c64f0353d_HGGS5740.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01781
+E0,fefb6d590415_RNPN2445.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01946
+E0,738de50bc3a5_AWUA9941.JPG,cocoa pod,diseased,healthy,,standard,0.01264
+E0,3ace14273bd3_WhatsApp Image 2025-05-28 at 10.26.26 (1).jpeg,cocoa pod,diseased,diseased,unknown:plausible,high,0.01629
+E0,de69dd80996c_UPTO0240.JPG,cocoa pod,diseased,diseased,unknown:plausible,high,0.01696
+E0,cd10a87dc293_IMG-20250527-WA0282.jpg,cocoa pod,healthy,diseased,unknown:plausible,high,0.01478
+E0,68d47079ab0f_WhatsApp Image 2025-05-28 at 10.26.59 (2).jpeg,cocoa pod,healthy,healthy,unknown:compatible;unknown:plausible,high,0.01764
+E0,48480f70da23_KEVK9749.JPG,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01797
+E0,1cb699f8d614_IMG-20250527-WA0277.jpg,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01865
+E0,4c1837b374f1_MXPC0950.JPG,cocoa pod,healthy,healthy,,standard,0.01285
+E0,5efa6dae075d_IMG-20250527-WA0274.jpg,cocoa pod,healthy,diseased,unknown:plausible,high,0.01479
+E0,cf508e48af59_WhatsApp Image 2025-05-28 at 10.26.57 (5).jpeg,cocoa pod,healthy,healthy,,standard,0.01204
+E0,c15497e52ae5_WWNX1813.JPG,cocoa pod,healthy,diseased,unknown:plausible,high,0.02132
+E0,a60e98f10276_IMG-20250527-WA0279.jpg,cocoa pod,healthy,diseased,unknown:plausible,high,0.01926
+E0,b18a2bc04ac0_RXBM0251.JPG,cocoa pod,healthy,healthy,unknown:compatible;unknown:plausible,high,0.01611
+E1,d93ade13ec47_WhatsApp Image 2025-05-28 at 10.37.38.jpeg,Leaves-Adults,diseased,diseased,unknown:plausible;unknown:plausible,high,0.02277
+E1,35e980c196fd_IMG-20250527-WA0199.jpg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01919
+E1,d3ccd734e74a_IMG_20250527_100254_392~2.jpg,Leaves-Adults,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01831
+E1,ee12e18d379d_IMG-20250527-WA0309.jpg,Leaves-Adults,diseased,healthy,,standard,0.01547
+E1,e8e3eacafb0e_20250530_105439.jpg,Leaves-Adults,diseased,diseased,unknown:plausible,high,0.02168
+E1,a479d2290298_WhatsApp Image 2025-05-28 at 10.26.25 (5).jpeg,Leaves-Adults,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01537
+E1,17fb2926bc28_20250527_104427.jpg,Leaves-Adults,diseased,diseased,unknown:plausible;unknown:plausible,high,0.02447
+E1,69e8eb706d97_IMG_E7262.JPG,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.0207
+E1,df7f3b24ea40_WhatsApp Image 2025-05-28 at 10.25.19 (10).jpeg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01713
+E1,6d3274fb4c0f_OTCH9324.JPG,Leaves-Adults,diseased,diseased,unknown:compatible,high,0.0171
+E1,bcb7783de740_IMG-20250527-WA0211.jpg,Leaves-Adults,healthy,healthy,,standard,0.0105
+E1,03361083d478_IMG-20250527-WA0252.jpg,Leaves-Adults,healthy,healthy,unknown:compatible,high,0.01432
+E1,239e4be3d9dd_IMG-20250527-WA0174.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01922
+E1,c266d8414546_20250530_111937.jpg,Leaves-Adults,healthy,diseased,unknown:plausible;unknown:plausible,high,0.01901
+E1,858be92e9861_20250527_103721.jpg,Leaves-Adults,healthy,healthy,,standard,0.01589
+E1,34ac5e67340d_IMG-20250527-WA0188.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01854
+E1,143965058268_IMG-20250527-WA0251.jpg,Leaves-Adults,healthy,diseased,unknown:compatible,high,0.0209
+E1,6baee52bf3d2_IMG-20250527-WA0141.jpg,Leaves-Adults,healthy,healthy,,standard,0.00888
+E1,95cc8e224615_IMG-20250527-WA0200.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01777
+E1,2f0c0db9c320_MQJK7408.JPG,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01693
+E1,393b0ca5c676_IMG_E7283.JPG,Leaves-Young,diseased,healthy,unknown:compatible,high,0.02188
+E1,a99231dc6cf8_20250530_104850.jpg,Leaves-Young,diseased,diseased,unknown:plausible;unknown:plausible,high,0.02218
+E1,04af24e425c0_WhatsApp Image 2025-05-27 à 19.40.05_0ad9c30f.jpg,Leaves-Young,diseased,healthy,unknown:compatible,high,0.01465
+E1,c7dfcc926b70_TZZP1804.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01842
+E1,e15334fee1a8_IMG_E7271.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:compatible,high,0.02131
+E1,7d079a2f588d_20250530_111506.jpg,Leaves-Young,diseased,diseased,unknown:plausible,high,0.01936
+E1,658809b086fc_IMG_E7293.JPG,Leaves-Young,diseased,healthy,unknown:compatible;unknown:plausible,high,0.02095
+E1,b08ee31b3deb_WhatsApp Image 2025-05-28 at 10.25.19 (2).jpeg,Leaves-Young,diseased,healthy,unknown:compatible,high,0.01326
+E1,8ff7debf75ac_IMG_7311.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02335
+E1,1063e4a1dd87_WhatsApp Image 2025-05-27 à 19.40.05_559e8561.jpg,Leaves-Young,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01666
+E1,50e268be1b35_IMG-20250527-WA0097.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01627
+E1,014f382dee2f_IMG_20250527_104356_394~3.jpg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01828
+E1,a8f9f43884b7_Feuilles _ jeunes _ saines (53).jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01658
+E1,4bbe04ab170d_WhatsApp Image 2025-05-28 at 10.25.20.jpeg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01863
+E1,6dc6f16238df_IMG_20250527_115705_189~2.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01248
+E1,0913aa634030_20250530_102559.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01412
+E1,ad8639a2e22a_IMG_20250527_103800_618~2.jpg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01953
+E1,3bfb42c88a2b_SREB3653.JPG,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01712
+E1,fbf6ed843b54_Feuilles _ jeunes _ saines (49).jpg,Leaves-Young,healthy,healthy,,standard,0.01406
+E1,09657f16658b_Feuilles _ jeunes _ saines (50).jpg,Leaves-Young,healthy,diseased,unknown:compatible,high,0.01581
+E1,607926bd5398_CXPQ5851.JPG,Trees,diseased,abstain,,insufficient_data,0.01119
+E1,c7d709561982_IMG-20250527-WA0428.jpg,Trees,diseased,diseased,unknown:plausible,high,0.01927
+E1,b14975a97f12_IMG-20250527-WA0400.jpg,Trees,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01982
+E1,53478ce2b377_IMG-20250527-WA0435.jpg,Trees,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01892
+E1,3bd0d45db9bc_GQYE9603.JPG,Trees,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01914
+E1,50926ec218a3_CIIA9558.JPG,Trees,diseased,diseased,unknown:plausible;unknown:plausible,high,0.02308
+E1,45786245553f_BZNZ9028.JPG,Trees,diseased,healthy,,standard,0.01739
+E1,ab7330b3b79b_BNYQ7741.JPG,Trees,diseased,diseased,unknown:plausible,high,0.02025
+E1,576101bfe32a_RYNO6749.JPG,Trees,diseased,healthy,unknown:compatible,high,0.0226
+E1,c307312b66c7_IMG-20250527-WA0431.jpg,Trees,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01917
+E1,25ef859c480f_IMG-20250527-WA0017.jpg,Trees,healthy,healthy,,standard,0.01149
+E1,f32b46307367_IMG-20250527-WA0029.jpg,Trees,healthy,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.01869
+E1,80526c4a88fe_EFIY6101.JPG,Trees,healthy,diseased,unknown:compatible;unknown:compatible;unknown:plausible,high,0.0182
+E1,964b773901af_KFZL8515.JPG,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01904
+E1,b315e385c699_IMG-20250527-WA0036.jpg,Trees,healthy,healthy,unknown:plausible,high,0.01634
+E1,5a251488c861_IMG-20250527-WA0028.jpg,Trees,healthy,diseased,unknown:plausible;unknown:plausible;unknown:plausible,high,0.01817
+E1,cd759fdcf09b_IMG-20250527-WA0018.jpg,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01665
+E1,5601a5ec5b57_IMG-20250527-WA0034.jpg,Trees,healthy,healthy,,standard,0.0114
+E1,05268af8fe70_HVZJ7984.JPG,Trees,healthy,healthy,unknown:compatible,high,0.01532
+E1,793ccea83f0f_IMG-20250527-WA0031.jpg,Trees,healthy,healthy,,standard,0.01175
+E1,a91297d8166d_NUMI9413.JPG,cocoa pod,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01789
+E1,1bc930c74e76_AWIE6939.JPG,cocoa pod,diseased,diseased,unknown:plausible,high,0.02347
+E1,201a407ee6d2_NETQ0419.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.02064
+E1,31a1a00ad99e_QMQK5035.JPG,cocoa pod,diseased,diseased,unknown:plausible,high,0.01882
+E1,e8ae2bb21d48_SUAD4980.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02022
+E1,051c64f0353d_HGGS5740.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01979
+E1,fefb6d590415_RNPN2445.JPG,cocoa pod,diseased,diseased,unknown:plausible,high,0.02175
+E1,738de50bc3a5_AWUA9941.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02165
+E1,3ace14273bd3_WhatsApp Image 2025-05-28 at 10.26.26 (1).jpeg,cocoa pod,diseased,healthy,unknown:compatible;unknown:plausible,high,0.01852
+E1,de69dd80996c_UPTO0240.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02114
+E1,cd10a87dc293_IMG-20250527-WA0282.jpg,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01727
+E1,68d47079ab0f_WhatsApp Image 2025-05-28 at 10.26.59 (2).jpeg,cocoa pod,healthy,diseased,unknown:plausible,high,0.02002
+E1,48480f70da23_KEVK9749.JPG,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible,high,0.02021
+E1,1cb699f8d614_IMG-20250527-WA0277.jpg,cocoa pod,healthy,diseased,unknown:plausible;unknown:plausible,high,0.01845
+E1,4c1837b374f1_MXPC0950.JPG,cocoa pod,healthy,healthy,unknown:compatible,high,0.02322
+E1,5efa6dae075d_IMG-20250527-WA0274.jpg,cocoa pod,healthy,diseased,unknown:plausible;unknown:plausible,high,0.01878
+E1,cf508e48af59_WhatsApp Image 2025-05-28 at 10.26.57 (5).jpeg,cocoa pod,healthy,healthy,,standard,0.013
+E1,c15497e52ae5_WWNX1813.JPG,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01906
+E1,a60e98f10276_IMG-20250527-WA0279.jpg,cocoa pod,healthy,diseased,unknown:plausible,high,0.01863
+E1,b18a2bc04ac0_RXBM0251.JPG,cocoa pod,healthy,healthy,unknown:compatible;unknown:plausible,high,0.0167
+E2,d93ade13ec47_WhatsApp Image 2025-05-28 at 10.37.38.jpeg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.01817
+E2,35e980c196fd_IMG-20250527-WA0199.jpg,Leaves-Adults,diseased,diseased,unknown:plausible,high,0.01857
+E2,d3ccd734e74a_IMG_20250527_100254_392~2.jpg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.01711
+E2,ee12e18d379d_IMG-20250527-WA0309.jpg,Leaves-Adults,diseased,healthy,,standard,0.01286
+E2,e8e3eacafb0e_20250530_105439.jpg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02077
+E2,a479d2290298_WhatsApp Image 2025-05-28 at 10.26.25 (5).jpeg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02159
+E2,17fb2926bc28_20250527_104427.jpg,Leaves-Adults,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01679
+E2,69e8eb706d97_IMG_E7262.JPG,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01871
+E2,df7f3b24ea40_WhatsApp Image 2025-05-28 at 10.25.19 (10).jpeg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01544
+E2,6d3274fb4c0f_OTCH9324.JPG,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01994
+E2,bcb7783de740_IMG-20250527-WA0211.jpg,Leaves-Adults,healthy,healthy,,standard,0.0092
+E2,03361083d478_IMG-20250527-WA0252.jpg,Leaves-Adults,healthy,healthy,,standard,0.01213
+E2,239e4be3d9dd_IMG-20250527-WA0174.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.0212
+E2,c266d8414546_20250530_111937.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.02133
+E2,858be92e9861_20250527_103721.jpg,Leaves-Adults,healthy,healthy,,standard,0.01159
+E2,34ac5e67340d_IMG-20250527-WA0188.jpg,Leaves-Adults,healthy,diseased,unknown:compatible,high,0.01735
+E2,143965058268_IMG-20250527-WA0251.jpg,Leaves-Adults,healthy,healthy,,standard,0.01256
+E2,6baee52bf3d2_IMG-20250527-WA0141.jpg,Leaves-Adults,healthy,healthy,,standard,0.01289
+E2,95cc8e224615_IMG-20250527-WA0200.jpg,Leaves-Adults,healthy,diseased,unknown:plausible,high,0.01678
+E2,2f0c0db9c320_MQJK7408.JPG,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.0171
+E2,393b0ca5c676_IMG_E7283.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01696
+E2,a99231dc6cf8_20250530_104850.jpg,Leaves-Young,diseased,diseased,unknown:plausible;unknown:plausible,high,0.02104
+E2,04af24e425c0_WhatsApp Image 2025-05-27 à 19.40.05_0ad9c30f.jpg,Leaves-Young,diseased,healthy,unknown:compatible,high,0.01627
+E2,c7dfcc926b70_TZZP1804.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01871
+E2,e15334fee1a8_IMG_E7271.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02017
+E2,7d079a2f588d_20250530_111506.jpg,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02067
+E2,658809b086fc_IMG_E7293.JPG,Leaves-Young,diseased,diseased,unknown:compatible,high,0.02025
+E2,b08ee31b3deb_WhatsApp Image 2025-05-28 at 10.25.19 (2).jpeg,Leaves-Young,diseased,healthy,unknown:compatible,high,0.01841
+E2,8ff7debf75ac_IMG_7311.JPG,Leaves-Young,diseased,diseased,unknown:plausible;unknown:plausible,high,0.02177
+E2,1063e4a1dd87_WhatsApp Image 2025-05-27 à 19.40.05_559e8561.jpg,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01315
+E2,50e268be1b35_IMG-20250527-WA0097.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01735
+E2,014f382dee2f_IMG_20250527_104356_394~3.jpg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.02091
+E2,a8f9f43884b7_Feuilles _ jeunes _ saines (53).jpg,Leaves-Young,healthy,healthy,,standard,0.01312
+E2,4bbe04ab170d_WhatsApp Image 2025-05-28 at 10.25.20.jpeg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01978
+E2,6dc6f16238df_IMG_20250527_115705_189~2.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01302
+E2,0913aa634030_20250530_102559.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01333
+E2,ad8639a2e22a_IMG_20250527_103800_618~2.jpg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01707
+E2,3bfb42c88a2b_SREB3653.JPG,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01774
+E2,fbf6ed843b54_Feuilles _ jeunes _ saines (49).jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01916
+E2,09657f16658b_Feuilles _ jeunes _ saines (50).jpg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01592
+E2,607926bd5398_CXPQ5851.JPG,Trees,diseased,abstain,,insufficient_data,0.01342
+E2,c7d709561982_IMG-20250527-WA0428.jpg,Trees,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01762
+E2,b14975a97f12_IMG-20250527-WA0400.jpg,Trees,diseased,diseased,unknown:plausible,high,0.01821
+E2,53478ce2b377_IMG-20250527-WA0435.jpg,Trees,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01698
+E2,3bd0d45db9bc_GQYE9603.JPG,Trees,diseased,diseased,unknown:plausible;unknown:plausible,high,0.02345
+E2,50926ec218a3_CIIA9558.JPG,Trees,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01733
+E2,45786245553f_BZNZ9028.JPG,Trees,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02331
+E2,ab7330b3b79b_BNYQ7741.JPG,Trees,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02131
+E2,576101bfe32a_RYNO6749.JPG,Trees,diseased,healthy,unknown:compatible,high,0.01951
+E2,c307312b66c7_IMG-20250527-WA0431.jpg,Trees,diseased,diseased,unknown:plausible,high,0.01657
+E2,25ef859c480f_IMG-20250527-WA0017.jpg,Trees,healthy,healthy,,standard,0.01193
+E2,f32b46307367_IMG-20250527-WA0029.jpg,Trees,healthy,healthy,,standard,0.01773
+E2,80526c4a88fe_EFIY6101.JPG,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01871
+E2,964b773901af_KFZL8515.JPG,Trees,healthy,diseased,unknown:plausible,high,0.01766
+E2,b315e385c699_IMG-20250527-WA0036.jpg,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.0208
+E2,5a251488c861_IMG-20250527-WA0028.jpg,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01785
+E2,cd759fdcf09b_IMG-20250527-WA0018.jpg,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.017
+E2,5601a5ec5b57_IMG-20250527-WA0034.jpg,Trees,healthy,healthy,,standard,0.01108
+E2,05268af8fe70_HVZJ7984.JPG,Trees,healthy,healthy,unknown:compatible,high,0.01733
+E2,793ccea83f0f_IMG-20250527-WA0031.jpg,Trees,healthy,healthy,unknown:compatible,high,0.01581
+E2,a91297d8166d_NUMI9413.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.01983
+E2,1bc930c74e76_AWIE6939.JPG,cocoa pod,diseased,diseased,unknown:plausible,high,0.01849
+E2,201a407ee6d2_NETQ0419.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01702
+E2,31a1a00ad99e_QMQK5035.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01577
+E2,e8ae2bb21d48_SUAD4980.JPG,cocoa pod,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01559
+E2,051c64f0353d_HGGS5740.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02129
+E2,fefb6d590415_RNPN2445.JPG,cocoa pod,diseased,diseased,unknown:compatible,high,0.02072
+E2,738de50bc3a5_AWUA9941.JPG,cocoa pod,diseased,diseased,unknown:compatible,high,0.01915
+E2,3ace14273bd3_WhatsApp Image 2025-05-28 at 10.26.26 (1).jpeg,cocoa pod,diseased,diseased,unknown:compatible,high,0.02345
+E2,de69dd80996c_UPTO0240.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01868
+E2,cd10a87dc293_IMG-20250527-WA0282.jpg,cocoa pod,healthy,diseased,unknown:plausible;unknown:plausible,high,0.01641
+E2,68d47079ab0f_WhatsApp Image 2025-05-28 at 10.26.59 (2).jpeg,cocoa pod,healthy,diseased,unknown:compatible,high,0.01969
+E2,48480f70da23_KEVK9749.JPG,cocoa pod,healthy,diseased,unknown:plausible;unknown:plausible,high,0.0205
+E2,1cb699f8d614_IMG-20250527-WA0277.jpg,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01959
+E2,4c1837b374f1_MXPC0950.JPG,cocoa pod,healthy,healthy,,standard,0.01469
+E2,5efa6dae075d_IMG-20250527-WA0274.jpg,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.02156
+E2,cf508e48af59_WhatsApp Image 2025-05-28 at 10.26.57 (5).jpeg,cocoa pod,healthy,healthy,,standard,0.01307
+E2,c15497e52ae5_WWNX1813.JPG,cocoa pod,healthy,diseased,unknown:plausible,high,0.01655
+E2,a60e98f10276_IMG-20250527-WA0279.jpg,cocoa pod,healthy,diseased,unknown:plausible,high,0.01427
+E2,b18a2bc04ac0_RXBM0251.JPG,cocoa pod,healthy,healthy,unknown:compatible,high,0.01808
+E3,d93ade13ec47_WhatsApp Image 2025-05-28 at 10.37.38.jpeg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:compatible;unknown:plausible,high,0.01767
+E3,35e980c196fd_IMG-20250527-WA0199.jpg,Leaves-Adults,diseased,healthy,,standard,0.02154
+E3,d3ccd734e74a_IMG_20250527_100254_392~2.jpg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02013
+E3,ee12e18d379d_IMG-20250527-WA0309.jpg,Leaves-Adults,diseased,healthy,unknown:compatible,high,0.01876
+E3,e8e3eacafb0e_20250530_105439.jpg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02017
+E3,a479d2290298_WhatsApp Image 2025-05-28 at 10.26.25 (5).jpeg,Leaves-Adults,diseased,diseased,unknown:plausible,high,0.02263
+E3,17fb2926bc28_20250527_104427.jpg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.02262
+E3,69e8eb706d97_IMG_E7262.JPG,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02077
+E3,df7f3b24ea40_WhatsApp Image 2025-05-28 at 10.25.19 (10).jpeg,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01752
+E3,6d3274fb4c0f_OTCH9324.JPG,Leaves-Adults,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02128
+E3,bcb7783de740_IMG-20250527-WA0211.jpg,Leaves-Adults,healthy,healthy,unknown:compatible,high,0.01489
+E3,03361083d478_IMG-20250527-WA0252.jpg,Leaves-Adults,healthy,healthy,,standard,0.01174
+E3,239e4be3d9dd_IMG-20250527-WA0174.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01806
+E3,c266d8414546_20250530_111937.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.02395
+E3,858be92e9861_20250527_103721.jpg,Leaves-Adults,healthy,diseased,unknown:plausible,high,0.02109
+E3,34ac5e67340d_IMG-20250527-WA0188.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01766
+E3,143965058268_IMG-20250527-WA0251.jpg,Leaves-Adults,healthy,diseased,unknown:compatible,high,0.01756
+E3,6baee52bf3d2_IMG-20250527-WA0141.jpg,Leaves-Adults,healthy,healthy,,standard,0.0127
+E3,95cc8e224615_IMG-20250527-WA0200.jpg,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01532
+E3,2f0c0db9c320_MQJK7408.JPG,Leaves-Adults,healthy,diseased,unknown:compatible;unknown:compatible;unknown:compatible,high,0.02321
+E3,393b0ca5c676_IMG_E7283.JPG,Leaves-Young,diseased,healthy,unknown:compatible;unknown:plausible,high,0.01756
+E3,a99231dc6cf8_20250530_104850.jpg,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.0204
+E3,04af24e425c0_WhatsApp Image 2025-05-27 à 19.40.05_0ad9c30f.jpg,Leaves-Young,diseased,healthy,unknown:compatible,high,0.01513
+E3,c7dfcc926b70_TZZP1804.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01992
+E3,e15334fee1a8_IMG_E7271.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01857
+E3,7d079a2f588d_20250530_111506.jpg,Leaves-Young,diseased,diseased,unknown:plausible,high,0.0202
+E3,658809b086fc_IMG_E7293.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01565
+E3,b08ee31b3deb_WhatsApp Image 2025-05-28 at 10.25.19 (2).jpeg,Leaves-Young,diseased,healthy,unknown:compatible,high,0.01912
+E3,8ff7debf75ac_IMG_7311.JPG,Leaves-Young,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01856
+E3,1063e4a1dd87_WhatsApp Image 2025-05-27 à 19.40.05_559e8561.jpg,Leaves-Young,diseased,healthy,unknown:compatible,high,0.01373
+E3,50e268be1b35_IMG-20250527-WA0097.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.02364
+E3,014f382dee2f_IMG_20250527_104356_394~3.jpg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01789
+E3,a8f9f43884b7_Feuilles _ jeunes _ saines (53).jpg,Leaves-Young,healthy,healthy,,standard,0.01236
+E3,4bbe04ab170d_WhatsApp Image 2025-05-28 at 10.25.20.jpeg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.02228
+E3,6dc6f16238df_IMG_20250527_115705_189~2.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.01598
+E3,0913aa634030_20250530_102559.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.02029
+E3,ad8639a2e22a_IMG_20250527_103800_618~2.jpg,Leaves-Young,healthy,diseased,unknown:compatible,high,0.02497
+E3,3bfb42c88a2b_SREB3653.JPG,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.02101
+E3,fbf6ed843b54_Feuilles _ jeunes _ saines (49).jpg,Leaves-Young,healthy,healthy,,standard,0.01438
+E3,09657f16658b_Feuilles _ jeunes _ saines (50).jpg,Leaves-Young,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01647
+E3,607926bd5398_CXPQ5851.JPG,Trees,diseased,abstain,,insufficient_data,0.01884
+E3,c7d709561982_IMG-20250527-WA0428.jpg,Trees,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01787
+E3,b14975a97f12_IMG-20250527-WA0400.jpg,Trees,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01852
+E3,53478ce2b377_IMG-20250527-WA0435.jpg,Trees,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01982
+E3,3bd0d45db9bc_GQYE9603.JPG,Trees,diseased,diseased,unknown:compatible;unknown:plausible,high,0.02153
+E3,50926ec218a3_CIIA9558.JPG,Trees,diseased,diseased,unknown:plausible,high,0.02281
+E3,45786245553f_BZNZ9028.JPG,Trees,diseased,diseased,unknown:plausible,high,0.02197
+E3,ab7330b3b79b_BNYQ7741.JPG,Trees,diseased,diseased,unknown:compatible,high,0.02373
+E3,576101bfe32a_RYNO6749.JPG,Trees,diseased,healthy,,standard,0.01577
+E3,c307312b66c7_IMG-20250527-WA0431.jpg,Trees,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01625
+E3,25ef859c480f_IMG-20250527-WA0017.jpg,Trees,healthy,healthy,,standard,0.01288
+E3,f32b46307367_IMG-20250527-WA0029.jpg,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.0247
+E3,80526c4a88fe_EFIY6101.JPG,Trees,healthy,diseased,unknown:compatible;unknown:compatible;unknown:plausible,high,0.02033
+E3,964b773901af_KFZL8515.JPG,Trees,healthy,diseased,unknown:plausible,high,0.02029
+E3,b315e385c699_IMG-20250527-WA0036.jpg,Trees,healthy,healthy,unknown:compatible,high,0.01457
+E3,5a251488c861_IMG-20250527-WA0028.jpg,Trees,healthy,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.02116
+E3,cd759fdcf09b_IMG-20250527-WA0018.jpg,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.02052
+E3,5601a5ec5b57_IMG-20250527-WA0034.jpg,Trees,healthy,healthy,unknown:compatible,high,0.01404
+E3,05268af8fe70_HVZJ7984.JPG,Trees,healthy,diseased,unknown:compatible;unknown:plausible,high,0.0206
+E3,793ccea83f0f_IMG-20250527-WA0031.jpg,Trees,healthy,healthy,,standard,0.01232
+E3,a91297d8166d_NUMI9413.JPG,cocoa pod,diseased,diseased,unknown:plausible;unknown:plausible,high,0.02148
+E3,1bc930c74e76_AWIE6939.JPG,cocoa pod,diseased,diseased,unknown:plausible,high,0.01807
+E3,201a407ee6d2_NETQ0419.JPG,cocoa pod,diseased,diseased,unknown:plausible,high,0.01848
+E3,31a1a00ad99e_QMQK5035.JPG,cocoa pod,diseased,diseased,unknown:plausible;unknown:plausible,high,0.01802
+E3,e8ae2bb21d48_SUAD4980.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01833
+E3,051c64f0353d_HGGS5740.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01758
+E3,fefb6d590415_RNPN2445.JPG,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible;unknown:plausible,high,0.02097
+E3,738de50bc3a5_AWUA9941.JPG,cocoa pod,diseased,diseased,unknown:plausible,high,0.01906
+E3,3ace14273bd3_WhatsApp Image 2025-05-28 at 10.26.26 (1).jpeg,cocoa pod,diseased,diseased,unknown:compatible;unknown:plausible,high,0.01865
+E3,de69dd80996c_UPTO0240.JPG,cocoa pod,diseased,diseased,unknown:plausible,high,0.02095
+E3,cd10a87dc293_IMG-20250527-WA0282.jpg,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01692
+E3,68d47079ab0f_WhatsApp Image 2025-05-28 at 10.26.59 (2).jpeg,cocoa pod,healthy,healthy,unknown:compatible,high,0.01966
+E3,48480f70da23_KEVK9749.JPG,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible,high,0.02045
+E3,1cb699f8d614_IMG-20250527-WA0277.jpg,cocoa pod,healthy,diseased,unknown:plausible;unknown:plausible,high,0.02292
+E3,4c1837b374f1_MXPC0950.JPG,cocoa pod,healthy,healthy,,standard,0.01358
+E3,5efa6dae075d_IMG-20250527-WA0274.jpg,cocoa pod,healthy,diseased,unknown:plausible,high,0.0171
+E3,cf508e48af59_WhatsApp Image 2025-05-28 at 10.26.57 (5).jpeg,cocoa pod,healthy,healthy,,standard,0.01378
+E3,c15497e52ae5_WWNX1813.JPG,cocoa pod,healthy,diseased,unknown:compatible;unknown:plausible,high,0.01819
+E3,a60e98f10276_IMG-20250527-WA0279.jpg,cocoa pod,healthy,diseased,unknown:plausible,high,0.02059
+E3,b18a2bc04ac0_RXBM0251.JPG,cocoa pod,healthy,healthy,unknown:compatible,high,0.02517
+E4,d93ade13ec47_WhatsApp Image 2025-05-28 at 10.37.38.jpeg,Leaves-Adults,diseased,diseased,unknown:plausible,high,0.02237
+E4,35e980c196fd_IMG-20250527-WA0199.jpg,Leaves-Adults,diseased,healthy,,standard,0.02403
+E4,d3ccd734e74a_IMG_20250527_100254_392~2.jpg,Leaves-Adults,diseased,diseased,cssvd:plausible;unknown:plausible,elevated,0.02793
+E4,ee12e18d379d_IMG-20250527-WA0309.jpg,Leaves-Adults,diseased,healthy,,standard,0.02082
+E4,e8e3eacafb0e_20250530_105439.jpg,Leaves-Adults,diseased,diseased,unknown:plausible,high,0.02927
+E4,a479d2290298_WhatsApp Image 2025-05-28 at 10.26.25 (5).jpeg,Leaves-Adults,diseased,diseased,cssvd:plausible;unknown:plausible,elevated,0.03213
+E4,17fb2926bc28_20250527_104427.jpg,Leaves-Adults,diseased,diseased,,elevated,0.02773
+E4,69e8eb706d97_IMG_E7262.JPG,Leaves-Adults,diseased,diseased,unknown:plausible,high,0.02813
+E4,df7f3b24ea40_WhatsApp Image 2025-05-28 at 10.25.19 (10).jpeg,Leaves-Adults,diseased,healthy,,standard,0.02555
+E4,6d3274fb4c0f_OTCH9324.JPG,Leaves-Adults,diseased,healthy,,standard,0.02718
+E4,bcb7783de740_IMG-20250527-WA0211.jpg,Leaves-Adults,healthy,healthy,,standard,0.01848
+E4,03361083d478_IMG-20250527-WA0252.jpg,Leaves-Adults,healthy,healthy,,standard,0.01635
+E4,239e4be3d9dd_IMG-20250527-WA0174.jpg,Leaves-Adults,healthy,diseased,unknown:plausible,high,0.02649
+E4,c266d8414546_20250530_111937.jpg,Leaves-Adults,healthy,diseased,unknown:plausible,high,0.02632
+E4,858be92e9861_20250527_103721.jpg,Leaves-Adults,healthy,diseased,,elevated,0.02528
+E4,34ac5e67340d_IMG-20250527-WA0188.jpg,Leaves-Adults,healthy,diseased,unknown:compatible,high,0.021
+E4,143965058268_IMG-20250527-WA0251.jpg,Leaves-Adults,healthy,healthy,,standard,0.01623
+E4,6baee52bf3d2_IMG-20250527-WA0141.jpg,Leaves-Adults,healthy,healthy,,standard,0.02553
+E4,95cc8e224615_IMG-20250527-WA0200.jpg,Leaves-Adults,healthy,diseased,unknown:plausible;unknown:plausible,high,0.03163
+E4,2f0c0db9c320_MQJK7408.JPG,Leaves-Adults,healthy,healthy,unknown:compatible,high,0.02391
+E4,393b0ca5c676_IMG_E7283.JPG,Leaves-Young,diseased,diseased,cssvd:plausible,elevated,0.02979
+E4,a99231dc6cf8_20250530_104850.jpg,Leaves-Young,diseased,diseased,unknown:compatible;cssvd:plausible,high,0.02402
+E4,04af24e425c0_WhatsApp Image 2025-05-27 à 19.40.05_0ad9c30f.jpg,Leaves-Young,diseased,healthy,,standard,0.02535
+E4,c7dfcc926b70_TZZP1804.JPG,Leaves-Young,diseased,healthy,,standard,0.03034
+E4,e15334fee1a8_IMG_E7271.JPG,Leaves-Young,diseased,diseased,cssvd:plausible;unknown:plausible,elevated,0.02886
+E4,7d079a2f588d_20250530_111506.jpg,Leaves-Young,diseased,diseased,cssvd:compatible;unknown:plausible,standard,0.03022
+E4,658809b086fc_IMG_E7293.JPG,Leaves-Young,diseased,healthy,,standard,0.02811
+E4,b08ee31b3deb_WhatsApp Image 2025-05-28 at 10.25.19 (2).jpeg,Leaves-Young,diseased,diseased,cssvd:plausible;unknown:plausible,elevated,0.02724
+E4,8ff7debf75ac_IMG_7311.JPG,Leaves-Young,diseased,diseased,cssvd:compatible,standard,0.02971
+E4,1063e4a1dd87_WhatsApp Image 2025-05-27 à 19.40.05_559e8561.jpg,Leaves-Young,diseased,healthy,,standard,0.02778
+E4,50e268be1b35_IMG-20250527-WA0097.jpg,Leaves-Young,healthy,healthy,,standard,0.02644
+E4,014f382dee2f_IMG_20250527_104356_394~3.jpg,Leaves-Young,healthy,diseased,,elevated,0.02674
+E4,a8f9f43884b7_Feuilles _ jeunes _ saines (53).jpg,Leaves-Young,healthy,healthy,,standard,0.02331
+E4,4bbe04ab170d_WhatsApp Image 2025-05-28 at 10.25.20.jpeg,Leaves-Young,healthy,diseased,unknown:plausible,high,0.02642
+E4,6dc6f16238df_IMG_20250527_115705_189~2.jpg,Leaves-Young,healthy,healthy,,standard,0.02573
+E4,0913aa634030_20250530_102559.jpg,Leaves-Young,healthy,healthy,unknown:compatible,high,0.02395
+E4,ad8639a2e22a_IMG_20250527_103800_618~2.jpg,Leaves-Young,healthy,healthy,,standard,0.0292
+E4,3bfb42c88a2b_SREB3653.JPG,Leaves-Young,healthy,diseased,,elevated,0.02422
+E4,fbf6ed843b54_Feuilles _ jeunes _ saines (49).jpg,Leaves-Young,healthy,healthy,,standard,0.02457
+E4,09657f16658b_Feuilles _ jeunes _ saines (50).jpg,Leaves-Young,healthy,healthy,,standard,0.02558
+E4,607926bd5398_CXPQ5851.JPG,Trees,diseased,abstain,,insufficient_data,0.01793
+E4,c7d709561982_IMG-20250527-WA0428.jpg,Trees,diseased,diseased,unknown:compatible;mirids:plausible,high,0.0282
+E4,b14975a97f12_IMG-20250527-WA0400.jpg,Trees,diseased,diseased,unknown:compatible;mirids:plausible,high,0.02444
+E4,53478ce2b377_IMG-20250527-WA0435.jpg,Trees,diseased,diseased,mirids:plausible;unknown:plausible,elevated,0.02234
+E4,3bd0d45db9bc_GQYE9603.JPG,Trees,diseased,diseased,mirids:plausible,standard,0.02203
+E4,50926ec218a3_CIIA9558.JPG,Trees,diseased,diseased,mirids:plausible,elevated,0.02119
+E4,45786245553f_BZNZ9028.JPG,Trees,diseased,diseased,mirids:plausible,elevated,0.03061
+E4,ab7330b3b79b_BNYQ7741.JPG,Trees,diseased,diseased,mirids:plausible,standard,0.02035
+E4,576101bfe32a_RYNO6749.JPG,Trees,diseased,healthy,,standard,0.02806
+E4,c307312b66c7_IMG-20250527-WA0431.jpg,Trees,diseased,diseased,unknown:compatible;mirids:plausible,high,0.03064
+E4,25ef859c480f_IMG-20250527-WA0017.jpg,Trees,healthy,healthy,,standard,0.02843
+E4,f32b46307367_IMG-20250527-WA0029.jpg,Trees,healthy,diseased,,elevated,0.02919
+E4,80526c4a88fe_EFIY6101.JPG,Trees,healthy,healthy,,standard,0.02418
+E4,964b773901af_KFZL8515.JPG,Trees,healthy,healthy,,standard,0.02082
+E4,b315e385c699_IMG-20250527-WA0036.jpg,Trees,healthy,healthy,,standard,0.01887
+E4,5a251488c861_IMG-20250527-WA0028.jpg,Trees,healthy,diseased,black_pod:plausible;unknown:plausible,elevated,0.02671
+E4,cd759fdcf09b_IMG-20250527-WA0018.jpg,Trees,healthy,healthy,,standard,0.02069
+E4,5601a5ec5b57_IMG-20250527-WA0034.jpg,Trees,healthy,healthy,,standard,0.01765
+E4,05268af8fe70_HVZJ7984.JPG,Trees,healthy,diseased,,elevated,0.02112
+E4,793ccea83f0f_IMG-20250527-WA0031.jpg,Trees,healthy,healthy,,standard,0.02499
+E4,a91297d8166d_NUMI9413.JPG,cocoa pod,diseased,diseased,mirids:plausible,standard,0.02618
+E4,1bc930c74e76_AWIE6939.JPG,cocoa pod,diseased,diseased,mirids:plausible,elevated,0.02918
+E4,201a407ee6d2_NETQ0419.JPG,cocoa pod,diseased,diseased,mirids:plausible;unknown:plausible,elevated,0.04018
+E4,31a1a00ad99e_QMQK5035.JPG,cocoa pod,diseased,diseased,mirids:plausible,standard,0.02937
+E4,e8ae2bb21d48_SUAD4980.JPG,cocoa pod,diseased,diseased,mirids:plausible,standard,0.03237
+E4,051c64f0353d_HGGS5740.JPG,cocoa pod,diseased,diseased,mirids:plausible,standard,0.01984
+E4,fefb6d590415_RNPN2445.JPG,cocoa pod,diseased,diseased,mirids:plausible,elevated,0.02878
+E4,738de50bc3a5_AWUA9941.JPG,cocoa pod,diseased,diseased,,elevated,0.02895
+E4,3ace14273bd3_WhatsApp Image 2025-05-28 at 10.26.26 (1).jpeg,cocoa pod,diseased,diseased,mirids:plausible;unknown:plausible,elevated,0.03006
+E4,de69dd80996c_UPTO0240.JPG,cocoa pod,diseased,diseased,unknown:plausible;mirids:plausible,high,0.04121
+E4,cd10a87dc293_IMG-20250527-WA0282.jpg,cocoa pod,healthy,diseased,mirids:plausible,standard,0.02871
+E4,68d47079ab0f_WhatsApp Image 2025-05-28 at 10.26.59 (2).jpeg,cocoa pod,healthy,healthy,,standard,0.02836
+E4,48480f70da23_KEVK9749.JPG,cocoa pod,healthy,diseased,mirids:plausible,standard,0.02455
+E4,1cb699f8d614_IMG-20250527-WA0277.jpg,cocoa pod,healthy,diseased,mirids:plausible,elevated,0.02979
+E4,4c1837b374f1_MXPC0950.JPG,cocoa pod,healthy,healthy,,standard,0.02701
+E4,5efa6dae075d_IMG-20250527-WA0274.jpg,cocoa pod,healthy,diseased,mirids:plausible,standard,0.02511
+E4,cf508e48af59_WhatsApp Image 2025-05-28 at 10.26.57 (5).jpeg,cocoa pod,healthy,healthy,,standard,0.02428
+E4,c15497e52ae5_WWNX1813.JPG,cocoa pod,healthy,diseased,mirids:plausible,standard,0.03241
+E4,a60e98f10276_IMG-20250527-WA0279.jpg,cocoa pod,healthy,diseased,mirids:plausible,standard,0.02439
+E4,b18a2bc04ac0_RXBM0251.JPG,cocoa pod,healthy,healthy,,standard,0.02709

@@ -71,4 +71,9 @@ Lecture prudente :
 - Aucune règle de contradiction déterministe ne s'est déclenchée (contexte proxy avec météo « normale ») : la métrique
   « contradictions ignorées » n'est pas évaluable ici.
 
-Prochaine étape recommandée : ~80 images (10 par strate) et ≥ 2 répétitions par condition, puis test de McNemar E0 vs E4.
+## Résultats — évaluation n°2 (80 images, 2 novembre 2026, coût réel 7,77 $)
+Rapport complet : `experiments/reports/ablation_80_20261102/REPORT.md`.
+Accuracy : E0 0,58 · E1 0,61 · E2 0,67 · E3 0,61 · E4 0,67. McNemar exact vs E0 : p = 0,77 / 0,065 / 0,75 / 0,14 →
+**aucune différence significative**. Forte tendance aux faux positifs sur plantes saines. E4 : meilleur macro-F1 (0,67),
+meilleur rappel des sains (0,58), seul cas où CSSVD est identifié (17,5 % des malades). Le gain brut d'E2 ne peut pas être
+causal (satellite d'un lieu proxy). Conclusion : il faut des photos de terrain géolocalisées pour évaluer la fusion.

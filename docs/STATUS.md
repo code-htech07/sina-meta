@@ -49,13 +49,14 @@
 - Base de connaissances : fiches anthracnose et chérelles de fiabilité faible ; sources CNRA/ANADER à ajouter.
 - Prompts SAM choisis sur 3 images seulement.
 
-## ESSAI D'ABLATION RÉALISÉ
+## ÉVALUATIONS RÉALISÉES
+- Évaluation 80 images (7,77 $) : aucun écart significatif entre E0 et E1–E4 ; E4 meilleur macro-F1 ; faux positifs fréquents ; voir `experiments/reports/ablation_80_20261102/REPORT.md`.
+- Essai 8 images :
 Run 20261031-155838 (8 images, 0,78 $) — résultats et limites : `docs/EVALUATION_PROTOCOL.md`.
 
 ## EN ATTENTE D'ACCORD
 | Élément | Raison | Estimation |
 |---|---|---|
-| Ablation E0–E4 à plus grande échelle | Dépense | 80 images × 5 ≈ 8 $ (coût mesuré : ~0,02 $ par appel sans SAM) |
 | Interface en ligne | Clics du porteur sur Streamlit Community Cloud (préparé : mot de passe, plafond, démo) | voir `docs/DEPLOYMENT.md` §6 |
 
 ## NON COMMENCÉ
@@ -64,4 +65,6 @@ Run 20261031-155838 (8 images, 0,78 $) — résultats et limites : `docs/EVALUAT
 - Conversion HEIC/DNG du dataset ; prise en charge de polygones de parcelle dans l'UI.
 
 ## PROCHAINE ACTION
-Avec l'accord du porteur : ablation E0–E4 sur les 8 images du dépôt (~1,2 $), puis sur ~80 images (~12 $).
+1. Fusionner la PR #1 dans `main`, puis faire suivre `main` à l'application Streamlit.
+2. Collecter des photos de terrain **géolocalisées** (avec CNRA/ANADER/coopératives) pour évaluer réellement la fusion météo/satellite.
+3. Réduire les faux positifs (prompt : critères explicites de « aucun problème visible ») et mesurer la variabilité (répétitions).

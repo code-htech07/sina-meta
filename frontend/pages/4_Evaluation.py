@@ -33,7 +33,8 @@ else:
     st.info("Audit non exécuté : `python scripts/run_dataset_audit.py`.")
 
 st.subheader("Ablation E0–E4")
-runs = sorted((ROOT / "experiments" / "ablation" / "runs").glob("*/summary.json"), reverse=True)
+runs = sorted(list((ROOT / "experiments" / "reports").glob("ablation*/summary.json"))
+              + list((ROOT / "experiments" / "ablation" / "runs").glob("*/summary.json")), key=lambda p: p.parent.name, reverse=True)
 if not runs:
     st.warning("Aucun run d'ablation disponible. Il nécessite la clé Meta : "
                "`python scripts/run_ablation.py --manifest ... --proxy-lat ... --proxy-lon ... --fallback-date ...`")
@@ -50,5 +51,12 @@ for k, v in summary["experiments"].items():
                  "contradictions ignorées": q.get("contradictions_ignored_by_model_rate"),
                  "latence moy. (ms)": cost.get("pipeline_latency_ms_mean"), "coût/analyse ($)": cost.get("estimated_cost_usd_per_analysis")})
 st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")
+if summary.get("paired_tests_mcnemar_exact"):
+    st.markdown("**Tests appariés (McNemar exact, vs E0)** — p < 0,05 requis pour conclure")
+    st.dataframe(pd.DataFrame(summary["paired_tests_mcnemar_exact"]).T, width="stretch")
+report_md = run.parent / "REPORT.md"
+if report_md.exists():
+    with st.expander("Rapport et interprétation"):
+        st.markdown(report_md.read_text(encoding="utf-8"))
 st.json({k: summary[k] for k in ("n_samples", "label_distribution", "muse_model", "prompt_version", "context_location",
                                   "context_location_is_proxy", "limitations")}, expanded=False)
