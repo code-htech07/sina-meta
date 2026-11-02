@@ -33,6 +33,7 @@ def main() -> int:
     ap.add_argument("--fallback-date", type=date.fromisoformat, required=True)
     ap.add_argument("--limit", type=int)
     ap.add_argument("--yes", action="store_true")
+    ap.add_argument("--workers", type=int, default=1, help="parallel analyses (API rate limit: 3000 req/min)")
     args = ap.parse_args()
     setup_logging("WARNING")
     if describe_secret_status()["auth_mode"] == "none":
@@ -45,7 +46,8 @@ def main() -> int:
     print(f"{n} images x {len(exps)} expériences = {n * len(exps)} appels Muse Spark (coût estimé ~{est:.2f} USD max).")
     if not args.yes and input("Continuer ? [o/N] ").strip().lower() not in ("o", "y", "oui", "yes"):
         return 1
-    summary = run_ablation(args.manifest, exps, args.proxy_lat, args.proxy_lon, args.fallback_date, args.limit)
+    summary = run_ablation(args.manifest, exps, args.proxy_lat, args.proxy_lon, args.fallback_date, args.limit,
+                           workers=args.workers)
     print(json.dumps({k: v["classification"] for k, v in summary["experiments"].items()}, indent=1, ensure_ascii=False))
     print(f"Résultats : experiments/ablation/runs/{summary['run_id']}/")
     return 0
