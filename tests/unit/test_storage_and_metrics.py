@@ -56,3 +56,11 @@ def test_date_from_filename():
     assert date_from_filename("IMG-20250527-WA0223.jpg") == date(2025, 5, 27)
     assert date_from_filename("WhatsApp Image 2025-05-28 at 10.25.54 (2).jpeg") == date(2025, 5, 28)
     assert date_from_filename("GTWX0674.JPG") is None
+
+
+def test_mcnemar_exact():
+    from engine.evaluation.metrics import mcnemar_exact
+
+    r = mcnemar_exact([True] * 10 + [False] * 0, [False] * 10)
+    assert r["a_only_correct"] == 10 and r["p_value"] == round(2 / 2 ** 10, 4)
+    assert mcnemar_exact([True, False], [True, False])["p_value"] == 1.0

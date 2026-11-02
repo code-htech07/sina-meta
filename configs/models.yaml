@@ -5,6 +5,10 @@
 meta_api:
   base_url: https://api.meta.ai/v1
   api_key_env: [MODEL_API_KEY, META_API_KEY]   # first non-empty wins; Kaggle secret with same name also read
+  # When no key is visible to the code, send requests WITHOUT an Authorization header and let the
+  # Claude Code cloud network proxy inject it ("Network secrets" > Bearer, host api.meta.ai).
+  # The key then never exists in the process. A 401 means no secret is configured for the host.
+  allow_proxy_injected_auth: true
   timeout_s: 240
   max_retries: 2
 
@@ -12,7 +16,8 @@ muse_spark:
   model: muse-spark-1.3          # listed on /docs/models (vision input: yes). Override: MAANA_MUSE_MODEL
   reasoning_effort: medium       # Responses API: {"reasoning": {"effort": ...}}
   max_output_tokens: 8000
-  structured_output: true        # text.format = json_schema (strict=false; validated locally with Pydantic)
+  structured_output: true        # text.format = json_schema, always re-validated locally with Pydantic (extra keys forbidden)
+  strict_schema: true            # strict=true: live test showed corrupted keys ("hypotheses_foo") with strict=false
   temperature: null              # null => API default
 
 sam:
@@ -21,11 +26,11 @@ sam:
   mask_encoding: one_bit         # "lossless" (default, '~') or "one_bit" ('!')
   include_confidence: true       # metadata.include_confidence = "true" (string)
   # Short noun phrases (SAM 3.x concept prompts). SAM localises; it does NOT diagnose.
-  prompts:
-    - cocoa pod
-    - leaf
-    - brown lesion
-    - dark spot
+  # Chosen from a live benchmark (experiments/reports/sam_prompt_benchmark.md, 2026-10-31):
+  # "cocoa pod", "pod", "lesion", "rot" returned no match on clear pod images; generic words work.
+  organ_prompts: [fruit, leaf]
+  anomaly_prompts: [brown spot, discolored area, hole]
+  min_region_confidence: 0.5
   max_regions_to_muse: 4         # number of ROI crops forwarded to Muse Spark
 
 # Public list prices (USD) from /docs/pricing-rate-limits, used only to ESTIMATE cost in evaluations.

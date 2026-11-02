@@ -18,6 +18,7 @@ def _isolate_env(tmp_path, monkeypatch):
     if not os.environ.get("MAANA_LIVE_TESTS"):
         monkeypatch.delenv("MODEL_API_KEY", raising=False)
         monkeypatch.delenv("META_API_KEY", raising=False)
+        monkeypatch.setenv("MAANA_META_PROXY_AUTH", "false")  # offline tests never rely on proxy-injected auth
     monkeypatch.setenv("MAANA_DB_PATH", str(tmp_path / "test.db"))
     yield
 

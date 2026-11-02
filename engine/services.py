@@ -117,10 +117,10 @@ def check_sources(timeout: float = 15.0, check_meta_models: bool = True) -> dict
 
     def meta():
         status = describe_secret_status()
-        info: dict[str, Any] = {"key_present": status["meta_api_key_present"], "muse_model": s.muse_model,
+        info: dict[str, Any] = {"auth_mode": status["auth_mode"], "muse_model": s.muse_model,
                                 "sam_model": s.sam_model, "sam_enabled": s.sam_enabled}
-        if not status["meta_api_key_present"]:
-            raise RuntimeError("MODEL_API_KEY absente")
+        if status["auth_mode"] == "none":
+            raise RuntimeError("Aucune clé Meta (ni variable, ni secret réseau)")
         if check_meta_models:
             ids = MetaModelClient(timeout_s=timeout, max_retries=0).list_models()
             info["muse_listed"] = s.muse_model in ids

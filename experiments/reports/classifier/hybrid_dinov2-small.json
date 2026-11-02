@@ -1,0 +1,325 @@
+{
+  "backbone": "dinov2-small",
+  "n": 80,
+  "trusted_parts": [
+    "Leaves-Young",
+    "Leaves-Adults",
+    "cocoa pod"
+  ],
+  "E0": {
+    "muse_alone": {
+      "n_evaluated": 80,
+      "n_errors": 0,
+      "n_answered": 79,
+      "abstention_rate": 0.0125,
+      "confusion_matrix": {
+        "healthy": {
+          "healthy": 16,
+          "diseased": 24,
+          "abstain": 0
+        },
+        "diseased": {
+          "healthy": 9,
+          "diseased": 30,
+          "abstain": 1
+        }
+      },
+      "accuracy": 0.5823,
+      "balanced_accuracy": 0.5846,
+      "per_class": {
+        "healthy": {
+          "precision": 0.64,
+          "recall": 0.4,
+          "f1": 0.4923,
+          "support": 40
+        },
+        "diseased": {
+          "precision": 0.5556,
+          "recall": 0.7692,
+          "f1": 0.6452,
+          "support": 39
+        }
+      },
+      "macro_f1": 0.5687,
+      "critical_error_rate": 0.225
+    },
+    "classifier_alone": {
+      "n_evaluated": 80,
+      "n_errors": 0,
+      "n_answered": 80,
+      "abstention_rate": 0.0,
+      "confusion_matrix": {
+        "healthy": {
+          "healthy": 37,
+          "diseased": 3,
+          "abstain": 0
+        },
+        "diseased": {
+          "healthy": 16,
+          "diseased": 24,
+          "abstain": 0
+        }
+      },
+      "accuracy": 0.7625,
+      "balanced_accuracy": 0.7625,
+      "per_class": {
+        "healthy": {
+          "precision": 0.6981,
+          "recall": 0.925,
+          "f1": 0.7957,
+          "support": 40
+        },
+        "diseased": {
+          "precision": 0.8889,
+          "recall": 0.6,
+          "f1": 0.7164,
+          "support": 40
+        }
+      },
+      "macro_f1": 0.756,
+      "critical_error_rate": 0.4
+    },
+    "H1_routing": {
+      "n_evaluated": 80,
+      "n_errors": 0,
+      "n_answered": 79,
+      "abstention_rate": 0.0125,
+      "confusion_matrix": {
+        "healthy": {
+          "healthy": 32,
+          "diseased": 8,
+          "abstain": 0
+        },
+        "diseased": {
+          "healthy": 16,
+          "diseased": 23,
+          "abstain": 1
+        }
+      },
+      "accuracy": 0.6962,
+      "balanced_accuracy": 0.6949,
+      "per_class": {
+        "healthy": {
+          "precision": 0.6667,
+          "recall": 0.8,
+          "f1": 0.7273,
+          "support": 40
+        },
+        "diseased": {
+          "precision": 0.7419,
+          "recall": 0.5897,
+          "f1": 0.6571,
+          "support": 39
+        }
+      },
+      "macro_f1": 0.6922,
+      "critical_error_rate": 0.4
+    },
+    "H2_consensus": {
+      "n_evaluated": 80,
+      "n_errors": 0,
+      "n_answered": 42,
+      "abstention_rate": 0.475,
+      "confusion_matrix": {
+        "healthy": {
+          "healthy": 16,
+          "diseased": 3,
+          "abstain": 21
+        },
+        "diseased": {
+          "healthy": 4,
+          "diseased": 19,
+          "abstain": 17
+        }
+      },
+      "accuracy": 0.8333,
+      "balanced_accuracy": 0.8341,
+      "per_class": {
+        "healthy": {
+          "precision": 0.8,
+          "recall": 0.8421,
+          "f1": 0.8205,
+          "support": 19
+        },
+        "diseased": {
+          "precision": 0.8636,
+          "recall": 0.8261,
+          "f1": 0.8444,
+          "support": 23
+        }
+      },
+      "macro_f1": 0.8325,
+      "critical_error_rate": 0.1
+    },
+    "mcnemar_H1_vs_muse": {
+      "a_only_correct": 19,
+      "b_only_correct": 10,
+      "discordant": 29,
+      "p_value": 0.136
+    },
+    "mcnemar_H1_vs_classifier": {
+      "a_only_correct": 1,
+      "b_only_correct": 7,
+      "discordant": 8,
+      "p_value": 0.0703
+    }
+  },
+  "E4": {
+    "muse_alone": {
+      "n_evaluated": 80,
+      "n_errors": 0,
+      "n_answered": 79,
+      "abstention_rate": 0.0125,
+      "confusion_matrix": {
+        "healthy": {
+          "healthy": 23,
+          "diseased": 17,
+          "abstain": 0
+        },
+        "diseased": {
+          "healthy": 9,
+          "diseased": 30,
+          "abstain": 1
+        }
+      },
+      "accuracy": 0.6709,
+      "balanced_accuracy": 0.6721,
+      "per_class": {
+        "healthy": {
+          "precision": 0.7188,
+          "recall": 0.575,
+          "f1": 0.6389,
+          "support": 40
+        },
+        "diseased": {
+          "precision": 0.6383,
+          "recall": 0.7692,
+          "f1": 0.6977,
+          "support": 39
+        }
+      },
+      "macro_f1": 0.6683,
+      "critical_error_rate": 0.225
+    },
+    "classifier_alone": {
+      "n_evaluated": 80,
+      "n_errors": 0,
+      "n_answered": 80,
+      "abstention_rate": 0.0,
+      "confusion_matrix": {
+        "healthy": {
+          "healthy": 37,
+          "diseased": 3,
+          "abstain": 0
+        },
+        "diseased": {
+          "healthy": 16,
+          "diseased": 24,
+          "abstain": 0
+        }
+      },
+      "accuracy": 0.7625,
+      "balanced_accuracy": 0.7625,
+      "per_class": {
+        "healthy": {
+          "precision": 0.6981,
+          "recall": 0.925,
+          "f1": 0.7957,
+          "support": 40
+        },
+        "diseased": {
+          "precision": 0.8889,
+          "recall": 0.6,
+          "f1": 0.7164,
+          "support": 40
+        }
+      },
+      "macro_f1": 0.756,
+      "critical_error_rate": 0.4
+    },
+    "H1_routing": {
+      "n_evaluated": 80,
+      "n_errors": 0,
+      "n_answered": 79,
+      "abstention_rate": 0.0125,
+      "confusion_matrix": {
+        "healthy": {
+          "healthy": 36,
+          "diseased": 4,
+          "abstain": 0
+        },
+        "diseased": {
+          "healthy": 14,
+          "diseased": 25,
+          "abstain": 1
+        }
+      },
+      "accuracy": 0.7722,
+      "balanced_accuracy": 0.7705,
+      "per_class": {
+        "healthy": {
+          "precision": 0.72,
+          "recall": 0.9,
+          "f1": 0.8,
+          "support": 40
+        },
+        "diseased": {
+          "precision": 0.8621,
+          "recall": 0.641,
+          "f1": 0.7353,
+          "support": 39
+        }
+      },
+      "macro_f1": 0.7676,
+      "critical_error_rate": 0.35
+    },
+    "H2_consensus": {
+      "n_evaluated": 80,
+      "n_errors": 0,
+      "n_answered": 43,
+      "abstention_rate": 0.4625,
+      "confusion_matrix": {
+        "healthy": {
+          "healthy": 21,
+          "diseased": 1,
+          "abstain": 18
+        },
+        "diseased": {
+          "healthy": 3,
+          "diseased": 18,
+          "abstain": 19
+        }
+      },
+      "accuracy": 0.907,
+      "balanced_accuracy": 0.9058,
+      "per_class": {
+        "healthy": {
+          "precision": 0.875,
+          "recall": 0.9545,
+          "f1": 0.913,
+          "support": 22
+        },
+        "diseased": {
+          "precision": 0.9474,
+          "recall": 0.8571,
+          "f1": 0.9,
+          "support": 21
+        }
+      },
+      "macro_f1": 0.9065,
+      "critical_error_rate": 0.075
+    },
+    "mcnemar_H1_vs_muse": {
+      "a_only_correct": 18,
+      "b_only_correct": 10,
+      "discordant": 28,
+      "p_value": 0.1849
+    },
+    "mcnemar_H1_vs_classifier": {
+      "a_only_correct": 4,
+      "b_only_correct": 4,
+      "discordant": 8,
+      "p_value": 1.0
+    }
+  }
+}

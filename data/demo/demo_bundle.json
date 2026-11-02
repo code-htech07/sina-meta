@@ -1,0 +1,1300 @@
+{
+ "_note": "Real analysis recorded with the live Meta Model API; exported by scripts/export_demo.py. Demo image belongs to the classifier TRAINING set: illustrative only, not a performance measure.",
+ "parcel": {
+  "name": "Démo — Soubré (coordonnées de démonstration)",
+  "latitude": 5.7,
+  "longitude": -6.7,
+  "crop": "cocoa",
+  "polygon_geojson": null,
+  "planting_year": 2012,
+  "variety": null,
+  "area_ha": null,
+  "notes": "Parcelle fictive de démonstration ; photo CocoaSwolSet (CC BY 4.0) non prise à cet endroit.",
+  "id": "parcel_a6f95cb2b00b",
+  "created_at": "2026-11-02T16:19:04.426148Z"
+ },
+ "observation": {
+  "parcel_id": "parcel_a6f95cb2b00b",
+  "observation_date": "2026-10-28",
+  "plant_part": "young_leaf",
+  "farmer_symptoms": "Taches brunes sur plusieurs cabosses, certaines avec des trous",
+  "farmer_notes": null,
+  "id": "obs_61b18d8e93e9",
+  "created_at": "2026-11-02T16:19:04.442949Z",
+  "images": [
+   {
+    "image_id": "img_9a1050067aab",
+    "path": "data/demo/img_9a1050067aab.jpg",
+    "sha256": "7cf427ee9bcbce107fa03a57a079008fce17aba5947dc5a8a4a620f72cbfd61f",
+    "width": 750,
+    "height": 1000,
+    "format": "JPEG",
+    "capture_date": null,
+    "exif_latitude": null,
+    "exif_longitude": null,
+    "crop": "cocoa",
+    "plant_part": "young_leaf",
+    "source": "user_upload",
+    "licence": null,
+    "attribution": null
+   }
+  ]
+ },
+ "analysis": {
+  "schema_version": "1.0",
+  "analysis_id": "ana_2ab1163f4c31",
+  "parcel_id": "parcel_a6f95cb2b00b",
+  "observation_id": "obs_61b18d8e93e9",
+  "created_at": "2026-11-02T16:19:04.470537Z",
+  "experiment": {
+   "name": "full",
+   "use_weather": true,
+   "use_satellite": true,
+   "use_knowledge_base": true,
+   "use_segmentation": true,
+   "use_farmer_input": true,
+   "use_classifier": true
+  },
+  "status": "completed",
+  "failure_reason": null,
+  "image_quality": [
+   {
+    "image_id": "img_9a1050067aab",
+    "width": 750,
+    "height": 1000,
+    "laplacian_variance": 201.49,
+    "mean_brightness": 155.54,
+    "clipped_fraction": 0.0,
+    "issues": [],
+    "usable": true,
+    "retake_advice": [],
+    "provenance": {
+     "source": "Maana Terra image QC (Pillow/NumPy)",
+     "kind": "image_measurement",
+     "url": null,
+     "retrieved_at": "2026-11-02T16:19:04.489544Z",
+     "period_start": null,
+     "period_end": null,
+     "latitude": null,
+     "longitude": null,
+     "spatial_resolution": null,
+     "notes": "Seuils heuristiques définis dans configs/settings.yaml (non issus de la littérature)."
+    }
+   }
+  ],
+  "image_assessment": {
+   "is_cocoa": "yes",
+   "plant_part_detected": "young_leaf",
+   "image_usable": true,
+   "usability_issues": []
+  },
+  "overall_assessment": "abnormality_detected",
+  "visual_observations": [
+   {
+    "description": "Feuille jeune isolée posée sur carnet blanc, limbe entier lancéolé vert olive à vert jaunâtre avec réseau diffus de coloration rouge-brun à bronze suivant les nervures secondaires et le réseau internervaire, présent des deux côtés de la nervure centrale sur tout le limbe.",
+    "plant_part": "young_leaf",
+    "location_in_image": "centre de l'image, occupant la majeure partie du cadre vertical",
+    "extent": "widespread"
+   },
+   {
+    "description": "Petites pertes de matière marginale : encoche sur bord droit vers tiers inférieur et irrégularité à la pointe, sans grande nécrose ni lésion ponctuelle multiple évidente.",
+    "plant_part": "young_leaf",
+    "location_in_image": "bord droit et apex de la feuille au centre-bas",
+    "extent": "localized"
+   }
+  ],
+  "segmentation": {
+   "status": "ok",
+   "model": "sam-3.1",
+   "regions": [
+    {
+     "image_id": "img_9a1050067aab",
+     "prompt": "leaf",
+     "object_id": "leaf#0",
+     "bbox_xyxy": [
+      50.0,
+      152.0,
+      102.0,
+      183.0
+     ],
+     "image_width": 750,
+     "image_height": 1000,
+     "mask_area_px": 928,
+     "mask_area_fraction": 0.00124,
+     "box_confidence": 0.7460317611694336,
+     "mask_confidence": 0.7460317611694336,
+     "crop_path": "data/demo/roi0.jpg",
+     "overlay_path": "data/demo/sam_overlay.png"
+    },
+    {
+     "image_id": "img_9a1050067aab",
+     "prompt": "leaf",
+     "object_id": "leaf#1",
+     "bbox_xyxy": [
+      0.0,
+      769.0,
+      16.0,
+      829.0
+     ],
+     "image_width": 750,
+     "image_height": 1000,
+     "mask_area_px": 713,
+     "mask_area_fraction": 0.00095,
+     "box_confidence": 0.7064220309257507,
+     "mask_confidence": 0.7064220309257507,
+     "crop_path": "data/demo/roi1.jpg",
+     "overlay_path": "data/demo/sam_overlay.png"
+    },
+    {
+     "image_id": "img_9a1050067aab",
+     "prompt": "leaf",
+     "object_id": "leaf#2",
+     "bbox_xyxy": [
+      12.0,
+      141.0,
+      82.0,
+      180.0
+     ],
+     "image_width": 750,
+     "image_height": 1000,
+     "mask_area_px": 1375,
+     "mask_area_fraction": 0.00183,
+     "box_confidence": 0.7299578189849854,
+     "mask_confidence": 0.7299578189849854,
+     "crop_path": "data/demo/roi2.jpg",
+     "overlay_path": "data/demo/sam_overlay.png"
+    },
+    {
+     "image_id": "img_9a1050067aab",
+     "prompt": "leaf",
+     "object_id": "leaf#3",
+     "bbox_xyxy": [
+      33.0,
+      97.0,
+      154.0,
+      144.0
+     ],
+     "image_width": 750,
+     "image_height": 1000,
+     "mask_area_px": 3119,
+     "mask_area_fraction": 0.00416,
+     "box_confidence": 0.8012422323226929,
+     "mask_confidence": 0.8012422323226929,
+     "crop_path": "data/demo/roi3.jpg",
+     "overlay_path": "data/demo/sam_overlay.png"
+    },
+    {
+     "image_id": "img_9a1050067aab",
+     "prompt": "leaf",
+     "object_id": "leaf#4",
+     "bbox_xyxy": [
+      202.0,
+      141.0,
+      541.0,
+      1000.0
+     ],
+     "image_width": 750,
+     "image_height": 1000,
+     "mask_area_px": 180755,
+     "mask_area_fraction": 0.24101,
+     "box_confidence": 0.9804878830909729,
+     "mask_confidence": 0.9804878830909729,
+     "crop_path": "data/demo/roi4.jpg",
+     "overlay_path": "data/demo/sam_overlay.png"
+    },
+    {
+     "image_id": "img_9a1050067aab",
+     "prompt": "leaf",
+     "object_id": "leaf#5",
+     "bbox_xyxy": [
+      217.0,
+      985.0,
+      240.0,
+      1000.0
+     ],
+     "image_width": 750,
+     "image_height": 1000,
+     "mask_area_px": 227,
+     "mask_area_fraction": 0.0003,
+     "box_confidence": 0.5241636037826538,
+     "mask_confidence": 0.5241636037826538,
+     "crop_path": "data/demo/roi5.jpg",
+     "overlay_path": "data/demo/sam_overlay.png"
+    },
+    {
+     "image_id": "img_9a1050067aab",
+     "prompt": "leaf",
+     "object_id": "leaf#6",
+     "bbox_xyxy": [
+      0.0,
+      74.0,
+      37.0,
+      136.0
+     ],
+     "image_width": 750,
+     "image_height": 1000,
+     "mask_area_px": 1823,
+     "mask_area_fraction": 0.00243,
+     "box_confidence": 0.8750000596046448,
+     "mask_confidence": 0.8750000596046448,
+     "crop_path": "data/demo/roi6.jpg",
+     "overlay_path": "data/demo/sam_overlay.png"
+    },
+    {
+     "image_id": "img_9a1050067aab",
+     "prompt": "discolored area",
+     "object_id": "discolored area#0",
+     "bbox_xyxy": [
+      202.0,
+      183.0,
+      540.0,
+      1000.0
+     ],
+     "image_width": 750,
+     "image_height": 1000,
+     "mask_area_px": 179403,
+     "mask_area_fraction": 0.2392,
+     "box_confidence": 0.6831682920455933,
+     "mask_confidence": 0.6831682920455933,
+     "crop_path": "data/demo/roi7.jpg",
+     "overlay_path": "data/demo/sam_overlay.png"
+    }
+   ],
+   "diagnostics": [],
+   "error": null,
+   "latency_ms": 12804.362857000342
+  },
+  "classifier": {
+   "status": "ok",
+   "model_version": "dinov2-small-lr-20261102",
+   "probability_cssvd_like": 0.8633,
+   "decision": "cssvd_like",
+   "reason": "Probabilité hors de la zone d'incertitude.",
+   "in_domain": true,
+   "trusted_for_part": true,
+   "nearest_train_similarity": 0.9982,
+   "test_metrics": {
+    "n": 407,
+    "accuracy": 0.8894,
+    "accuracy_ci95": [
+     0.8575,
+     0.9165
+    ],
+    "balanced_accuracy": 0.8809,
+    "balanced_accuracy_ci95": [
+     0.8475,
+     0.912
+    ],
+    "roc_auc": 0.9461,
+    "recall_cssvd": 0.8101,
+    "recall_healthy": 0.9518,
+    "with_abstention": {
+     "coverage": 0.9484,
+     "selective_accuracy": 0.9119,
+     "selective_balanced_accuracy": 0.9025,
+     "selective_false_healthy_rate": 0.1677
+    }
+   },
+   "error": null,
+   "latency_ms": 573.7
+  },
+  "consensus": {
+   "classifier_view": "cssvd_like",
+   "muse_view": "abnormality_detected",
+   "final": "anomaly_likely",
+   "agreement": true,
+   "explanation": "Le classifieur spécialisé et Muse Spark concordent (règle de consensus H2 : ≈ 91 % de bonnes réponses sur les cas concordants de l'évaluation, 39/43)."
+  },
+  "primary_hypotheses": [
+   {
+    "problem_id": "cssvd",
+    "name": "Maladie du swollen shoot du cacaoyer (CSSD / CSSVD)",
+    "status": "compatible",
+    "support_level": "high",
+    "supporting_evidence": [
+     {
+      "statement": "Jeune feuille avec réseau diffus de coloration rouge-brun/bronze le long des nervures secondaires sur l'ensemble du limbe, aspect compatible avec red vein banding / bandes chlorotiques.",
+      "source_type": "image",
+      "reference_id": "img_9a1050067aab"
+     },
+     {
+      "statement": "Classifieur spécialiste CSSVD : probabilité 0,8633 d'aspect swollen-shoot-like, décision cssvd_like hors zone d'incertitude, dans son domaine d'entraînement et fiable pour cette partie de plante.",
+      "source_type": "classifier",
+      "reference_id": null
+     },
+     {
+      "statement": "Bandes rouges le long des nervures sur jeunes feuilles du flush : symptôme le plus courant, puis flecks/bandes chlorotiques, expression variable et parfois transitoire.",
+      "source_type": "knowledge_base",
+      "reference_id": "cssvd"
+     },
+     {
+      "statement": "Segmentation SAM 3.1 : zone décolorée superposée à la feuille (mask ~23,9 % image, score 0,68) et feuille#4 (~24,1 %), localisation d'une décoloration étendue sans valeur diagnostique.",
+      "source_type": "segmentation",
+      "reference_id": "discolored area#0"
+     }
+    ],
+    "contradicting_evidence": [
+     {
+      "statement": "Photo limitée à une seule feuille isolée sur carnet : aucun gonflement de tige/rameau, aucune cochenille farineuse, aucun arbre voisin visible.",
+      "source_type": "image",
+      "reference_id": "img_9a1050067aab"
+     },
+     {
+      "statement": "L'inspection visuelle seule est peu fiable : symptômes pouvant être confondus avec des carences nutritionnelles, infections latentes possibles sans symptômes.",
+      "source_type": "knowledge_base",
+      "reference_id": "cssvd"
+     },
+     {
+      "statement": "Taches brunes et trous sur cabosses déclarés par le planteur non visibles sur cette photo de feuille, ne correspondant pas aux symptômes foliaires typiques décrits.",
+      "source_type": "farmer",
+      "reference_id": null
+     }
+    ],
+    "needed_for_confirmation": [
+     "Photographier plusieurs jeunes feuilles du flush sur l'arbre et arbres voisins à la recherche de bandes rouges le long des nervures.",
+     "Rechercher gonflements des tiges, rameaux, nœuds et présence de cochenilles farineuses.",
+     "Confirmation par PCR en laboratoire et contact ANADER/CNRA service lutte swollen shoot avant tout arrachage."
+    ],
+    "rank": "primary",
+    "kb_known": true,
+    "weather_consistency": "neutral"
+   },
+   {
+    "problem_id": "unknown",
+    "name": "Trouble foliaire non viral (carence nutritionnelle ou cause physiologique à préciser)",
+    "status": "plausible",
+    "support_level": "low",
+    "supporting_evidence": [
+     {
+      "statement": "Teinte vert olive à jaunâtre diffuse du limbe pouvant aussi évoquer une chlorose internervaire non spécifique visible sur photo unique.",
+      "source_type": "image",
+      "reference_id": "img_9a1050067aab"
+     },
+     {
+      "statement": "La documentation indique que les symptômes visuels du swollen shoot peuvent être confondus avec des carences nutritionnelles.",
+      "source_type": "knowledge_base",
+      "reference_id": "cssvd"
+     }
+    ],
+    "contradicting_evidence": [
+     {
+      "statement": "Le classifieur oriente fortement vers un aspect swollen-shoot-like (0,86) et défavorise l'hypothèse d'une feuille saine ou d'un simple trouble non viral.",
+      "source_type": "classifier",
+      "reference_id": null
+     },
+     {
+      "statement": "NDVI médian 0,7223 et NDMI 0,2007 le 2026-10-28 en hausse, sans signe de dépérissement du couvert à l'échelle parcellaire.",
+      "source_type": "satellite",
+      "reference_id": null
+     }
+    ],
+    "needed_for_confirmation": [
+     "Comparer plusieurs feuilles de différents âges et arbres pour caractère homogène ou hétérogène de la chlorose.",
+     "Analyses foliaires et sol, historique fertilisation et observation de l'état hydrique du sol.",
+     "Exclure le CSSVD par inspection tiges/cochenilles et test PCR avant de conclure à une carence."
+    ],
+    "rank": "primary",
+    "kb_known": false,
+    "weather_consistency": "unknown"
+   }
+  ],
+  "alternative_hypotheses": [
+   {
+    "problem_id": "black_pod",
+    "name": "Pourriture brune des cabosses (black pod)",
+    "status": "weakly_supported",
+    "support_level": "low",
+    "supporting_evidence": [
+     {
+      "statement": "Déclaration de taches brunes sur plusieurs cabosses évocatrice d'une atteinte des fruits à vérifier au champ.",
+      "source_type": "farmer",
+      "reference_id": null
+     },
+     {
+      "statement": "Tache jaunâtre puis brune au point d'infection de la cabosse avec extension rapide brune à noire, en conditions humides et ombragées.",
+      "source_type": "knowledge_base",
+      "reference_id": "black_pod"
+     }
+    ],
+    "contradicting_evidence": [
+     {
+      "statement": "Aucune cabosse visible sur la photo : lésion brune/noire extensive, sporulation blanche ou chancre non évaluable ici.",
+      "source_type": "image",
+      "reference_id": "img_9a1050067aab"
+     },
+     {
+      "statement": "Planteur déclare taches brunes sur plusieurs cabosses, certaines avec trous : compatible dans le principe avec une atteinte des cabosses à documenter.",
+      "source_type": "farmer",
+      "reference_id": null
+     },
+     {
+      "statement": "Période très humide 30 jours : 228,4 mm, 26 jours pluvieux, HR 88,5 %, ratio vs normale 1,12, conditions fraîches et humides favorables à Phytophthora selon la base.",
+      "source_type": "weather",
+      "reference_id": null
+     }
+    ],
+    "needed_for_confirmation": [
+     "Photographier les cabosses atteintes : localisation tache, vitesse d'extension en quelques jours, présence de sporulation blanche, momification.",
+     "Rechercher chancres suintants sur tronc/branches et état d'ombrage, drainage, cabosses momifiées laissées sur arbre/sol.",
+     "Isolement / test moléculaire Phytophthora au laboratoire ex. CNRA pour identifier l'espèce."
+    ],
+    "rank": "alternative",
+    "kb_known": true,
+    "weather_consistency": "neutral"
+   }
+  ],
+  "contradictions": [
+   {
+    "description": "L'image montre une anomalie d'une jeune feuille alors que les symptômes déclarés par le planteur concernent des cabosses (taches brunes et trous) non visibles sur cette photo : deux organes différents, non évaluables ensemble.",
+    "sources_involved": [],
+    "origin": "model",
+    "rule_id": null,
+    "related_problem_id": null
+   },
+   {
+    "description": "La période très humide des 30 derniers jours (228,4 mm, 26 jours pluvieux, HR moyenne 88,5 %) est favorable à la pourriture brune des cabosses mais n'est pas un critère discriminant pour le virus du swollen shoot selon la base documentaire.",
+    "sources_involved": [],
+    "origin": "model",
+    "rule_id": null,
+    "related_problem_id": null
+   },
+   {
+    "description": "Les indices satellitaires Sentinel-2 sont stables à en hausse (NDVI +0,057, NDMI +0,106) à l'échelle de la parcelle alors que la feuille photographiée présente une anomalie : les échelles feuille versus couvert 10-20 m ne convergent pas et ne permettent pas de conclure.",
+    "sources_involved": [],
+    "origin": "model",
+    "rule_id": null,
+    "related_problem_id": null
+   }
+  ],
+  "weather_context": {
+   "status": "ok",
+   "indicators": {
+    "rain_7d_mm": 36.2,
+    "rain_14d_mm": 81.5,
+    "rain_30d_mm": 228.4,
+    "rain_60d_mm": 233.3,
+    "rainy_days_30d": 26,
+    "longest_dry_spell_30d": 2,
+    "current_dry_spell_days": 0,
+    "mean_t2m_30d_c": 25.32,
+    "max_t2m_30d_c": 31.17,
+    "min_t2m_30d_c": 20.82,
+    "mean_rh2m_30d_pct": 88.54,
+    "days_rh_ge_90_30d": 9,
+    "climatology_rain_30d_mm": 203.3,
+    "rain_30d_ratio_vs_normal": 1.12,
+    "climatology_t2m_c": 24.94,
+    "t2m_anomaly_30d_c": 0.38,
+    "valid_days": 60,
+    "missing_days": 0,
+    "last_valid_day": "2026-10-28"
+   },
+   "daily": [
+    {
+     "day": "2026-08-30",
+     "precipitation_mm": 0.28,
+     "t2m_c": 25.45,
+     "t2m_max_c": 30.59,
+     "t2m_min_c": 21.65,
+     "rh2m_pct": 84.36
+    },
+    {
+     "day": "2026-08-31",
+     "precipitation_mm": 0.19,
+     "t2m_c": 25.81,
+     "t2m_max_c": 31.32,
+     "t2m_min_c": 22.0,
+     "rh2m_pct": 83.58
+    },
+    {
+     "day": "2026-09-01",
+     "precipitation_mm": 0.4,
+     "t2m_c": 25.73,
+     "t2m_max_c": 30.58,
+     "t2m_min_c": 22.48,
+     "rh2m_pct": 84.95
+    },
+    {
+     "day": "2026-09-02",
+     "precipitation_mm": 0.41,
+     "t2m_c": 25.56,
+     "t2m_max_c": 30.07,
+     "t2m_min_c": 22.62,
+     "rh2m_pct": 84.67
+    },
+    {
+     "day": "2026-09-03",
+     "precipitation_mm": 0.15,
+     "t2m_c": 25.89,
+     "t2m_max_c": 30.71,
+     "t2m_min_c": 22.68,
+     "rh2m_pct": 84.08
+    },
+    {
+     "day": "2026-09-04",
+     "precipitation_mm": 0.18,
+     "t2m_c": 25.81,
+     "t2m_max_c": 29.98,
+     "t2m_min_c": 22.75,
+     "rh2m_pct": 84.51
+    },
+    {
+     "day": "2026-09-05",
+     "precipitation_mm": 0.2,
+     "t2m_c": 26.37,
+     "t2m_max_c": 31.67,
+     "t2m_min_c": 22.38,
+     "rh2m_pct": 82.55
+    },
+    {
+     "day": "2026-09-06",
+     "precipitation_mm": 0.19,
+     "t2m_c": 25.2,
+     "t2m_max_c": 28.2,
+     "t2m_min_c": 22.92,
+     "rh2m_pct": 86.45
+    },
+    {
+     "day": "2026-09-07",
+     "precipitation_mm": 0.09,
+     "t2m_c": 25.91,
+     "t2m_max_c": 30.83,
+     "t2m_min_c": 22.39,
+     "rh2m_pct": 83.16
+    },
+    {
+     "day": "2026-09-08",
+     "precipitation_mm": 0.16,
+     "t2m_c": 26.24,
+     "t2m_max_c": 31.84,
+     "t2m_min_c": 22.37,
+     "rh2m_pct": 82.45
+    },
+    {
+     "day": "2026-09-09",
+     "precipitation_mm": 0.35,
+     "t2m_c": 25.67,
+     "t2m_max_c": 29.62,
+     "t2m_min_c": 23.32,
+     "rh2m_pct": 84.73
+    },
+    {
+     "day": "2026-09-10",
+     "precipitation_mm": 0.25,
+     "t2m_c": 25.71,
+     "t2m_max_c": 30.53,
+     "t2m_min_c": 22.59,
+     "rh2m_pct": 83.7
+    },
+    {
+     "day": "2026-09-11",
+     "precipitation_mm": 0.24,
+     "t2m_c": 25.08,
+     "t2m_max_c": 28.92,
+     "t2m_min_c": 22.84,
+     "rh2m_pct": 85.68
+    },
+    {
+     "day": "2026-09-12",
+     "precipitation_mm": 0.31,
+     "t2m_c": 25.8,
+     "t2m_max_c": 30.93,
+     "t2m_min_c": 22.19,
+     "rh2m_pct": 83.72
+    },
+    {
+     "day": "2026-09-13",
+     "precipitation_mm": 0.3,
+     "t2m_c": 26.03,
+     "t2m_max_c": 31.22,
+     "t2m_min_c": 22.66,
+     "rh2m_pct": 82.66
+    },
+    {
+     "day": "2026-09-14",
+     "precipitation_mm": 0.31,
+     "t2m_c": 24.53,
+     "t2m_max_c": 26.99,
+     "t2m_min_c": 22.67,
+     "rh2m_pct": 88.53
+    },
+    {
+     "day": "2026-09-15",
+     "precipitation_mm": 0.05,
+     "t2m_c": 25.79,
+     "t2m_max_c": 30.85,
+     "t2m_min_c": 22.13,
+     "rh2m_pct": 82.72
+    },
+    {
+     "day": "2026-09-16",
+     "precipitation_mm": 0.08,
+     "t2m_c": 25.71,
+     "t2m_max_c": 30.44,
+     "t2m_min_c": 22.56,
+     "rh2m_pct": 83.29
+    },
+    {
+     "day": "2026-09-17",
+     "precipitation_mm": 0.05,
+     "t2m_c": 25.98,
+     "t2m_max_c": 31.14,
+     "t2m_min_c": 22.63,
+     "rh2m_pct": 81.5
+    },
+    {
+     "day": "2026-09-18",
+     "precipitation_mm": 0.04,
+     "t2m_c": 25.82,
+     "t2m_max_c": 30.68,
+     "t2m_min_c": 22.65,
+     "rh2m_pct": 81.54
+    },
+    {
+     "day": "2026-09-19",
+     "precipitation_mm": 0.03,
+     "t2m_c": 25.56,
+     "t2m_max_c": 29.88,
+     "t2m_min_c": 22.74,
+     "rh2m_pct": 80.65
+    },
+    {
+     "day": "2026-09-20",
+     "precipitation_mm": 0.05,
+     "t2m_c": 26.15,
+     "t2m_max_c": 31.56,
+     "t2m_min_c": 22.0,
+     "rh2m_pct": 79.28
+    },
+    {
+     "day": "2026-09-21",
+     "precipitation_mm": 0.07,
+     "t2m_c": 26.29,
+     "t2m_max_c": 31.73,
+     "t2m_min_c": 22.72,
+     "rh2m_pct": 79.87
+    },
+    {
+     "day": "2026-09-22",
+     "precipitation_mm": 0.07,
+     "t2m_c": 25.43,
+     "t2m_max_c": 30.03,
+     "t2m_min_c": 22.88,
+     "rh2m_pct": 82.57
+    },
+    {
+     "day": "2026-09-23",
+     "precipitation_mm": 0.09,
+     "t2m_c": 25.0,
+     "t2m_max_c": 29.01,
+     "t2m_min_c": 21.95,
+     "rh2m_pct": 82.66
+    },
+    {
+     "day": "2026-09-24",
+     "precipitation_mm": 0.09,
+     "t2m_c": 25.53,
+     "t2m_max_c": 30.87,
+     "t2m_min_c": 21.75,
+     "rh2m_pct": 82.82
+    },
+    {
+     "day": "2026-09-25",
+     "precipitation_mm": 0.1,
+     "t2m_c": 25.57,
+     "t2m_max_c": 30.42,
+     "t2m_min_c": 22.69,
+     "rh2m_pct": 82.14
+    },
+    {
+     "day": "2026-09-26",
+     "precipitation_mm": 0.09,
+     "t2m_c": 25.73,
+     "t2m_max_c": 30.92,
+     "t2m_min_c": 22.29,
+     "rh2m_pct": 80.78
+    },
+    {
+     "day": "2026-09-27",
+     "precipitation_mm": 0.1,
+     "t2m_c": 25.64,
+     "t2m_max_c": 31.15,
+     "t2m_min_c": 21.41,
+     "rh2m_pct": 78.75
+    },
+    {
+     "day": "2026-09-28",
+     "precipitation_mm": 0.02,
+     "t2m_c": 23.75,
+     "t2m_max_c": 26.27,
+     "t2m_min_c": 21.76,
+     "rh2m_pct": 79.19
+    },
+    {
+     "day": "2026-09-29",
+     "precipitation_mm": 0.02,
+     "t2m_c": 25.47,
+     "t2m_max_c": 31.08,
+     "t2m_min_c": 20.82,
+     "rh2m_pct": 78.6
+    },
+    {
+     "day": "2026-09-30",
+     "precipitation_mm": 0.05,
+     "t2m_c": 26.05,
+     "t2m_max_c": 30.73,
+     "t2m_min_c": 22.74,
+     "rh2m_pct": 82.09
+    },
+    {
+     "day": "2026-10-01",
+     "precipitation_mm": 12.45,
+     "t2m_c": 23.88,
+     "t2m_max_c": 26.76,
+     "t2m_min_c": 22.22,
+     "rh2m_pct": 92.81
+    },
+    {
+     "day": "2026-10-02",
+     "precipitation_mm": 1.13,
+     "t2m_c": 23.74,
+     "t2m_max_c": 26.94,
+     "t2m_min_c": 22.05,
+     "rh2m_pct": 88.04
+    },
+    {
+     "day": "2026-10-03",
+     "precipitation_mm": 0.75,
+     "t2m_c": 24.34,
+     "t2m_max_c": 28.36,
+     "t2m_min_c": 20.85,
+     "rh2m_pct": 84.16
+    },
+    {
+     "day": "2026-10-04",
+     "precipitation_mm": 7.85,
+     "t2m_c": 24.72,
+     "t2m_max_c": 29.44,
+     "t2m_min_c": 21.43,
+     "rh2m_pct": 87.62
+    },
+    {
+     "day": "2026-10-05",
+     "precipitation_mm": 15.86,
+     "t2m_c": 24.81,
+     "t2m_max_c": 28.34,
+     "t2m_min_c": 22.97,
+     "rh2m_pct": 90.6
+    },
+    {
+     "day": "2026-10-06",
+     "precipitation_mm": 17.7,
+     "t2m_c": 24.84,
+     "t2m_max_c": 28.65,
+     "t2m_min_c": 22.74,
+     "rh2m_pct": 90.89
+    },
+    {
+     "day": "2026-10-07",
+     "precipitation_mm": 16.42,
+     "t2m_c": 24.69,
+     "t2m_max_c": 28.45,
+     "t2m_min_c": 22.94,
+     "rh2m_pct": 91.81
+    },
+    {
+     "day": "2026-10-08",
+     "precipitation_mm": 15.72,
+     "t2m_c": 24.49,
+     "t2m_max_c": 27.7,
+     "t2m_min_c": 23.04,
+     "rh2m_pct": 92.09
+    },
+    {
+     "day": "2026-10-09",
+     "precipitation_mm": 12.99,
+     "t2m_c": 24.95,
+     "t2m_max_c": 29.71,
+     "t2m_min_c": 22.89,
+     "rh2m_pct": 89.76
+    },
+    {
+     "day": "2026-10-10",
+     "precipitation_mm": 8.12,
+     "t2m_c": 25.04,
+     "t2m_max_c": 28.66,
+     "t2m_min_c": 23.09,
+     "rh2m_pct": 90.28
+    },
+    {
+     "day": "2026-10-11",
+     "precipitation_mm": 8.13,
+     "t2m_c": 25.32,
+     "t2m_max_c": 29.27,
+     "t2m_min_c": 22.69,
+     "rh2m_pct": 90.04
+    },
+    {
+     "day": "2026-10-12",
+     "precipitation_mm": 12.0,
+     "t2m_c": 25.45,
+     "t2m_max_c": 30.05,
+     "t2m_min_c": 22.95,
+     "rh2m_pct": 89.46
+    },
+    {
+     "day": "2026-10-13",
+     "precipitation_mm": 7.91,
+     "t2m_c": 25.25,
+     "t2m_max_c": 29.47,
+     "t2m_min_c": 22.77,
+     "rh2m_pct": 89.39
+    },
+    {
+     "day": "2026-10-14",
+     "precipitation_mm": 9.79,
+     "t2m_c": 25.06,
+     "t2m_max_c": 29.22,
+     "t2m_min_c": 23.12,
+     "rh2m_pct": 90.92
+    },
+    {
+     "day": "2026-10-15",
+     "precipitation_mm": 5.52,
+     "t2m_c": 25.28,
+     "t2m_max_c": 29.23,
+     "t2m_min_c": 23.13,
+     "rh2m_pct": 90.26
+    },
+    {
+     "day": "2026-10-16",
+     "precipitation_mm": 9.68,
+     "t2m_c": 25.85,
+     "t2m_max_c": 30.12,
+     "t2m_min_c": 22.93,
+     "rh2m_pct": 88.82
+    },
+    {
+     "day": "2026-10-17",
+     "precipitation_mm": 5.34,
+     "t2m_c": 25.9,
+     "t2m_max_c": 30.33,
+     "t2m_min_c": 23.04,
+     "rh2m_pct": 88.26
+    },
+    {
+     "day": "2026-10-18",
+     "precipitation_mm": 5.42,
+     "t2m_c": 25.92,
+     "t2m_max_c": 30.39,
+     "t2m_min_c": 23.6,
+     "rh2m_pct": 87.5
+    },
+    {
+     "day": "2026-10-19",
+     "precipitation_mm": 3.61,
+     "t2m_c": 25.57,
+     "t2m_max_c": 29.16,
+     "t2m_min_c": 23.34,
+     "rh2m_pct": 89.75
+    },
+    {
+     "day": "2026-10-20",
+     "precipitation_mm": 7.15,
+     "t2m_c": 25.84,
+     "t2m_max_c": 30.06,
+     "t2m_min_c": 23.09,
+     "rh2m_pct": 89.16
+    },
+    {
+     "day": "2026-10-21",
+     "precipitation_mm": 8.63,
+     "t2m_c": 25.77,
+     "t2m_max_c": 30.19,
+     "t2m_min_c": 23.2,
+     "rh2m_pct": 89.37
+    },
+    {
+     "day": "2026-10-22",
+     "precipitation_mm": 1.97,
+     "t2m_c": 25.92,
+     "t2m_max_c": 30.39,
+     "t2m_min_c": 22.74,
+     "rh2m_pct": 87.25
+    },
+    {
+     "day": "2026-10-23",
+     "precipitation_mm": 4.78,
+     "t2m_c": 25.88,
+     "t2m_max_c": 30.07,
+     "t2m_min_c": 23.28,
+     "rh2m_pct": 89.0
+    },
+    {
+     "day": "2026-10-24",
+     "precipitation_mm": 8.72,
+     "t2m_c": 25.72,
+     "t2m_max_c": 29.85,
+     "t2m_min_c": 23.18,
+     "rh2m_pct": 89.03
+    },
+    {
+     "day": "2026-10-25",
+     "precipitation_mm": 0.85,
+     "t2m_c": 26.3,
+     "t2m_max_c": 31.17,
+     "t2m_min_c": 23.15,
+     "rh2m_pct": 86.48
+    },
+    {
+     "day": "2026-10-26",
+     "precipitation_mm": 1.27,
+     "t2m_c": 26.08,
+     "t2m_max_c": 30.62,
+     "t2m_min_c": 23.39,
+     "rh2m_pct": 87.39
+    },
+    {
+     "day": "2026-10-27",
+     "precipitation_mm": 4.56,
+     "t2m_c": 25.95,
+     "t2m_max_c": 30.13,
+     "t2m_min_c": 23.06,
+     "rh2m_pct": 86.64
+    },
+    {
+     "day": "2026-10-28",
+     "precipitation_mm": 14.02,
+     "t2m_c": 25.52,
+     "t2m_max_c": 30.32,
+     "t2m_min_c": 22.82,
+     "rh2m_pct": 88.79
+    }
+   ],
+   "units": {
+    "precipitation_mm": "mm/day",
+    "t2m_c": "°C",
+    "t2m_max_c": "°C",
+    "t2m_min_c": "°C",
+    "rh2m_pct": "%"
+   },
+   "provenance": {
+    "source": "NASA POWER Daily API (community AG)",
+    "kind": "modelled_estimate",
+    "url": "https://power.larc.nasa.gov/docs/services/api/temporal/daily/",
+    "retrieved_at": "2026-11-02T16:19:18.024683Z",
+    "period_start": "2026-08-30",
+    "period_end": "2026-10-28",
+    "latitude": 5.7,
+    "longitude": -6.7,
+    "spatial_resolution": "~0.5° x 0.625° (météorologie MERRA-2)",
+    "notes": null
+   },
+   "limitations": [
+    "Données NASA POWER : estimations maillées (résolution ~0,5° x 0,625° pour la météo), pas des mesures sur la parcelle.",
+    "Les derniers jours peuvent être absents (latence de traitement) ; ils sont signalés comme manquants.",
+    "La pluviométrie locale sous couvert agroforestier peut différer fortement de la valeur de maille."
+   ],
+   "error": null
+  },
+  "satellite_context": {
+   "status": "ok",
+   "scenes": [
+    {
+     "scene_id": "S2A_29NQG_20260915_0_L2A",
+     "acquired": "2026-09-15T10:59:51.303000Z",
+     "scene_cloud_cover": 78.355479,
+     "valid_pixel_fraction": 0.0,
+     "ndvi_median": null,
+     "ndmi_median": null,
+     "n_pixels": 132,
+     "usable": false,
+     "note": "Trop peu de pixels valides (nuages/ombres/eau) sur la parcelle."
+    },
+    {
+     "scene_id": "S2C_29NQG_20261003_0_L2A",
+     "acquired": "2026-10-03T10:59:39.386000Z",
+     "scene_cloud_cover": 60.238886,
+     "valid_pixel_fraction": 1.0,
+     "ndvi_median": 0.6649,
+     "ndmi_median": 0.0948,
+     "n_pixels": 132,
+     "usable": true,
+     "note": null
+    },
+    {
+     "scene_id": "S2B_29NQG_20261008_0_L2A",
+     "acquired": "2026-10-08T10:59:37.426000Z",
+     "scene_cloud_cover": 82.681721,
+     "valid_pixel_fraction": 0.0,
+     "ndvi_median": null,
+     "ndmi_median": null,
+     "n_pixels": 132,
+     "usable": false,
+     "note": "Trop peu de pixels valides (nuages/ombres/eau) sur la parcelle."
+    },
+    {
+     "scene_id": "S2C_29NQG_20261013_0_L2A",
+     "acquired": "2026-10-13T10:59:39.219000Z",
+     "scene_cloud_cover": 77.71371,
+     "valid_pixel_fraction": 0.0,
+     "ndvi_median": null,
+     "ndmi_median": null,
+     "n_pixels": 132,
+     "usable": false,
+     "note": "Trop peu de pixels valides (nuages/ombres/eau) sur la parcelle."
+    },
+    {
+     "scene_id": "S2A_29NQG_20261025_0_L2A",
+     "acquired": "2026-10-25T10:59:45.318000Z",
+     "scene_cloud_cover": 65.967071,
+     "valid_pixel_fraction": 0.0,
+     "ndvi_median": null,
+     "ndmi_median": null,
+     "n_pixels": 132,
+     "usable": false,
+     "note": "Trop peu de pixels valides (nuages/ombres/eau) sur la parcelle."
+    },
+    {
+     "scene_id": "S2B_29NQG_20261028_0_L2A",
+     "acquired": "2026-10-28T10:59:38.517000Z",
+     "scene_cloud_cover": 47.949454,
+     "valid_pixel_fraction": 0.886,
+     "ndvi_median": 0.7223,
+     "ndmi_median": 0.2007,
+     "n_pixels": 132,
+     "usable": true,
+     "note": null
+    }
+   ],
+   "latest_ndvi": 0.7223,
+   "latest_ndmi": 0.2007,
+   "ndvi_change": 0.0574,
+   "ndmi_change": 0.1059,
+   "valid_scene_count": 2,
+   "provenance": {
+    "source": "Copernicus Sentinel-2 L2A (ESA) via Element 84 Earth Search / AWS Open Data COGs",
+    "kind": "remote_sensing_observation",
+    "url": "https://element84.com/earth-search/",
+    "retrieved_at": "2026-11-02T16:19:19.834291Z",
+    "period_start": "2026-06-30",
+    "period_end": "2026-10-28",
+    "latitude": 5.7,
+    "longitude": -6.7,
+    "spatial_resolution": "10 m (B04, B08, NDVI) / 20 m (B8A, B11, SCL, NDMI)",
+    "notes": "Contient des données Copernicus Sentinel modifiées. Géométrie : cercle de 60 m autour du point"
+   },
+   "limitations": [
+    "Sentinel-2 (pixels de 10-20 m) caractérise le couvert de la parcelle ; il ne permet pas d'identifier une maladie du cacao à l'échelle d'une feuille ou d'une cabosse.",
+    "Les indices (NDVI, NDMI) mélangent cacaoyers, arbres d'ombrage et sol ; une baisse peut avoir de nombreuses causes (récolte, élagage, saison, stress, nuages résiduels).",
+    "Un indice hydrique bas ne prouve pas à lui seul un stress hydrique.",
+    "Couverture nuageuse fréquente en zone tropicale : les dates utilisables peuvent être rares."
+   ],
+   "error": null
+  },
+  "knowledge_references": [
+   {
+    "id": "cssvd",
+    "name": "Maladie du swollen shoot du cacaoyer (CSSD / CSSVD)",
+    "documentary_reliability": "high",
+    "references": [
+     {
+      "citation": "Ameyaw G.A., Domfeh O., Gyamera E. (2023). Epidemiology and Diagnostics of Cacao Swollen Shoot Disease in Ghana: Past Research Achievements and Knowledge Gaps to Guide Future Research. Viruses 16(1):43. doi:10.3390/v16010043",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10819116/",
+      "accessed": "2026-10-31",
+      "reliability": "peer_reviewed",
+      "licence": "CC BY 4.0"
+     }
+    ]
+   },
+   {
+    "id": "black_pod",
+    "name": "Pourriture brune des cabosses (black pod)",
+    "documentary_reliability": "high",
+    "references": [
+     {
+      "citation": "Luseni M.M., Kroma S. (2012, rev. 2015). Black pod disease of cacao. Plantwise Factsheets for Farmers SL014En, CABI / SLARI.",
+      "url": "https://factsheetadmin.plantwise.org/Uploads/PDFs/20127801283.pdf",
+      "accessed": "2026-10-31",
+      "reliability": "institutional_factsheet",
+      "licence": "CC BY-SA 4.0"
+     },
+     {
+      "citation": "Vanegtern B., Rogers M., Nelson S. (2015). Black Pod Rot of Cacao Caused by Phytophthora palmivora. University of Hawai'i CTAHR, Plant Disease PD-108.",
+      "url": "https://www3.ctahr.hawaii.edu/oc/freepubs/pdf/PD-108.pdf",
+      "accessed": "2026-10-31",
+      "reliability": "institutional_extension",
+      "licence": null
+     }
+    ]
+   }
+  ],
+  "farmer_input": {
+   "plant_part": "young_leaf",
+   "symptoms": "Taches brunes sur plusieurs cabosses, certaines avec des trous",
+   "notes": null
+  },
+  "missing_information": [
+   "Photos des cabosses avec taches brunes et trous déclarés : nombre d'arbres touchés, aspect rapproché des lésions, présence de sporulation blanche ou d'insectes.",
+   "Photos des tiges, rameaux, troncs et couronne : gonflements, chancres, gourmands, état général des arbres voisins.",
+   "Présence/absence de mirides, cochenilles farineuses et fourmis, répartition des dégâts dans la parcelle.",
+   "Historique parcelle : foyers swollen shoot voisins, entretien, ombrage, drainage, fertilisation, traitements récents."
+  ],
+  "recommended_checks": [
+   "Inspecter flushs de plusieurs arbres voisins : bandes rouges sur jeunes feuilles, taches angulaires sur feuilles âgées, gonflements tiges/rameaux/racines.",
+   "Rechercher cochenilles farineuses vectrices et hôtes alternatifs (Cola, Ceiba, Adansonia) autour de la parcelle.",
+   "Documenter les cabosses : photographier lésions, suivre extension sur quelques jours, chercher sporulation blanche, trous/piqûres de mirides et insectes vivants.",
+   "Relever ombrage, aération, drainage, humidité du sol et répartition des plants atteints pour discriminer causes biotiques."
+  ],
+  "recommendations": [
+   {
+    "text": "Ne pas arracher sur seule base photo : faire vérifier les arbres suspects par / avec les services officiels (ANADER/CNRA) et envisager l'arrachage (cutting-out) des arbres infectés comme principale stratégie si infection confirmée.",
+    "kb_reference_id": "cssvd",
+    "documented": true,
+    "sources": [
+     "Ameyaw G.A., Domfeh O., Gyamera E. (2023). Epidemiology and Diagnostics of Cacao Swollen Shoot Disease in Ghana: Past Research Achievements and Knowledge Gaps to Guide Future Research. Viruses 16(1):43. doi:10.3390/v16010043"
+    ]
+   },
+   {
+    "text": "En cas de confirmation, replanter avec variétés tolérantes (aucune immune/résistante) et éliminer les hôtes alternatifs sauvages du virus à proximité des parcelles.",
+    "kb_reference_id": "cssvd",
+    "documented": true,
+    "sources": [
+     "Ameyaw G.A., Domfeh O., Gyamera E. (2023). Epidemiology and Diagnostics of Cacao Swollen Shoot Disease in Ghana: Past Research Achievements and Knowledge Gaps to Guide Future Research. Viruses 16(1):43. doi:10.3390/v16010043"
+    ]
+   },
+   {
+    "text": "Pour les cabosses suspectes signalées : retirer toutes les cabosses présentant des symptômes, les sortir de la plantation et les brûler ou enfouir, tailler et réguler l'ombrage vers ~50 % pour aérer, sans appliquer de fongicide sans recommandation locale.",
+    "kb_reference_id": "black_pod",
+    "documented": true,
+    "sources": [
+     "Luseni M.M., Kroma S. (2012, rev. 2015). Black pod disease of cacao. Plantwise Factsheets for Farmers SL014En, CABI / SLARI.",
+     "Vanegtern B., Rogers M., Nelson S. (2015). Black Pod Rot of Cacao Caused by Phytophthora palmivora. University of Hawai'i CTAHR, Plant Disease PD-108."
+    ]
+   }
+  ],
+  "caution_level": "standard",
+  "caution_rationale": [
+   "Sources disponibles et cohérentes ; la confirmation terrain reste nécessaire."
+  ],
+  "validation_flags": [],
+  "reasoning_summary": "Une jeune feuille de cacaoyer présente une décoloration rouge-brun en réseau le long des nervures sur tout le limbe, compatible visuellement avec le red vein banding décrit pour le swollen shoot. Le classifieur spécialiste, fiable pour cette question, renforce fortement cette orientation avec 0,86 de probabilité cssvd_like. La photo seule ne peut confirmer un diagnostic et la confusion avec carence reste documentée. Les symptômes sur cabosses signalés par le planteur ne sont pas visibles ici et relèvent d'une vérification séparée, dans un contexte météo très humide favorable à la pourriture brune mais non discriminant pour le virus. Le couvert satellitaire reste stable, sans portée diagnostique à l'échelle foliaire.",
+  "provenance": [
+   {
+    "source": "Maana Terra image QC (Pillow/NumPy)",
+    "kind": "image_measurement",
+    "url": null,
+    "retrieved_at": "2026-11-02T16:19:04.489544Z",
+    "period_start": null,
+    "period_end": null,
+    "latitude": null,
+    "longitude": null,
+    "spatial_resolution": null,
+    "notes": "Seuils heuristiques définis dans configs/settings.yaml (non issus de la littérature)."
+   },
+   {
+    "source": "NASA POWER Daily API (community AG)",
+    "kind": "modelled_estimate",
+    "url": "https://power.larc.nasa.gov/docs/services/api/temporal/daily/",
+    "retrieved_at": "2026-11-02T16:19:18.024683Z",
+    "period_start": "2026-08-30",
+    "period_end": "2026-10-28",
+    "latitude": 5.7,
+    "longitude": -6.7,
+    "spatial_resolution": "~0.5° x 0.625° (météorologie MERRA-2)",
+    "notes": null
+   },
+   {
+    "source": "Copernicus Sentinel-2 L2A (ESA) via Element 84 Earth Search / AWS Open Data COGs",
+    "kind": "remote_sensing_observation",
+    "url": "https://element84.com/earth-search/",
+    "retrieved_at": "2026-11-02T16:19:19.834291Z",
+    "period_start": "2026-06-30",
+    "period_end": "2026-10-28",
+    "latitude": 5.7,
+    "longitude": -6.7,
+    "spatial_resolution": "10 m (B04, B08, NDVI) / 20 m (B8A, B11, SCL, NDMI)",
+    "notes": "Contient des données Copernicus Sentinel modifiées. Géométrie : cercle de 60 m autour du point"
+   },
+   {
+    "source": "Maana Terra cocoa knowledge base",
+    "kind": "literature",
+    "url": null,
+    "retrieved_at": null,
+    "period_start": null,
+    "period_end": null,
+    "latitude": null,
+    "longitude": null,
+    "spatial_resolution": null,
+    "notes": "data/knowledge_base/cocoa/*.yaml"
+   }
+  ],
+  "timings": [
+   {
+    "step": "image_quality",
+    "status": "ok",
+    "latency_ms": 19.1,
+    "detail": null
+   },
+   {
+    "step": "specialist_classifier",
+    "status": "ok",
+    "latency_ms": 573.8,
+    "detail": "p=0.8633 -> cssvd_like"
+   },
+   {
+    "step": "sam_segmentation",
+    "status": "ok",
+    "latency_ms": 12960.9,
+    "detail": "ok: 8 région(s)"
+   },
+   {
+    "step": "weather_nasa_power",
+    "status": "ok",
+    "latency_ms": 1809.5,
+    "detail": "ok"
+   },
+   {
+    "step": "satellite_sentinel2",
+    "status": "ok",
+    "latency_ms": 19010.2,
+    "detail": "ok, 2 scène(s) valide(s)"
+   },
+   {
+    "step": "muse_spark_analysis",
+    "status": "ok",
+    "latency_ms": 98384.4,
+    "detail": null
+   },
+   {
+    "step": "validation_fusion",
+    "status": "ok",
+    "latency_ms": 0.8,
+    "detail": null
+   }
+  ],
+  "model_usage": [
+   {
+    "model": "muse-spark-1.3",
+    "input_tokens": 8718,
+    "output_tokens": 5183,
+    "reasoning_tokens": 2731,
+    "cached_tokens": 8689,
+    "images": 5,
+    "estimated_cost_usd": 0.023367,
+    "response_id": "resp_6ae8b87d277fbdd3cb6e4c9b"
+   },
+   {
+    "model": "sam-3.1",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "reasoning_tokens": 0,
+    "cached_tokens": 0,
+    "images": 5,
+    "estimated_cost_usd": 0.0125,
+    "response_id": null
+   }
+  ],
+  "disclaimer": "Analyse d'aide à la décision. Une photographie ne permet pas de confirmer un diagnostic : les hypothèses doivent être vérifiées sur le terrain et, si nécessaire, par un laboratoire ou un conseiller agricole (ANADER, CNRA). Les scores de soutien ne sont pas des probabilités calibrées."
+ }
+}
