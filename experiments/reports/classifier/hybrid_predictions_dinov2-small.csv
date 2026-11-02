@@ -1,0 +1,81 @@
+image,part,label,p_cssvd,classifier,in_domain,muse_E4,H1,H2
+014f382dee2f_IMG_20250527_104356_394~3.jpg,Leaves-Young,healthy,0.0014,healthy,True,diseased,healthy,abstain
+03361083d478_IMG-20250527-WA0252.jpg,Leaves-Adults,healthy,0.0031,healthy,True,healthy,healthy,healthy
+04af24e425c0_WhatsApp Image 2025-05-27 à 19.40.05_0ad9c30f.jpg,Leaves-Young,diseased,0.9746,cssvd_like,True,healthy,diseased,abstain
+051c64f0353d_HGGS5740.JPG,cocoa pod,diseased,0.1359,healthy,True,diseased,healthy,abstain
+05268af8fe70_HVZJ7984.JPG,Trees,healthy,0.0578,abstain,False,diseased,diseased,abstain
+0913aa634030_20250530_102559.jpg,Leaves-Young,healthy,0.0691,healthy,True,healthy,healthy,healthy
+09657f16658b_Feuilles _ jeunes _ saines (50).jpg,Leaves-Young,healthy,0.0,healthy,True,healthy,healthy,healthy
+1063e4a1dd87_WhatsApp Image 2025-05-27 à 19.40.05_559e8561.jpg,Leaves-Young,diseased,0.1897,healthy,True,healthy,healthy,healthy
+143965058268_IMG-20250527-WA0251.jpg,Leaves-Adults,healthy,0.0052,healthy,True,healthy,healthy,healthy
+17fb2926bc28_20250527_104427.jpg,Leaves-Adults,diseased,0.7819,cssvd_like,True,diseased,diseased,diseased
+1bc930c74e76_AWIE6939.JPG,cocoa pod,diseased,0.05,healthy,True,diseased,healthy,abstain
+1cb699f8d614_IMG-20250527-WA0277.jpg,cocoa pod,healthy,0.0176,healthy,True,diseased,healthy,abstain
+201a407ee6d2_NETQ0419.JPG,cocoa pod,diseased,0.0187,healthy,True,diseased,healthy,abstain
+239e4be3d9dd_IMG-20250527-WA0174.jpg,Leaves-Adults,healthy,0.0096,healthy,True,diseased,healthy,abstain
+25ef859c480f_IMG-20250527-WA0017.jpg,Trees,healthy,0.1028,healthy,True,healthy,healthy,healthy
+2f0c0db9c320_MQJK7408.JPG,Leaves-Adults,healthy,0.0159,healthy,True,healthy,healthy,healthy
+31a1a00ad99e_QMQK5035.JPG,cocoa pod,diseased,0.0004,healthy,True,diseased,healthy,abstain
+34ac5e67340d_IMG-20250527-WA0188.jpg,Leaves-Adults,healthy,0.0003,healthy,True,diseased,healthy,abstain
+35e980c196fd_IMG-20250527-WA0199.jpg,Leaves-Adults,diseased,0.0114,healthy,True,healthy,healthy,healthy
+393b0ca5c676_IMG_E7283.JPG,Leaves-Young,diseased,0.9944,cssvd_like,True,diseased,diseased,diseased
+3ace14273bd3_WhatsApp Image 2025-05-28 at 10.26.26 (1).jpeg,cocoa pod,diseased,0.1034,healthy,True,diseased,healthy,abstain
+3bd0d45db9bc_GQYE9603.JPG,Trees,diseased,0.9944,cssvd_like,True,diseased,diseased,diseased
+3bfb42c88a2b_SREB3653.JPG,Leaves-Young,healthy,0.046,healthy,True,diseased,healthy,abstain
+45786245553f_BZNZ9028.JPG,Trees,diseased,0.4426,abstain,True,diseased,diseased,abstain
+48480f70da23_KEVK9749.JPG,cocoa pod,healthy,0.0102,healthy,True,diseased,healthy,abstain
+4bbe04ab170d_WhatsApp Image 2025-05-28 at 10.25.20.jpeg,Leaves-Young,healthy,0.5455,abstain,True,diseased,diseased,diseased
+4c1837b374f1_MXPC0950.JPG,cocoa pod,healthy,0.0026,healthy,True,healthy,healthy,healthy
+50926ec218a3_CIIA9558.JPG,Trees,diseased,0.9955,cssvd_like,True,diseased,diseased,diseased
+50e268be1b35_IMG-20250527-WA0097.jpg,Leaves-Young,healthy,0.0139,healthy,True,healthy,healthy,healthy
+53478ce2b377_IMG-20250527-WA0435.jpg,Trees,diseased,0.9974,cssvd_like,True,diseased,diseased,diseased
+5601a5ec5b57_IMG-20250527-WA0034.jpg,Trees,healthy,0.2117,healthy,True,healthy,healthy,healthy
+576101bfe32a_RYNO6749.JPG,Trees,diseased,0.9449,cssvd_like,True,healthy,healthy,abstain
+5a251488c861_IMG-20250527-WA0028.jpg,Trees,healthy,0.0433,healthy,True,diseased,diseased,abstain
+5efa6dae075d_IMG-20250527-WA0274.jpg,cocoa pod,healthy,0.0164,healthy,True,diseased,healthy,abstain
+607926bd5398_CXPQ5851.JPG,Trees,diseased,0.4471,abstain,False,abstain,abstain,abstain
+658809b086fc_IMG_E7293.JPG,Leaves-Young,diseased,0.9413,cssvd_like,True,healthy,diseased,abstain
+68d47079ab0f_WhatsApp Image 2025-05-28 at 10.26.59 (2).jpeg,cocoa pod,healthy,0.0444,healthy,True,healthy,healthy,healthy
+69e8eb706d97_IMG_E7262.JPG,Leaves-Adults,diseased,1.0,cssvd_like,True,diseased,diseased,diseased
+6baee52bf3d2_IMG-20250527-WA0141.jpg,Leaves-Adults,healthy,0.0177,healthy,True,healthy,healthy,healthy
+6d3274fb4c0f_OTCH9324.JPG,Leaves-Adults,diseased,0.0803,healthy,True,healthy,healthy,healthy
+6dc6f16238df_IMG_20250527_115705_189~2.jpg,Leaves-Young,healthy,0.0072,healthy,True,healthy,healthy,healthy
+738de50bc3a5_AWUA9941.JPG,cocoa pod,diseased,0.0015,healthy,True,diseased,healthy,abstain
+793ccea83f0f_IMG-20250527-WA0031.jpg,Trees,healthy,0.0053,healthy,True,healthy,healthy,healthy
+7d079a2f588d_20250530_111506.jpg,Leaves-Young,diseased,0.115,healthy,True,diseased,healthy,abstain
+80526c4a88fe_EFIY6101.JPG,Trees,healthy,0.6271,abstain,True,healthy,healthy,abstain
+858be92e9861_20250527_103721.jpg,Leaves-Adults,healthy,0.0702,healthy,True,diseased,healthy,abstain
+8ff7debf75ac_IMG_7311.JPG,Leaves-Young,diseased,0.99,cssvd_like,True,diseased,diseased,diseased
+95cc8e224615_IMG-20250527-WA0200.jpg,Leaves-Adults,healthy,0.0552,healthy,True,diseased,healthy,abstain
+964b773901af_KFZL8515.JPG,Trees,healthy,0.2713,healthy,True,healthy,healthy,healthy
+a479d2290298_WhatsApp Image 2025-05-28 at 10.26.25 (5).jpeg,Leaves-Adults,diseased,0.9987,cssvd_like,True,diseased,diseased,diseased
+a60e98f10276_IMG-20250527-WA0279.jpg,cocoa pod,healthy,0.0134,healthy,True,diseased,healthy,abstain
+a8f9f43884b7_Feuilles _ jeunes _ saines (53).jpg,Leaves-Young,healthy,0.0832,healthy,True,healthy,healthy,healthy
+a91297d8166d_NUMI9413.JPG,cocoa pod,diseased,0.3867,abstain,True,diseased,diseased,abstain
+a99231dc6cf8_20250530_104850.jpg,Leaves-Young,diseased,0.7731,cssvd_like,True,diseased,diseased,diseased
+ab7330b3b79b_BNYQ7741.JPG,Trees,diseased,0.9765,cssvd_like,True,diseased,diseased,diseased
+ad8639a2e22a_IMG_20250527_103800_618~2.jpg,Leaves-Young,healthy,0.0022,healthy,True,healthy,healthy,healthy
+b08ee31b3deb_WhatsApp Image 2025-05-28 at 10.25.19 (2).jpeg,Leaves-Young,diseased,0.8617,cssvd_like,True,diseased,diseased,diseased
+b14975a97f12_IMG-20250527-WA0400.jpg,Trees,diseased,0.9259,cssvd_like,True,diseased,diseased,diseased
+b18a2bc04ac0_RXBM0251.JPG,cocoa pod,healthy,0.0021,healthy,True,healthy,healthy,healthy
+b315e385c699_IMG-20250527-WA0036.jpg,Trees,healthy,0.5021,abstain,True,healthy,healthy,abstain
+bcb7783de740_IMG-20250527-WA0211.jpg,Leaves-Adults,healthy,0.0002,healthy,True,healthy,healthy,healthy
+c15497e52ae5_WWNX1813.JPG,cocoa pod,healthy,0.0012,healthy,True,diseased,healthy,abstain
+c266d8414546_20250530_111937.jpg,Leaves-Adults,healthy,0.0462,healthy,True,diseased,healthy,abstain
+c307312b66c7_IMG-20250527-WA0431.jpg,Trees,diseased,0.9924,cssvd_like,True,diseased,diseased,diseased
+c7d709561982_IMG-20250527-WA0428.jpg,Trees,diseased,0.9957,cssvd_like,True,diseased,diseased,diseased
+c7dfcc926b70_TZZP1804.JPG,Leaves-Young,diseased,0.9193,cssvd_like,True,healthy,diseased,abstain
+cd10a87dc293_IMG-20250527-WA0282.jpg,cocoa pod,healthy,0.0107,healthy,True,diseased,healthy,abstain
+cd759fdcf09b_IMG-20250527-WA0018.jpg,Trees,healthy,0.0332,abstain,False,healthy,healthy,healthy
+cf508e48af59_WhatsApp Image 2025-05-28 at 10.26.57 (5).jpeg,cocoa pod,healthy,0.0044,healthy,True,healthy,healthy,healthy
+d3ccd734e74a_IMG_20250527_100254_392~2.jpg,Leaves-Adults,diseased,0.9659,cssvd_like,True,diseased,diseased,diseased
+d93ade13ec47_WhatsApp Image 2025-05-28 at 10.37.38.jpeg,Leaves-Adults,diseased,0.9972,cssvd_like,True,diseased,diseased,diseased
+de69dd80996c_UPTO0240.JPG,cocoa pod,diseased,0.3478,healthy,True,diseased,healthy,abstain
+df7f3b24ea40_WhatsApp Image 2025-05-28 at 10.25.19 (10).jpeg,Leaves-Adults,diseased,0.9999,cssvd_like,True,healthy,diseased,abstain
+e15334fee1a8_IMG_E7271.JPG,Leaves-Young,diseased,0.9333,cssvd_like,True,diseased,diseased,diseased
+e8ae2bb21d48_SUAD4980.JPG,cocoa pod,diseased,0.2726,healthy,True,diseased,healthy,abstain
+e8e3eacafb0e_20250530_105439.jpg,Leaves-Adults,diseased,0.9976,cssvd_like,True,diseased,diseased,diseased
+ee12e18d379d_IMG-20250527-WA0309.jpg,Leaves-Adults,diseased,0.7567,cssvd_like,True,healthy,diseased,abstain
+f32b46307367_IMG-20250527-WA0029.jpg,Trees,healthy,0.0393,healthy,True,diseased,diseased,abstain
+fbf6ed843b54_Feuilles _ jeunes _ saines (49).jpg,Leaves-Young,healthy,0.0015,healthy,True,healthy,healthy,healthy
+fefb6d590415_RNPN2445.JPG,cocoa pod,diseased,0.1217,healthy,True,diseased,healthy,abstain

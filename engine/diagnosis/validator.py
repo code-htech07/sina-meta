@@ -35,6 +35,7 @@ SOURCE_FLAGS = {
     "knowledge_base": "use_knowledge_base",
     "segmentation": "use_segmentation",
     "farmer": "use_farmer_input",
+    "classifier": "use_classifier",
 }
 SUPPORT_ORDER = {"high": 0, "medium": 1, "low": 2}
 STATUS_ORDER = {"compatible": 0, "plausible": 1, "weakly_supported": 2, "unlikely": 3}

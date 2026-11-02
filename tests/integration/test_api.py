@@ -8,13 +8,14 @@ from engine.meta_ai.muse_spark import MuseSparkAnalyzer
 from engine.orchestration.pipeline import AnalysisPipeline
 from engine.services import MaanaTerraService
 from engine.storage.db import Database
-from tests.integration.test_pipeline_mocked import _stub_sat, _stub_weather
+from tests.integration.test_pipeline_mocked import _stub_clf, _stub_sat, _stub_weather
 
 
 def test_api_flow(tmp_path, sample_pod):
     svc = MaanaTerraService(db=Database(tmp_path / "api.db"),
                             pipeline=AnalysisPipeline(muse=MuseSparkAnalyzer(client=MetaModelClient(api_key="")),
-                                                      weather_fn=_stub_weather, satellite_fn=_stub_sat))
+                                                      weather_fn=_stub_weather, satellite_fn=_stub_sat,
+                                                      classifier_fn=_stub_clf))
     app.dependency_overrides[service] = lambda: svc
     try:
         c = TestClient(app)

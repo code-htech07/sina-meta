@@ -1,0 +1,132 @@
+{
+  "version": "dinov2-small-lr-20261102",
+  "backbone": "dinov2-small",
+  "cv_balanced_accuracy": 0.9329,
+  "selected": {
+    "use_part_features": false,
+    "C": 30.0
+  },
+  "abstain_band": [
+    0.35,
+    0.65
+  ],
+  "ood_min_similarity": 0.7614,
+  "part_reliability_oof": {
+    "Leaves-Young": {
+      "n_train": 350,
+      "oof_balanced_accuracy": 0.9304
+    },
+    "Leaves-Adults": {
+      "n_train": 780,
+      "oof_balanced_accuracy": 0.9479
+    },
+    "Trees": {
+      "n_train": 85,
+      "oof_balanced_accuracy": 0.6783
+    },
+    "cocoa pod": {
+      "n_train": 70,
+      "oof_balanced_accuracy": 0.8198
+    }
+  },
+  "trusted_parts": [
+    "Leaves-Young",
+    "Leaves-Adults",
+    "cocoa pod"
+  ],
+  "n_groups": 1546,
+  "split": {
+    "train": 1285,
+    "test": 407
+  },
+  "test": {
+    "n": 407,
+    "positives_cssvd": 179,
+    "accuracy": 0.8894,
+    "accuracy_ci95": [
+      0.8575,
+      0.9165
+    ],
+    "balanced_accuracy": 0.8809,
+    "balanced_accuracy_ci95": [
+      0.8475,
+      0.912
+    ],
+    "f1_cssvd": 0.8657,
+    "recall_cssvd": 0.8101,
+    "recall_healthy": 0.9518,
+    "roc_auc": 0.9461,
+    "brier": 0.0823,
+    "ece": 0.0507,
+    "confusion": {
+      "healthy->healthy": 217,
+      "healthy->cssvd": 11,
+      "cssvd->healthy": 34,
+      "cssvd->cssvd": 145
+    },
+    "with_abstention": {
+      "coverage": 0.9484,
+      "selective_accuracy": 0.9119,
+      "selective_balanced_accuracy": 0.9025,
+      "selective_false_healthy_rate": 0.1677
+    }
+  },
+  "test_per_part": {
+    "Leaves-Young": {
+      "n": 113,
+      "accuracy": 0.9204,
+      "balanced_accuracy": 0.905,
+      "recall_cssvd": 0.871,
+      "recall_healthy": 0.939,
+      "roc_auc": 0.9614
+    },
+    "Leaves-Adults": {
+      "n": 216,
+      "accuracy": 0.9398,
+      "balanced_accuracy": 0.9407,
+      "recall_cssvd": 0.8909,
+      "recall_healthy": 0.9906,
+      "roc_auc": 0.9874
+    },
+    "Trees": {
+      "n": 43,
+      "accuracy": 0.814,
+      "balanced_accuracy": 0.813,
+      "recall_cssvd": 0.8261,
+      "recall_healthy": 0.8,
+      "roc_auc": 0.95
+    },
+    "cocoa pod": {
+      "n": 35,
+      "accuracy": 0.5714,
+      "balanced_accuracy": 0.5083,
+      "recall_cssvd": 0.0667,
+      "recall_healthy": 0.95,
+      "roc_auc": 0.6367
+    }
+  },
+  "paired_comparison_with_muse_spark": {
+    "classifier_vs_muse_E0": {
+      "n": 80,
+      "classifier_accuracy": 0.7625,
+      "muse_accuracy": 0.575,
+      "mcnemar": {
+        "a_only_correct": 26,
+        "b_only_correct": 11,
+        "discordant": 37,
+        "p_value": 0.0201
+      }
+    },
+    "classifier_vs_muse_E4": {
+      "n": 80,
+      "classifier_accuracy": 0.7625,
+      "muse_accuracy": 0.6625,
+      "mcnemar": {
+        "a_only_correct": 22,
+        "b_only_correct": 14,
+        "discordant": 36,
+        "p_value": 0.243
+      }
+    }
+  }
+}

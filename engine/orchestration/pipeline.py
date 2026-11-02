@@ -30,6 +30,7 @@ from engine.meta_ai.muse_spark import MuseSparkAnalyzer
 from engine.meta_ai.sam import SamSegmenter
 from engine.preprocessing.quality import assess_quality, to_data_url
 from engine.schemas import (
+    Contradiction,
     AnalysisReport,
     ExperimentConfig,
     ImageMetadata,
@@ -80,6 +81,7 @@ class AnalysisPipeline:
         weather_fn: Callable[..., WeatherContext] = get_weather_context,
         satellite_fn: Callable[..., SatelliteContext] = get_satellite_context,
         cache: ContextCache | None = None,
+        classifier_fn: Callable[..., Any] | None = None,
     ) -> None:
         self.muse = muse or MuseSparkAnalyzer()
         self.sam = sam or SamSegmenter(client=self.muse.client)
@@ -87,6 +89,9 @@ class AnalysisPipeline:
         self.weather_fn = weather_fn
         self.satellite_fn = satellite_fn
         self.cache = cache or ContextCache()
+        if classifier_fn is None:
+            from engine.vision.service import run_classifier as classifier_fn
+        self.classifier_fn = classifier_fn
 
     # ------------------------------------------------------------------ utils
     @contextmanager
@@ -146,6 +151,18 @@ class AnalysisPipeline:
         if loc is None:
             report.missing_information.append("Localisation inconnue : météo et satellite non récupérables.")
 
+        # 1b. Specialist classifier (trained, local, free) ----------------------
+        clf = None
+        if experiment.use_classifier:
+            with self._step(timings, "specialist_classifier") as st:
+                key = "clf:" + usable[0].sha256 + ":" + inp.plant_part
+                if key not in self.cache.segmentation:
+                    self.cache.segmentation[key] = self.classifier_fn(usable[0].path, inp.plant_part)
+                clf = self.cache.segmentation[key]
+                st["status"] = "ok" if clf.status == "ok" else ("skipped" if clf.status == "unavailable" else "error")
+                st["detail"] = (f"p={clf.probability_cssvd_like} -> {clf.decision}" if clf.status == "ok" else clf.error)
+            report.classifier = clf
+
         # 2. Segmentation (SAM 3.1) ---------------------------------------------
         seg: SegmentationResult | None = None
         if experiment.use_segmentation:
@@ -190,7 +207,7 @@ class AnalysisPipeline:
         context, missing = build_context(
             parcel=inp.parcel, observation_date=inp.observation_date, declared_plant_part=inp.plant_part,
             farmer_symptoms=inp.farmer_symptoms, farmer_notes=inp.farmer_notes, quality=report.image_quality,
-            weather=weather, satellite=satellite, segmentation=seg, kb=self.kb, experiment=experiment,
+            weather=weather, satellite=satellite, segmentation=seg, kb=self.kb, experiment=experiment, classifier=clf,
         )
         report.missing_information += missing
         if experiment.use_knowledge_base:
@@ -245,6 +262,8 @@ class AnalysisPipeline:
             available.add("knowledge_base")
         if seg and seg.status == "ok":
             available.add("segmentation")
+        if clf is not None and clf.status == "ok":
+            available.add("classifier")
         # the declared plant part is always in the context (user_declared), so citing "farmer" for it is legitimate
         if (experiment.use_farmer_input and (inp.farmer_symptoms or inp.farmer_notes)) or inp.plant_part not in ("unknown", None):
             available.add("farmer")
@@ -264,6 +283,17 @@ class AnalysisPipeline:
         report.contradictions = contradictions
         report.recommendations = recs
         report.validation_flags = flags
+        if experiment.use_classifier:
+            from engine.vision.service import consensus
+
+            report.consensus = consensus(clf, out.overall_assessment)
+            if not report.consensus.agreement and report.consensus.classifier_view in ("cssvd_like", "healthy"):
+                level = "high" if level != "insufficient_data" else level
+                why = [*why, "Le classifieur spécialisé et Muse Spark divergent."]
+                contradictions.append(Contradiction(
+                    rule_id="R6_classifier_vs_muse", origin="rule", sources_involved=["classifier", "image"],
+                    description=f"Classifieur spécialisé : {clf.decision} (p = {clf.probability_cssvd_like}) ; "
+                                f"Muse Spark : {out.overall_assessment}. Les deux lectures de l'image divergent."))
         report.caution_level, report.caution_rationale = level, why
         report.missing_information = list(dict.fromkeys(report.missing_information + out.missing_information))
         report.recommended_checks = out.recommended_field_checks

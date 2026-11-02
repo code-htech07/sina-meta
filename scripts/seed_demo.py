@@ -35,11 +35,12 @@ def main() -> int:
     ap.add_argument("--analyze", action="store_true")
     ap.add_argument("--image", type=Path, default=ROOT / "data/samples/cocoaswolset/cocoa_pod_Diseased.jpg")
     ap.add_argument("--date", type=date.fromisoformat, default=date(2026, 10, 28))
+    ap.add_argument("--part", default="pod", help="declared plant part (pod, leaf, young_leaf, whole_tree, ...)")
     args = ap.parse_args()
     setup_logging("WARNING")
     svc = MaanaTerraService()
     parcel = next((p for p in svc.list_parcels() if p.name == DEMO_PARCEL.name), None) or svc.create_parcel(DEMO_PARCEL)
-    obs = svc.create_observation(ObservationCreate(parcel_id=parcel.id, observation_date=args.date, plant_part="pod",
+    obs = svc.create_observation(ObservationCreate(parcel_id=parcel.id, observation_date=args.date, plant_part=args.part,
                                                    farmer_symptoms="Taches brunes sur plusieurs cabosses, certaines avec des trous"),
                                  [args.image.read_bytes()])
     print(f"Parcelle {parcel.id} · observation {obs.id}")

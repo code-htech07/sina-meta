@@ -72,3 +72,11 @@ Format : décision — alternatives — justification. Date : 2026-10-31 sauf me
 
 ### TD-14 · Licence du code : MIT (à confirmer par le porteur)
 - Choix par défaut réversible pour un projet de hackathon ; le porteur peut la changer avant publication.
+
+### TD-15 · Architecture hybride : classifieur spécialisé + Muse Spark + consensus (2026-11-02)
+- Constat : Muse Spark zero-shot 58–67 % sur sain/swollen shoot ; aucun gain significatif du contexte.
+- Choix : DINOv2-small (modèle de vision Meta, Apache-2.0) en ONNX + régression logistique calibrée, entraînée sur
+  CocoaSwolSet avec regroupement des quasi-doublons ; 89,7 % sur test. Alternatives : fine-tuning complet (pas de GPU),
+  DINOv2-base (+0,7 pt non significatif, 4× plus lourd), règle d'aiguillage H1 (moins bonne que le consensus H2).
+- Décision finale : consensus H2 (pré-déclarée avant le test) ; désaccord ⇒ vérification humaine.
+- ONNX Runtime à l'inférence : pas de PyTorch dans l'application (déploiement Streamlit Cloud possible).

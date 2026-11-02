@@ -23,6 +23,11 @@ preprocessing  meta_ai/sam    sources/weather   sources/satellite  sources/agron
                                                      AnalysisReport (Pydantic, JSON Schema) → storage/db.py (SQLite)
 ```
 
+## Mise à jour : architecture hybride (voir `docs/CLASSIFIER.md`)
+Un classifieur spécialisé entraîné (DINOv2-small ONNX + régression logistique calibrée, `engine/vision/`) s'exécute
+après le contrôle qualité ; sa sortie est transmise à Muse Spark (`specialist_classifier` dans le contexte) et la décision
+finale suit une règle de consensus (`AnalysisReport.consensus`). Désaccord ⇒ contradiction R6 + prudence élevée.
+
 ## Flux d'une analyse
 1. **Réception** de la/des photo(s) → `acquisition/images.py` (format, SHA-256, EXIF date/GPS, stockage fichier).
 2. **Contrôle qualité** déterministe → `preprocessing/quality.py` (résolution, flou, luminosité, saturation).

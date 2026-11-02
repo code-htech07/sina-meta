@@ -75,6 +75,25 @@ def render_report(report: AnalysisReport, image_paths: dict[str, str] | None = N
             st.json(report.farmer_input, expanded=False)
 
     with tab_hyp:
+        c, k = report.consensus, report.classifier
+        if c is not None:
+            label = {"anomaly_likely": "🔴 Anomalie probable", "no_anomaly_likely": "🟢 Pas d'anomalie probable",
+                     "uncertain_needs_check": "🟠 Incertain — vérification terrain nécessaire"}[c.final]
+            with st.container(border=True):
+                st.markdown(f"#### Décision de consensus : {label}")
+                st.caption(c.explanation)
+                if k is not None and k.status == "ok":
+                    st.markdown(f"**Classifieur spécialisé** (DINOv2 entraîné sur 1 285 photos ivoiriennes étiquetées) : "
+                                f"probabilité d'aspect swollen shoot **{k.probability_cssvd_like:.0%}** "
+                                f"(calibrée sur données de test) → *{k.decision}* — {k.reason}")
+                    tm = k.test_metrics or {}
+                    if tm:
+                        st.caption(f"Performance mesurée sur {tm.get('n')} photos de test jamais vues : exactitude "
+                                   f"{tm.get('accuracy'):.0%} (IC95 {tm['accuracy_ci95'][0]:.0%}–{tm['accuracy_ci95'][1]:.0%}). "
+                                   "Ne reconnaît que « sain » vs « aspect swollen shoot ».")
+                elif k is not None:
+                    st.markdown(f"**Classifieur spécialisé** : {k.status} — {k.error or ''}")
+                st.markdown(f"**Muse Spark** : {OVERALL_FR.get(c.muse_view, c.muse_view)}")
         st.info("Hypothèses générées par IA à partir de l'image et du contexte. Aucune n'est confirmée : "
                 "les niveaux de soutien sont qualitatifs et NON calibrés.")
         for title, hyps in (("Hypothèses principales", report.primary_hypotheses), ("Hypothèses alternatives", report.alternative_hypotheses)):

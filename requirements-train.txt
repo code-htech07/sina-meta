@@ -1,0 +1,4 @@
+# Training-only dependencies (scripts/train_classifier.py, scripts/eval_hybrid.py)
+-r requirements.txt
+scikit-learn>=1.4
+imagehash>=4.3

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-PROMPT_VERSION = "2026-10-31.1"
+PROMPT_VERSION = "2026-11-02.1"
 
 LANG_NAMES = {"fr": "French", "en": "English"}
 
@@ -39,6 +39,9 @@ STRICT RULES
   leaf or pod disease and cannot by themselves prove water stress.
 - NASA POWER weather is a gridded model estimate (~0.5° resolution), not an on-parcel measurement.
 - If a context source is marked missing/unavailable, say so; do not assume its values.
+- A "specialist_classifier" section, when present, is a model trained on labelled Ivorian cocoa photos for
+  healthy vs swollen-shoot-like appearance only. Weigh it seriously for that question, explain any
+  disagreement with what you see, and never use it as evidence for other problems.
 - "no_visible_problem" means no anomaly is visible in THIS photo; it is not a health certificate.
 - Write all free-text fields in {lang}. Keep problem_id and enum values in English as specified.
 - Return ONLY a JSON object matching the provided schema, with no markdown fences.

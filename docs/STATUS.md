@@ -49,6 +49,12 @@
 - Base de connaissances : fiches anthracnose et chérelles de fiabilité faible ; sources CNRA/ANADER à ajouter.
 - Prompts SAM choisis sur 3 images seulement.
 
+## ARCHITECTURE HYBRIDE (2 novembre 2026)
+Classifieur spécialisé DINOv2-small + régression logistique calibrée, entraîné sur 1 285 photos CocoaSwolSet :
+**88,9 % sur 407 photos de test jamais vues** (IC95 85,8–91,7), robuste aux erreurs d'organe déclaré. Décision finale par
+consensus classifieur + Muse Spark : 90,7 % de bonnes réponses sur les cas tranchés (39/43 sur 80), 46 % renvoyés en vérification. Détails : `docs/CLASSIFIER.md`.
+Faiblesse : cabosses (51 %). Mesure en conditions réelles du pipeline complet (E5) : non encore exécutée (≈ 2 $).
+
 ## ÉVALUATIONS RÉALISÉES
 - Évaluation 80 images (7,77 $) : aucun écart significatif entre E0 et E1–E4 ; E4 meilleur macro-F1 ; faux positifs fréquents ; voir `experiments/reports/ablation_80_20261102/REPORT.md`.
 - Essai 8 images :
@@ -65,6 +71,7 @@ Run 20261031-155838 (8 images, 0,78 $) — résultats et limites : `docs/EVALUAT
 - Conversion HEIC/DNG du dataset ; prise en charge de polygones de parcelle dans l'UI.
 
 ## PROCHAINE ACTION
-1. Fusionner la PR #1 dans `main`, puis faire suivre `main` à l'application Streamlit.
-2. Collecter des photos de terrain **géolocalisées** (avec CNRA/ANADER/coopératives) pour évaluer réellement la fusion météo/satellite.
-3. Réduire les faux positifs (prompt : critères explicites de « aucun problème visible ») et mesurer la variabilité (répétitions).
+1. Exécuter E5 (pipeline complet avec classifieur et consensus) sur les 80 images (≈ 2 $) pour mesurer le système réel.
+2. Exclure les cabosses du classifieur sur la base d'une validation sur données nouvelles ; collecter plus de photos de cabosses.
+3. Fusionner la PR #1 ; faire suivre `main` à l'application Streamlit.
+4. Photos de terrain géolocalisées pour évaluer la fusion météo/satellite.

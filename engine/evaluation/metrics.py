@@ -21,6 +21,8 @@ def report_to_prediction(report: AnalysisReport) -> str:
         return "error"
     if report.status == "needs_new_photo" or report.overall_assessment == "cannot_assess":
         return "abstain"
+    if report.consensus is not None:
+        return {"anomaly_likely": "diseased", "no_anomaly_likely": "healthy"}.get(report.consensus.final, "abstain")
     return "diseased" if report.overall_assessment == "abnormality_detected" else "healthy"
 
 

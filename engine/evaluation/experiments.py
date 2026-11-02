@@ -7,6 +7,7 @@
 | E2  | image + satellite (Sentinel-2)                               |
 | E3  | image + weather + satellite                                  |
 | E4  | image + weather + satellite + agronomic knowledge base       |
+| E5  | E4 + trained specialist classifier + consensus decision rule |
 
 Controls: same images, same prompt version, same model, same cached context per
 (location, date) for every experiment; SAM segmentation and farmer input are held
@@ -42,15 +43,17 @@ from engine.schemas import AnalysisReport, ExperimentConfig
 
 EXPERIMENTS: dict[str, ExperimentConfig] = {
     "E0": ExperimentConfig(name="E0_image_only", use_weather=False, use_satellite=False, use_knowledge_base=False,
-                           use_segmentation=False, use_farmer_input=False),
+                           use_segmentation=False, use_farmer_input=False, use_classifier=False),
     "E1": ExperimentConfig(name="E1_image_weather", use_weather=True, use_satellite=False, use_knowledge_base=False,
-                           use_segmentation=False, use_farmer_input=False),
+                           use_segmentation=False, use_farmer_input=False, use_classifier=False),
     "E2": ExperimentConfig(name="E2_image_satellite", use_weather=False, use_satellite=True, use_knowledge_base=False,
-                           use_segmentation=False, use_farmer_input=False),
+                           use_segmentation=False, use_farmer_input=False, use_classifier=False),
     "E3": ExperimentConfig(name="E3_image_weather_satellite", use_weather=True, use_satellite=True,
-                           use_knowledge_base=False, use_segmentation=False, use_farmer_input=False),
+                           use_knowledge_base=False, use_segmentation=False, use_farmer_input=False, use_classifier=False),
     "E4": ExperimentConfig(name="E4_full_context", use_weather=True, use_satellite=True, use_knowledge_base=True,
-                           use_segmentation=False, use_farmer_input=False),
+                           use_segmentation=False, use_farmer_input=False, use_classifier=False),
+    "E5": ExperimentConfig(name="E5_full_context_classifier_consensus", use_weather=True, use_satellite=True,
+                           use_knowledge_base=True, use_segmentation=False, use_farmer_input=False, use_classifier=True),
 }
 
 PART_MAP = {"Leaves-Young": "young_leaf", "Leaves-Adults": "leaf", "Trees": "whole_tree", "cocoa pod": "pod"}

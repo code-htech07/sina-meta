@@ -34,3 +34,6 @@ experiments/*/runs/
 .DS_Store
 .idea/
 .vscode/
+
+# Downloaded model weights
+data/models/

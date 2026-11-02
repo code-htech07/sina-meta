@@ -109,6 +109,27 @@ def _segmentation_section(seg: SegmentationResult | None) -> dict[str, Any]:
     }
 
 
+def _classifier_section(clf: Any) -> dict[str, Any]:
+    if clf is None:
+        return dict(NOT_PROVIDED)
+    if clf.status != "ok":
+        return {"status": clf.status, "provenance_kind": "missing", "error": clf.error}
+    return {
+        "status": "ok",
+        "provenance_kind": "trained_model_prediction (DINOv2 + logistic regression trained on 1,285 labelled "
+                           "CocoaSwolSet images from Côte d'Ivoire; probability calibrated on held-out data)",
+        "task": "healthy vs swollen-shoot-like (CSSVD) appearance ONLY; it knows no other disease",
+        "probability_cssvd_like": clf.probability_cssvd_like,
+        "decision": clf.decision,
+        "decision_reason": clf.reason,
+        "in_training_domain": clf.in_domain,
+        "trusted_for_this_plant_part": clf.trusted_for_part,
+        "held_out_test_performance": clf.test_metrics,
+        "use": "Treat as strong but fallible evidence about CSSVD-like vs healthy. Cite it with source_type "
+               "'classifier'. It cannot rule in or out other problems (black pod, mirids, ...).",
+    }
+
+
 def build_context(
     *,
     parcel: Parcel | None,
@@ -122,6 +143,7 @@ def build_context(
     segmentation: SegmentationResult | None,
     kb: KnowledgeBase | None,
     experiment: ExperimentConfig,
+    classifier: Any = None,
 ) -> tuple[dict[str, Any], list[str]]:
     """Return (context_for_llm, missing_information)."""
     missing: list[str] = []
@@ -156,6 +178,7 @@ def build_context(
                     "size_px": [q.width, q.height]} for q in quality],
     }
     ctx["segmentation"] = _segmentation_section(segmentation if experiment.use_segmentation else None)
+    ctx["specialist_classifier"] = _classifier_section(classifier if experiment.use_classifier else None)
     ctx["weather"] = _weather_section(weather if experiment.use_weather else None)
     ctx["satellite"] = _satellite_section(satellite if experiment.use_satellite else None)
 

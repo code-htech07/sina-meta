@@ -277,7 +277,7 @@ class MuseEvidence(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     statement: str
-    source_type: Literal["image", "weather", "satellite", "knowledge_base", "farmer", "segmentation"]
+    source_type: Literal["image", "weather", "satellite", "knowledge_base", "farmer", "segmentation", "classifier"]
     reference_id: str | None = None   # KB entry id when source_type == knowledge_base
 
 
@@ -362,6 +362,30 @@ class ModelUsage(BaseModel):
     response_id: str | None = None
 
 
+class ClassifierResult(BaseModel):
+    """Output of the trained specialist classifier (DINOv2 + calibrated logistic regression)."""
+    status: Literal["ok", "unavailable", "error"]
+    model_version: str | None = None
+    probability_cssvd_like: float | None = None   # calibrated on held-out data (see docs/CLASSIFIER.md)
+    decision: Literal["cssvd_like", "healthy", "abstain"] | None = None
+    reason: str | None = None
+    in_domain: bool | None = None
+    trusted_for_part: bool | None = None
+    nearest_train_similarity: float | None = None
+    test_metrics: dict[str, Any] = Field(default_factory=dict)
+    error: str | None = None
+    latency_ms: float | None = None
+
+
+class ConsensusDecision(BaseModel):
+    """Final binary decision (rule H2, pre-declared): answer only when classifier and Muse Spark agree."""
+    classifier_view: Literal["cssvd_like", "healthy", "abstain", "unavailable"]
+    muse_view: Literal["abnormality_detected", "no_visible_problem", "cannot_assess"]
+    final: Literal["anomaly_likely", "no_anomaly_likely", "uncertain_needs_check"]
+    agreement: bool
+    explanation: str
+
+
 class ExperimentConfig(BaseModel):
     name: str = "full"
     use_weather: bool = True
@@ -369,6 +393,7 @@ class ExperimentConfig(BaseModel):
     use_knowledge_base: bool = True
     use_segmentation: bool = True
     use_farmer_input: bool = True
+    use_classifier: bool = True
 
 
 class AnalysisReport(BaseModel):
@@ -386,6 +411,8 @@ class AnalysisReport(BaseModel):
     overall_assessment: Literal["no_visible_problem", "abnormality_detected", "cannot_assess"] = "cannot_assess"
     visual_observations: list[MuseVisualObservation] = Field(default_factory=list)
     segmentation: SegmentationResult | None = None
+    classifier: ClassifierResult | None = None
+    consensus: ConsensusDecision | None = None
 
     primary_hypotheses: list[Hypothesis] = Field(default_factory=list)
     alternative_hypotheses: list[Hypothesis] = Field(default_factory=list)

@@ -36,6 +36,13 @@ def _stub_sat(lat, lon, d, poly=None):
                             error="clouds")
 
 
+def _stub_clf(path, part):
+    from engine.schemas import ClassifierResult
+
+    return ClassifierResult(status="ok", decision="healthy", probability_cssvd_like=0.1, in_domain=True,
+                            trusted_for_part=True, model_version="stub")
+
+
 def _pipeline(muse_fixture, calls):
     def handler(request):
         body = json.loads(request.content)
@@ -45,7 +52,8 @@ def _pipeline(muse_fixture, calls):
             "usage": {"input_tokens": 3000, "output_tokens": 800}})
     client = MetaModelClient(api_key="test-key-xxxxxxxxxxxx", transport=httpx.MockTransport(handler))
     sam = SamSegmenter(client=MetaModelClient(api_key=""))  # no key => SAM unavailable, pipeline must continue
-    return AnalysisPipeline(muse=MuseSparkAnalyzer(client=client), sam=sam, weather_fn=_stub_weather, satellite_fn=_stub_sat)
+    return AnalysisPipeline(muse=MuseSparkAnalyzer(client=client), sam=sam, weather_fn=_stub_weather, satellite_fn=_stub_sat,
+                            classifier_fn=_stub_clf)
 
 
 def test_pipeline_full_context(muse_fixture, sample_pod):
@@ -67,6 +75,10 @@ def test_pipeline_full_context(muse_fixture, sample_pod):
     ctx = json.loads(calls[0]["input"][0]["content"][1]["text"].split("CONTEXT:\n", 1)[1])
     assert ctx["weather"]["provenance_kind"].startswith("modelled_estimate")
     assert ctx["satellite"]["status"] == "no_valid_scene"
+    # classifier says healthy, Muse says abnormality -> consensus disagreement, R6 contradiction
+    assert rep.consensus.final == "uncertain_needs_check" and not rep.consensus.agreement
+    assert any(c.rule_id == "R6_classifier_vs_muse" for c in rep.contradictions)
+    assert ctx["specialist_classifier"]["decision"] == "healthy"
     names = [t.step for t in rep.timings]
     assert names[0] == "image_quality" and "muse_spark_analysis" in names
 
@@ -88,7 +100,8 @@ def test_pipeline_e0_sends_no_context(muse_fixture, sample_pod):
 def test_pipeline_without_key_fails_explicitly(sample_pod, tmp_path):
     svc = MaanaTerraService(db=Database(tmp_path / "x.db"),
                             pipeline=AnalysisPipeline(muse=MuseSparkAnalyzer(client=MetaModelClient(api_key="")),
-                                                      weather_fn=_stub_weather, satellite_fn=_stub_sat))
+                                                      weather_fn=_stub_weather, satellite_fn=_stub_sat,
+                                                      classifier_fn=_stub_clf))
     p = svc.create_parcel(ParcelCreate(name="P", latitude=5.78, longitude=-6.6))
     obs = svc.create_observation(ObservationCreate(parcel_id=p.id, observation_date=date(2026, 10, 1), plant_part="pod"),
                                  [sample_pod.read_bytes()])
